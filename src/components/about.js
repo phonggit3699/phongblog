@@ -1,8 +1,11 @@
 import React from 'react';
 
-const About = () =>{
-    return(
-        <div>
+import { useRouteMatch } from "react-router-dom";
+const About = () => {
+    let match = useRouteMatch().path.slice(1);
+
+    return (
+        <div className="container">
             This is about
         </div>
 

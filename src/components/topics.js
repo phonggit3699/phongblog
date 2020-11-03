@@ -3,7 +3,7 @@ import React from 'react';
 const Topics = () =>{
     return(
         <div>
-            This is topics
+            <h1>Chức năng đang được phát triển ahihi</h1>
         </div>
 
     )

@@ -1,30 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react';
+
+import { NavLink } from "react-router-dom";
 
 
-import {
-    BrowserRouter as Router,
-    Link,
-    useRouteMatch,
-    useParams
-} from "react-router-dom";
+
 const Nav = () => {
+    const [stickyNavBar, setStickyNavbar] = useState(false);
+    const stickyNav = () => {
+        if (window.scrollY >= 700) {
+            setStickyNavbar(true);
+
+        } else {
+            setStickyNavbar(false)
+        }
+    }
+    window.addEventListener('scroll', stickyNav);
+
     return (
         <div>
-            <header>
-                <Link className="logo" to="/">Phong Blog</Link>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/topics">Topics</Link>
-                        </li>
-                    </ul>
-                </nav>
+            <header className={stickyNavBar ? 'sticky' : ''}>
+                <div className="logo-nav container">
+                    <a className="logo" href="/"><h1>Phong Blog</h1></a>
+                    <nav>
+                        <ul>
+                            <li>
+                                <NavLink exact activeClassName="active" to="/">Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink activeClassName="active" to="/about">About</NavLink>
+                            </li>
+                            <li>
+                                <NavLink activeClassName="active" to="/topics">Topics</NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className="clear"></div>
             </header>
         </div>
     );
