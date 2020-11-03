@@ -1,7 +1,26 @@
 import './css/home.css';
 import Posts from './post';
+import {  animateScroll as scroll } from 'react-scroll';
+import React, { useState } from 'react';
 
 const Home = () => {
+    const [stickyScrollTop, setStickyScrollTop] = useState(false);
+    const stickyScrollTopF = () => {
+        if (window.scrollY >= 700) {
+            setStickyScrollTop(true);
+
+        } else {
+            setStickyScrollTop(false)
+        }
+    }
+    window.addEventListener('scroll', stickyScrollTopF);
+    const scrollToTop = () => {
+        scroll.scrollToTop({
+            duration: 800,
+            delay: 0,
+            smooth: 'easeInOutQuart'
+        });
+    }
     return (
         <div className='home-container'>
             <div className='banner'>
@@ -13,13 +32,13 @@ const Home = () => {
             <div className="content">
                 <h3>Thông tin về công nghệ thông tin</h3>
                 <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
-                <div class="items">
-                    <Posts/>
-                    <Posts/>
-                    <Posts/>
-                    <Posts/>
+                <div className="items">
+                    <Posts />
+                    <Posts />
+                    <Posts />
+                    <Posts />
                 </div>
-                
+
 
 
                 <p> ldsa;dksakdsad </p>
@@ -61,6 +80,7 @@ const Home = () => {
                 <p> ldsa;dksakdsad </p>
 
             </div>
+            <button type="button" onClick={scrollToTop} className={`scrollTop  ${stickyScrollTop ? 'stickyScrollTop' : ''}`}>TOP</button>
         </div>
 
     )

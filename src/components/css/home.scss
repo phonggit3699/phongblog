@@ -48,6 +48,18 @@
             max-width: 750px;
         }
     }
+
+    .scrollTop{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background-color: black;
+        display: none;
+    }
+
+    .stickyScrollTop{
+        display: block;
+    }
 }
 
 @keyframes down {

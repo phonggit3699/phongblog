@@ -33,4 +33,24 @@
 .footer .about .Box ul li {
   color: white;
 }
+
+.footer .share {
+  padding: 10px 0;
+}
+
+.footer .share .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .share .image a img {
+  width: 40px;
+}
 /*# sourceMappingURL=footer.css.map */

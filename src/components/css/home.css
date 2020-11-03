@@ -71,6 +71,18 @@
   max-width: 750px;
 }
 
+.home-container .scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: black;
+  display: none;
+}
+
+.home-container .stickyScrollTop {
+  display: block;
+}
+
 @-webkit-keyframes down {
   from {
     -webkit-transform: translateY(0);

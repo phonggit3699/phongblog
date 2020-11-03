@@ -1,4 +1,10 @@
-import './css/footer.css'
+import './css/footer.css';
+
+import fb from './images/fb.png';
+import ins from './images/ins.png';
+import bird from './images/bird.png';
+import heart from './images/heart.png';
+import ytb from './images/ytb.png';
 
 const Footer = () => {
 
@@ -50,9 +56,17 @@ const Footer = () => {
 
                     </ul>
                 </div>
-                <div className="share">
-                    <img src="./images/fb.png" alt="Photos" />
+
+            </div>
+            <div className="share">
+                <div className="image">
+                    <a href="https://www.facebook.com/phamphong.03061999/" target="_blank"><img src={fb} alt="Photos" /></a>
+                    <a href="https://www.youtube.com/channel/UCCVGk8rAAmqTySbW-PFpfyQ?view_as=subscriber" target="_blank"><img src={ytb} alt="Photos" /></a>
+                    <a href="https://www.instagram.com/pham_phong_pham/" target="_blank"><img src={ins} alt="Photos" /></a>
+                    <a href="#" target="_blank"><img src={bird} alt="Photos" /></a>
+                    <a href="https://www.youtube.com/watch?v=jK2aIUmmdP4" target="_blank"><img src={heart} alt="Photos" /></a>
                 </div>
+
             </div>
 
         </div>
