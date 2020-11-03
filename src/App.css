@@ -11,6 +11,7 @@ body header {
   background-color: black;
   height: 4rem;
   width: 100vw;
+  z-index: 3;
 }
 
 body header .logo-nav {

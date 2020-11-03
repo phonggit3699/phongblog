@@ -1,17 +1,60 @@
 .home-container{
-
+//---Banner
     .banner{
         height: calc(100vh - 4rem);
-        background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg');
+        background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/banner.jpg');
         background-repeat: none;
         background-size: cover;
         background-position: center;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         h1{
             color: white;
             font-size: 4rem;
         }
+
+        h2{
+            color: white;
+        }
+        h3{
+            color: white;
+        }
+        .arrowDown{
+            color: white;
+            font-size: 40px;
+            animation: down infinite;
+            animation-duration: 1.5s;
+            
+        }
+
+    }
+// Content
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h3{
+            margin-top: 100px;
+            
+        }
+        span{
+            margin-bottom: 100px;
+            color: red;
+        }
+        .items{
+            max-width: 750px;
+        }
+    }
+}
+
+@keyframes down {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(150px);
     }
 }

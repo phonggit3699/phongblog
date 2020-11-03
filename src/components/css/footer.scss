@@ -1,0 +1,28 @@
+.footer{
+    background-color: black;
+    margin-top: 50px;
+    .about {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px #a29696 solid;
+
+        .Box{
+            margin-top: 30px;
+            h5{
+                color: white;
+            }
+            
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li{
+                    color: white;
+                }
+            }
+        }
+    }
+
+}

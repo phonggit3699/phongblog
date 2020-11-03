@@ -1,7 +1,8 @@
 import React, { useState }  from 'react';
 import About from './components/about';
-import Topics from './components/topics'
-import Home from './components/home'
+import Topics from './components/topics';
+import Home from './components/home';
+import Footer from './components/footer';
 import {
     BrowserRouter as Router,
     Switch,
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/topics" component={Topics} />
                 </Switch>
             </Router>
+            <Footer/>
         </div>
     );
 }

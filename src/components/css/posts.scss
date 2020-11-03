@@ -1,0 +1,21 @@
+.posts-container{
+    margin-top: 20px;
+    border-bottom: 1px rgb(191, 190, 190) solid;
+    padding-bottom: 0.5rem;
+    max-height: 300px;
+    .img-des{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 15rem;
+            height: 15rem;
+        }
+
+        .des{
+            margin-left: 20px;
+            text-align: justify;
+        }
+    }
+}

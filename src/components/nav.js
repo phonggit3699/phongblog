@@ -20,7 +20,7 @@ const Nav = () => {
         <div>
             <header className={stickyNavBar ? 'sticky' : ''}>
                 <div className="logo-nav container">
-                    <a className="logo" href="/"><h1>Phong Blog</h1></a>
+                    <a className="logo" href="/"><h1>Beeze Blog</h1></a>
                     <nav>
                         <ul>
                             <li>

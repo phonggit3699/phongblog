@@ -1,0 +1,29 @@
+.posts-container {
+  margin-top: 20px;
+  border-bottom: 1px #bfbebe solid;
+  padding-bottom: 0.5rem;
+  max-height: 300px;
+}
+
+.posts-container .img-des {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.posts-container .img-des img {
+  width: 15rem;
+  height: 15rem;
+}
+
+.posts-container .img-des .des {
+  margin-left: 20px;
+  text-align: justify;
+}
+/*# sourceMappingURL=posts.css.map */
