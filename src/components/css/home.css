@@ -36,8 +36,8 @@
 .home-container .banner .arrowDown {
   color: white;
   font-size: 40px;
-  -webkit-animation: down infinite;
-          animation: down infinite;
+  -webkit-animation: down infinite linear;
+          animation: down infinite linear;
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
 }
@@ -75,8 +75,20 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: black;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: none;
+  font-size: 2rem;
+  -webkit-box-shadow: 0 0 14px #888888;
+          box-shadow: 0 0 14px #888888;
+  outline: none;
+}
+
+.home-container .scrollTop:hover {
+  background-color: black;
+  color: white;
 }
 
 .home-container .stickyScrollTop {
@@ -102,6 +114,18 @@
   to {
     -webkit-transform: translateY(150px);
             transform: translateY(150px);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .home-container .banner h1 {
+    font-size: 3rem;
+  }
+  .home-container .banner h2 {
+    font-size: 1.2rem;
+  }
+  .home-container .banner h3 {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=home.css.map */

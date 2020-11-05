@@ -1,0 +1,219 @@
+header {
+  background-color: black;
+  height: 4rem;
+  width: 100vw;
+  z-index: 3;
+}
+
+header .logo-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo-nav .logo {
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .logo-nav .logo h1 {
+  font-size: 2rem;
+}
+
+header .logo-nav nav {
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo-nav nav ul {
+  margin-left: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  list-style: none;
+}
+
+header .logo-nav nav ul a {
+  text-decoration: none;
+  color: white;
+  padding: 1.35rem;
+  font-size: 16px;
+}
+
+header .logo-nav nav ul a:hover {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+header .logo-nav .active {
+  background-color: white;
+  color: black;
+}
+
+header .logo-nav .hambergerButton {
+  position: absolute;
+  top: 0.3rem;
+  right: 2rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  color: white;
+  outline: none;
+}
+
+.showBtn {
+  display: block;
+}
+
+.hiddenBtn {
+  display: none;
+}
+
+.sticky {
+  position: fixed;
+  -webkit-animation: show 0.5s linear;
+          animation: show 0.5s linear;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.clear {
+  clear: both;
+}
+
+@-webkit-keyframes show {
+  from {
+    -webkit-transform: translateY(-101%);
+            transform: translateY(-101%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show {
+  from {
+    -webkit-transform: translateY(-101%);
+            transform: translateY(-101%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  header {
+    position: relative;
+  }
+  header .logo-nav {
+    height: 64px;
+  }
+  header .logo-nav .logo {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  header .logo-nav .logo h1 {
+    font-size: 2rem;
+  }
+  header .logo-nav nav {
+    -webkit-transform: translateX(150%);
+            transform: translateX(150%);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  header .logo-nav .navShow {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  header .logo-nav .navShow ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .logo-nav .navShow ul li {
+    margin: 1.9rem 0;
+  }
+  header .logo-nav .navShow ul li a {
+    padding: 2rem 100vw;
+    text-align: center;
+  }
+  header .logo-nav .navHidden {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    -webkit-transform: translate(150%);
+            transform: translate(150%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: black;
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  header .logo-nav .navHidden ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .logo-nav .navHidden ul li {
+    margin: 1.9rem 0;
+  }
+  header .logo-nav .navHidden ul li a {
+    padding: 2rem 100vw;
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=nav.css.map */

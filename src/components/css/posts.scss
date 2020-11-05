@@ -1,8 +1,8 @@
 .posts-container{
     margin-top: 20px;
     border-bottom: 1px rgb(191, 190, 190) solid;
-    padding-bottom: 0.5rem;
-    max-height: 300px;
+    padding-bottom: 1rem;
+    
     .img-des{
         display: flex;
         justify-content: center;
@@ -16,6 +16,34 @@
         .des{
             margin-left: 20px;
             text-align: justify;
+            max-height: 216px;
+            
+        }
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .posts-container{
+        overflow: hidden;
+        padding-bottom: 0.5rem;
+        h4{
+            margin-left: 9rem;
+        }
+        .img-des{
+            img{
+                width: 27.5rem;
+                height: 27.5rem;
+            }
+           
+            
+            align-items: center;
+            flex-direction: column;
+            .des{
+                margin-left: 20px;
+                margin-right: 20px;
+                max-height: 210px;
+                overflow: hidden;
+            }
         }
     }
 }

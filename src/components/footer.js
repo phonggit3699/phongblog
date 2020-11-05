@@ -60,11 +60,11 @@ const Footer = () => {
             </div>
             <div className="share">
                 <div className="image">
-                    <a href="https://www.facebook.com/phamphong.03061999/" target="_blank"><img src={fb} alt="Photos" /></a>
-                    <a href="https://www.youtube.com/channel/UCCVGk8rAAmqTySbW-PFpfyQ?view_as=subscriber" target="_blank"><img src={ytb} alt="Photos" /></a>
-                    <a href="https://www.instagram.com/pham_phong_pham/" target="_blank"><img src={ins} alt="Photos" /></a>
-                    <a href="#" target="_blank"><img src={bird} alt="Photos" /></a>
-                    <a href="https://www.youtube.com/watch?v=jK2aIUmmdP4" target="_blank"><img src={heart} alt="Photos" /></a>
+                    <a href="https://www.facebook.com/phamphong.03061999/" target="_blank" rel="noreferrer"><img src={fb} alt="Photos" /></a>
+                    <a href="https://www.youtube.com/channel/UCCVGk8rAAmqTySbW-PFpfyQ?view_as=subscriber" target="_blank" rel="noreferrer"><img src={ytb} alt="Photos" /></a>
+                    <a href="https://www.instagram.com/pham_phong_pham/" target="_blank" rel="noreferrer"><img src={ins} alt="Photos" /></a>
+                    <a href="https://twitter.com/?lang=vi" target="_blank" rel="noreferrer"><img src={bird} alt="Photos" /></a>
+                    <a href="https://www.youtube.com/watch?v=jK2aIUmmdP4" target="_blank" rel="noreferrer"><img src={heart} alt="Photos" /></a>
                 </div>
 
             </div>

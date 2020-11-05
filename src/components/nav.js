@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import './css/nav.css';
 
 import { NavLink } from "react-router-dom";
 
@@ -6,6 +7,23 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
     const [stickyNavBar, setStickyNavbar] = useState(false);
+    const [sizeScreen, setSizeScreen] = useState(false);
+    const [show, setShow] = useState(false);
+    
+
+    useEffect(()=>{
+        const setSize = () => {
+            if (window.innerWidth <= 500) {
+                setSizeScreen(true);
+            }
+            else {
+                setSizeScreen(false);
+                setShow(false);
+            }
+        }
+        setSize();
+        window.addEventListener('resize', setSize);
+    }, [])
     const stickyNav = () => {
         if (window.scrollY >= 700) {
             setStickyNavbar(true);
@@ -14,14 +32,23 @@ const Nav = () => {
             setStickyNavbar(false)
         }
     }
+
+   
+
+    const showUpNav = ()=>{
+        setShow(!show);
+    };
     window.addEventListener('scroll', stickyNav);
+    
+
+    
 
     return (
         <div>
             <header className={stickyNavBar ? 'sticky' : ''}>
                 <div className="logo-nav container">
                     <a className="logo" href="/"><h1>Fong Blog</h1></a>
-                    <nav>
+                    <nav className={show ? 'navShow' : 'navHidden'}>
                         <ul>
                             <li>
                                 <NavLink exact activeClassName="active" to="/">Home</NavLink>
@@ -34,6 +61,7 @@ const Nav = () => {
                             </li>
                         </ul>
                     </nav>
+                    <button className={`hambergerButton ${sizeScreen ? 'showBtn' :'hiddenBtn'}`} onClick={showUpNav}  type="button">☰</button>
                 </div>
                 <div className="clear"></div>
             </header>

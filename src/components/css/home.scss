@@ -1,8 +1,8 @@
-.home-container{
-//---Banner
-    .banner{
+.home-container {
+    //---Banner
+    .banner {
         height: calc(100vh - 4rem);
-        background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/banner.jpg');
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/banner.jpg");
         background-repeat: none;
         background-size: cover;
         background-position: center;
@@ -10,63 +10,87 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        h1{
+        h1 {
             color: white;
             font-size: 4rem;
         }
 
-        h2{
+        h2 {
             color: white;
         }
-        h3{
+        h3 {
             color: white;
         }
-        .arrowDown{
+        .arrowDown {
             color: white;
             font-size: 40px;
-            animation: down infinite;
+            animation: down infinite linear;
             animation-duration: 1.5s;
-            
         }
-
     }
-// Content
-    .content{
+    // Content
+    .content {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        h3{
+        h3 {
             margin-top: 100px;
-            
         }
-        span{
+        span {
             margin-bottom: 100px;
             color: red;
         }
-        .items{
+        .items {
             max-width: 750px;
         }
     }
 
-    .scrollTop{
+    .scrollTop {
         position: fixed;
         bottom: 2rem;
         right: 2rem;
-        background-color: black;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
         display: none;
+        font-size: 2rem;
+        box-shadow: 0 0 14px #888888;
+        outline: none;
+        &:hover {
+            background-color: black;
+            color: white;
+        }
     }
 
-    .stickyScrollTop{
+    .stickyScrollTop {
         display: block;
     }
 }
 
 @keyframes down {
-    from{
+    from {
         transform: translateY(0);
     }
-    to{
+    to {
         transform: translateY(150px);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .home-container {
+        .banner {
+            h1{
+                font-size: 3rem;
+            }
+            h2{
+                font-size: 1.2rem;
+            }
+            h3{
+                font-size: 1rem;
+            }
+        }
+
     }
 }
