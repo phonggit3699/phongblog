@@ -85,13 +85,6 @@ header .logo-nav .hambergerButton {
   font-size: 2rem;
   color: white;
   outline: none;
-}
-
-.showBtn {
-  display: block;
-}
-
-.hiddenBtn {
   display: none;
 }
 
@@ -145,10 +138,11 @@ header .logo-nav .hambergerButton {
     font-size: 2rem;
   }
   header .logo-nav nav {
-    -webkit-transform: translateX(150%);
-            transform: translateX(150%);
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    width: 100vw;
   }
   header .logo-nav .navShow {
     position: absolute;
@@ -186,8 +180,8 @@ header .logo-nav .hambergerButton {
     position: absolute;
     top: 4rem;
     right: 0;
-    -webkit-transform: translate(150%);
-            transform: translate(150%);
+    -webkit-transform: translate(200%);
+            transform: translate(200%);
     background-color: rgba(0, 0, 0, 0.8);
     color: black;
     width: 100vw;
@@ -214,6 +208,9 @@ header .logo-nav .hambergerButton {
   header .logo-nav .navHidden ul li a {
     padding: 2rem 100vw;
     text-align: center;
+  }
+  header .logo-nav .hambergerButton {
+    display: block;
   }
 }
 /*# sourceMappingURL=nav.css.map */

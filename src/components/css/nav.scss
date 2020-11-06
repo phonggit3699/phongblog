@@ -58,21 +58,12 @@ header {
             font-size: 2rem;
             color: white;
             outline: none;
+            display: none;
         }
 
     }
 
 }
-
-.showBtn{
-    display: block;
-}
-
-.hiddenBtn{
-    display: none;
-}
-
-
 
 .sticky {
     position: fixed;
@@ -106,8 +97,9 @@ header {
                 }
             }
             nav {
-                transform: translateX(150%);
+                transform: translateX(200%);
                 transition: all 0.5s;
+                width: 100vw;
             }
             .navShow{
                 position: absolute;
@@ -136,7 +128,7 @@ header {
                 position: absolute;
                 top:4rem;
                 right: 0;
-                transform: translate(150%);
+                transform: translate(200%);
                 background-color: rgba(0, 0, 0, 0.8);
                 color: black;
                 width: 100vw;
@@ -156,6 +148,11 @@ header {
                     }
                 }
             }
+            .hambergerButton{
+                display: block;
+            }
         }
     }
 }
+
+

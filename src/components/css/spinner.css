@@ -71,4 +71,12 @@
             transform: rotate(360deg);
   }
 }
+
+.hiddenSpinner {
+  display: none;
+}
+
+.showUp {
+  display: block;
+}
 /*# sourceMappingURL=spinner.css.map */

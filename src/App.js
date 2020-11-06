@@ -30,6 +30,7 @@ function App() {
 
         readySpinner();
     }, []);
+    
     if(viewSpinner){
         return ( <Spinner/> )
     }
