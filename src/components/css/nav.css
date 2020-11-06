@@ -1,7 +1,7 @@
 header {
   background-color: black;
   height: 4rem;
-  width: 100vw;
+  width: 100%;
   z-index: 3;
 }
 
@@ -138,20 +138,27 @@ header .logo-nav .hambergerButton {
     font-size: 2rem;
   }
   header .logo-nav nav {
+    position: absolute;
     -webkit-transform: translateX(200%);
             transform: translateX(200%);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    width: 100vw;
+    width: 100%;
+  }
+  header .logo-nav nav ul li {
+    width: 100%;
+  }
+  header .logo-nav nav ul li a {
+    width: 100%;
   }
   header .logo-nav .navShow {
     position: absolute;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     top: 4rem;
     right: 0;
-    -webkit-transform: translate(0);
-            transform: translate(0);
     background-color: rgba(0, 0, 0, 0.8);
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -162,6 +169,7 @@ header .logo-nav .hambergerButton {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    z-index: 999;
   }
   header .logo-nav .navShow ul {
     -webkit-box-orient: vertical;
@@ -173,18 +181,18 @@ header .logo-nav .hambergerButton {
     margin: 1.9rem 0;
   }
   header .logo-nav .navShow ul li a {
-    padding: 2rem 100vw;
+    padding: 2rem 50vw;
     text-align: center;
   }
   header .logo-nav .navHidden {
     position: absolute;
     top: 4rem;
     right: 0;
-    -webkit-transform: translate(200%);
-            transform: translate(200%);
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
     background-color: rgba(0, 0, 0, 0.8);
     color: black;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
