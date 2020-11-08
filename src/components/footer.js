@@ -1,5 +1,5 @@
 import './css/footer.css';
-
+import React from 'react';
 import fb from './images/fb.png';
 import ins from './images/ins.png';
 import bird from './images/bird.png';

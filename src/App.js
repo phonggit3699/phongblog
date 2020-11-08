@@ -4,6 +4,7 @@ import Topics from './components/topics';
 import Home from './components/home';
 import Footer from './components/footer';
 import Spinner from './components/spinner';
+import Form from './components/form';
 import {
     BrowserRouter as Router,
     Switch,
@@ -44,6 +45,7 @@ function App() {
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About}  ></Route>
                         <Route path="/topics" component={Topics} />
+                        <Route path="/form" component={Form} />
                     </Switch>
                 </Router>
                 <Footer />

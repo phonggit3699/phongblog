@@ -23,8 +23,8 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            
-            ul {
+
+            & > ul {
                 margin-left: 0;
                 margin-bottom: 0;
                 display: flex;
@@ -32,16 +32,69 @@ header {
                 align-items: center;
                 color: white;
                 list-style: none;
-                a {
-                    text-decoration: none;
-                    color: white;
-                    padding: 1.35rem;
-                    font-size: 16px;
-                    &:hover {
-                        background-color: white;
-                        color: black;
+                li {
+                    position: relative;
+                    a {
                         text-decoration: none;
+                        color: white;
+                        padding: 1.35rem;
+                        font-size: 16px;
+                        &:hover {
+                            background-color: white;
+                            color: black;
+                            text-decoration: none;
+                        }
+                        &:hover ~ .subNav {
+                            display: block;
+                        }
                     }
+                }
+            }
+            .subNav {
+                position: absolute;
+                bottom: -10.3rem;
+                width: 8rem;
+                height: auto;
+                left: 0;
+                text-align: center;
+                display: none;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                ul {
+                    list-style: none;
+
+                    li {
+                        border-bottom: 1px rgb(209, 207, 207) solid;
+                        height: 3rem;
+                        padding: 0.8rem 1rem;
+                        background-color: white;
+                        a {
+                            color: black;
+                            text-decoration: none;
+                            padding: 0.5rem 0.5rem;
+                            background-color: white;
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        button {
+                            background-color: white;
+                            outline: none;
+                        }
+
+                        &:hover {
+                            background-color: #f0f2f5;
+                            & a {
+                                background-color: #f0f2f5;
+                            }
+                            & button {
+                                background-color: #f0f2f5;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    display: block;
                 }
             }
         }
@@ -49,7 +102,7 @@ header {
             background-color: white;
             color: black;
         }
-        .hambergerButton{
+        .hambergerButton {
             position: absolute;
             top: 0.3rem;
             right: 2rem;
@@ -60,9 +113,7 @@ header {
             outline: none;
             display: none;
         }
-
     }
-
 }
 
 .sticky {
@@ -102,18 +153,25 @@ header {
                 transition: all 0.5s;
                 width: 100%;
                 ul {
-                    li{
+                    li {
                         width: 100%;
-                        a{
+                        a {
                             width: 100%;
+                            &:hover ~ .subNav {
+                                display: none;
+                            }
                         }
                     }
                 }
+                .subNav {
+                    display: none;
+                }
+
             }
-            .navShow{
+            .navShow {
                 position: absolute;
                 transform: translateX(0);
-                top:4rem;
+                top: 4rem;
                 right: 0;
                 background-color: rgba(0, 0, 0, 0.8);
                 width: 100%;
@@ -122,21 +180,21 @@ header {
                 justify-content: center;
                 align-items: flex-start;
                 z-index: 999;
-                
-                & ul{
+
+                & ul {
                     flex-direction: column;
-                    & li{
+                    & li {
                         margin: 1.9rem 0;
-                        & a{
-                            padding: 2rem 50vw;
+                        & a {
+                            padding: 2rem 100vw;
                             text-align: center;
                         }
                     }
                 }
             }
-            .navHidden{
+            .navHidden {
                 position: absolute;
-                top:4rem;
+                top: 4rem;
                 right: 0;
                 transform: translateX(200%);
                 background-color: rgba(0, 0, 0, 0.8);
@@ -146,23 +204,24 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: flex-start;
-                
-                & ul{
+
+                ul {
                     flex-direction: column;
-                    & li{
+                    li {
                         margin: 1.9rem 0;
-                        & a{
+                        a {
                             padding: 2rem 100vw;
                             text-align: center;
+                            &:hover{
+                                background-color: none;
+                            }
                         }
                     }
                 }
             }
-            .hambergerButton{
+            .hambergerButton {
                 display: block;
             }
         }
     }
 }
-
-
