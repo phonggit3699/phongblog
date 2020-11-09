@@ -1,6 +1,8 @@
 .home-container {
     //---Banner
+    position: relative;
     .banner {
+        
         height: calc(100vh - 4rem);
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/banner.jpg");
         background-repeat: none;
@@ -43,6 +45,10 @@
         }
         .items {
             max-width: 750px;
+        }
+        .specificPost{
+            text-decoration: none;
+            color: black;
         }
     }
 

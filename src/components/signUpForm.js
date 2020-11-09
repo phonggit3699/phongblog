@@ -1,10 +1,11 @@
 import React , { useState } from "react";
 import { useForm } from "react-hook-form";
 import { authLoginAPI } from '../API';
-import { NavLink } from "react-router-dom";
 import './css/form.css';
+import { NavLink } from "react-router-dom";
 
-const LoginForm = () => {
+
+const SignUpForm = () => {
     const { register, handleSubmit } = useForm();
     const [loading, setLoading] = useState(false);
     const [erorr, setErorr] = useState('');
@@ -36,12 +37,12 @@ const LoginForm = () => {
                     <label htmlFor="password">Password: </label>
                     <input type="password" className="form-control" id="password" name='password' required ref={register} />
                 </div>
-               
-                <button disabled={loading} type="submit" className="btn btn-success">{loading ? "Loging..." : "Login"}</button>
-                <NavLink exact activeClassName="active" className="btn btn-primary ml-2" to="/signup">Sign Up</NavLink>
+             
+                <button disabled={loading} type="submit" className="btn btn-success">{loading ? "Sign Up..." : "Sign Up"}</button>
+                
             </form>
             { erorr ? <p className="erorr">{erorr} </p> : <p className="sucess"></p>}
         </div>
     )
 }
-export default LoginForm;
+export default SignUpForm;

@@ -1,9 +1,20 @@
 const URL_API = "http://localhost:3001/api/post";
 
-const URL_API_CREATE = "http://localhost:3001/api/newPost"
+const URL_API_CREATE = "http://localhost:3001/api/newPost";
+
+const URL_API_LOGIN = "http://localhost:3001/api/findAuth";
+
+const URL_API_SIGNUP = "http://localhost:3001/api/newAuth";
+const URL_API_SPECIFIC_POST = "http://localhost:3001/api/post/";
+
 
 export async function getPostFromAPI() {
     const respones = await fetch(URL_API);
+    return respones.json();
+}
+
+export async function getSpecificPostFromAPI(id) {
+    const respones = await fetch(URL_API_SPECIFIC_POST+id);
     return respones.json();
 }
 
@@ -15,6 +26,20 @@ export async function createNewPostAPI(newPost) {
             'content-type': 'application/json'
         },
         body: JSON.stringify(newPost)
+    });
+    return status.json();
+
+}
+
+
+export async function authLoginAPI(user) {
+    
+    const status = await fetch(URL_API_LOGIN, {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
     });
     return status.json();
 

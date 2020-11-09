@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './css/nav.css';
-
 import { NavLink } from "react-router-dom";
-
-
 
 const Nav = () => {
     const [stickyNavBar, setStickyNavbar] = useState(false);
-    // const [sizeScreen, setSizeScreen] = useState(false);
+    const [loginName, setLoginname] = useState("");
     const [show, setShow] = useState(false);
 
     const stickyNav = () => {
@@ -19,15 +16,10 @@ const Nav = () => {
         }
     }
 
-
-
     const showUpNav = () => {
         setShow(!show);
     };
     window.addEventListener('scroll', stickyNav);
-
-
-
 
     return (
         <div>
@@ -46,17 +38,15 @@ const Nav = () => {
                                 <NavLink activeClassName="active" to="/topics" onClick={showUpNav}>Topics</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName="active" to="/form" exact onClick={showUpNav}>Sign_in</NavLink>
+
+                                {loginName ? <a href="#">{loginName}</a> : <NavLink activeClassName="active" to="/login" exact onClick={showUpNav}>Login</NavLink>}
                                 <div className="subNav">
                                     <ul >
                                         <li>
-                                            <NavLink  to="/form" onClick={showUpNav}><i class="fas fa-sign-in-alt"></i> Login</NavLink>
+                                            <NavLink to="/signup" onClick={showUpNav}><i className="fas fa-user-plus"></i> Sign up</NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to="/form/signup" onClick={showUpNav}><i class="fas fa-user-plus"></i> Sign up</NavLink>
-                                        </li>
-                                        <li>
-                                            <button type="button"><i class="fas fa-sign-out-alt"></i> Log out</button>
+                                            <button type="button"><i className="fas fa-sign-out-alt"></i> Log out</button>
                                         </li>
 
                                     </ul>

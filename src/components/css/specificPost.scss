@@ -1,0 +1,26 @@
+.specificPost-container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 750px;
+    img{
+        max-width: 750px;
+        margin: 2rem 0;
+    }
+    p{
+        text-align: justify;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .inforPost{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 750px;
+        padding: 0 1rem;
+    }
+
+}

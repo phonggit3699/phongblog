@@ -1,3 +1,7 @@
+.home-container {
+  position: relative;
+}
+
 .home-container .banner {
   height: calc(100vh - 4rem);
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../images/banner.jpg");
@@ -69,6 +73,11 @@
 
 .home-container .content .items {
   max-width: 750px;
+}
+
+.home-container .content .specificPost {
+  text-decoration: none;
+  color: black;
 }
 
 .home-container .scrollTop {

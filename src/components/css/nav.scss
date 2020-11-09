@@ -52,13 +52,14 @@ header {
             }
             .subNav {
                 position: absolute;
-                bottom: -10.3rem;
+                bottom: -7.3rem;
                 width: 8rem;
                 height: auto;
                 left: 0;
                 text-align: center;
                 display: none;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 5;
                 ul {
                     list-style: none;
 
