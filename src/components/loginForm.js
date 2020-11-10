@@ -1,47 +1,69 @@
-import React , { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { authLoginAPI } from '../API';
 import { NavLink } from "react-router-dom";
 import './css/form.css';
+import ValidateForm from "./validationForm";
+import GetNameLogin from './getNameLogin';
 
 const LoginForm = () => {
     const { register, handleSubmit } = useForm();
     const [loading, setLoading] = useState(false);
-    const [erorr, setErorr] = useState('');
-    const [check, setCheck] = useState({});
+    const [check, setCheck] = useState([]);
+    const { HandleChange, HandleSubmit, values, errors } = ValidateForm();
+    const { setLoginName } = GetNameLogin();
+    console.log(check);
     const onSubmit = async (data) => {
         try {
+            HandleSubmit();
+            if (Object.keys(errors).length !== 0) {
+                setLoading(false); console.log('loi roi'); return
+            };
             setLoading(true);
             const authLogin = await authLoginAPI(data);
             setLoading(false);
-            setCheck(authLogin)
-          
+            setCheck(authLogin);
         }
         catch (error) {
-            setErorr(error.messages);
             setLoading(false);
         }
-
     }
+
+    // useEffect(() => {
+    //     if (check.status === 'sucess') {
+    //         setLoginName(check.username);
+    //     }
+    // }, [])
+
 
     return (
         <div className="loginForm container">
             <NavLink exact activeClassName="active" className="btn btn-primary" to="/">&#8592;Home</NavLink>
             <form action="" onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-group">
+                <div className="form-group mt-3">
                     <label htmlFor="username">Username: </label>
-                    <input type="text" className="form-control" id="username" name="username" required ref={register} />
+                    <input type="text" className="form-control"
+                        value={values.username ? values.username : ''}
+                        name="username"
+                        required ref={register}
+                        onChange={HandleChange} />
+                    <small className='error'>{errors ? errors.username : ''}</small>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password: </label>
-                    <input type="password" className="form-control" id="password" name='password' required ref={register} />
+                    <input type="password" className="form-control"
+                        value={values.password ? values.password : ''}
+                        name='password'
+                        required ref={register}
+                        onChange={HandleChange} />
+                    <small className='error'>{errors ? errors.passowrd : ''}</small>
                 </div>
-               
+
                 <button disabled={loading} type="submit" className="btn btn-success">{loading ? "Loging..." : "Login"}</button>
-                <NavLink exact activeClassName="active" className="btn btn-primary ml-2" to="/signup">Sign Up</NavLink>
+                <NavLink exact activeClassName="active" className="btn btn-info ml-2" to="/signup">Sign Up</NavLink>
             </form>
-            { erorr ? <p className="erorr">{erorr} </p> : <p className="sucess"></p>}
         </div>
     )
 }
+
 export default LoginForm;

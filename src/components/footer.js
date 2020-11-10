@@ -7,8 +7,12 @@ import github from './images/github.png';
 import gmail from './images/gmail.png';
 
 const Footer = () => {
-
-
+    let myGmail;
+    const copyToClipboard = () => {
+        myGmail.select();
+        document.execCommand('copy',true, 'phamvanphong3699@gmail.com');
+        alert('Gmail copied to clipboard');
+    };
     return (
         <div className="footer">
             <div className="container about">
@@ -20,9 +24,9 @@ const Footer = () => {
                     <a href="https://www.youtube.com/channel/UCCVGk8rAAmqTySbW-PFpfyQ?view_as=subscriber" target="_blank" rel="noreferrer"><img src={ytb} alt="Photos" /></a>
                     <a href="https://www.instagram.com/pham_phong_pham/" target="_blank" rel="noreferrer"><img src={ins} alt="Photos" /></a>
                     <a href="https://github.com/phonggit3699?tab=repositories" target="_blank" rel="noreferrer"><img src={github} alt="Photos" /></a>
-                    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer"><img src={gmail} alt="Photos" /></a>
+                    <img src={gmail} alt="Photos" title='Click to copy my gmail'  onClick={copyToClipboard}/>
                 </div>
-
+                <textarea cols="1" rows="1" defaultValue="phamvanphong3699@gmail.com"  ref={(e) => myGmail = e }></textarea>
             </div>
 
         </div>

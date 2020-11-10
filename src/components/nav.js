@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './css/nav.css';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
-    const [stickyNavBar, setStickyNavbar] = useState(false);
-    const [loginName, setLoginname] = useState("");
-    const [show, setShow] = useState(false);
 
+    const [stickyNavBar, setStickyNavbar] = useState(false);
+    const [show, setShow] = useState(false);
+    let loginName = ''
     const stickyNav = () => {
         if (window.scrollY >= 700) {
             setStickyNavbar(true);

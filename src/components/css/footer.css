@@ -20,10 +20,11 @@
 .footer .about h5 {
   color: white;
   font-weight: inherit;
+  font-size: 1rem;
 }
 
 .footer .share {
-  padding: 10px 0;
+  padding-top: 1.5rem;
 }
 
 .footer .share .image {
@@ -40,5 +41,17 @@
 
 .footer .share .image a img {
   width: 40px;
+}
+
+.footer .share .image img {
+  width: 40px;
+  cursor: pointer;
+}
+
+.footer .share textarea {
+  background-color: black;
+  border: none;
+  -webkit-transform: translateX(-4rem);
+          transform: translateX(-4rem);
 }
 /*# sourceMappingURL=footer.css.map */

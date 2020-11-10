@@ -32,15 +32,27 @@ export async function createNewPostAPI(newPost) {
 }
 
 
-export async function authLoginAPI(user) {
+export async function authLoginAPI(data) {
     
     const status = await fetch(URL_API_LOGIN, {
         method: "POST",
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(data)
     });
     return status.json();
+}
 
+
+export async function authSignUpAPI(data) {
+    
+    const status = await fetch(URL_API_SIGNUP, {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    return status.json();
 }

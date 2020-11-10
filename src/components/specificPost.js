@@ -17,14 +17,14 @@ const SpecificPost = () => {
         }
         )()
 
-    }, []);
+    }, [match.params.id]);
     const dateAt = new Date(specificPost.Date).toLocaleDateString();
 
     return (
         <div className="specificPost-container container">
               {viewSpinner ? <Spinner/> : ''}
             <h2>{specificPost.title}</h2>
-            <img src={specificPost.img} alt="Photo" />
+            <img src={specificPost.img} alt='ImgSpecificPost' />
              <p>{specificPost.post}</p>
              <div className="inforPost">
                  <span>{`Tác giả: ${specificPost.author}`} </span>

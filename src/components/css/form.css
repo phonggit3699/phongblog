@@ -1,5 +1,19 @@
 .loginForm {
   margin-top: 2rem;
   margin-bottom: 25rem;
+  width: 400px;
+  -webkit-box-shadow: 0 0 3px #ccc;
+          box-shadow: 0 0 3px #ccc;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+}
+
+.loginForm .error {
+  color: red;
+}
+
+.loginForm p {
+  margin-top: 1rem;
+  color: #138496;
 }
 /*# sourceMappingURL=form.css.map */

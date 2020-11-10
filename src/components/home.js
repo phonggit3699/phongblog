@@ -18,13 +18,11 @@ const Home = () => {
     useEffect(() => {
         (async () => {
             const getPost = await getPostFromAPI()
-            setPost([...getPost, ...posts]);
+            setPost(getPost);
             setViewSpninner(false);
         }
         )()
-      
     }, []);
-   
 
     const [stickyScrollTop, setStickyScrollTop] = useState(false);
     const stickyScrollTopF = () => {
@@ -45,7 +43,7 @@ const Home = () => {
     }
     return (
         <div className='home-container'>
-            {viewSpinner ? <Spinner/> : ''}
+            {viewSpinner ? <Spinner /> : ''}
             <div className='banner'>
                 <h1>&lt;&#8725; Xin chào các bạn&gt;</h1>
                 <h2>&lt;&#8725; Cùng tìm hiểu các thông tin về IT qua blog này nhé&gt;</h2>
@@ -57,13 +55,13 @@ const Home = () => {
                 <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
                 <div className="items">
                     {posts.map((post) => (
-                        <NavLink to={`/page/${post._id}`}  key={post._id} className="specificPost"><Posts post={post} /></NavLink>
+                        <NavLink to={`/page/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></NavLink>
                     ))}
                 </div>
 
             </div>
             <button type="button" onClick={scrollToTop} className={`scrollTop  ${stickyScrollTop ? 'stickyScrollTop' : ''}`}>&#8682;</button>
-            
+
         </div>
 
     )

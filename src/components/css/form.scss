@@ -1,4 +1,15 @@
 .loginForm {
     margin-top: 2rem;
     margin-bottom: 25rem;
+    width: 400px;
+    box-shadow: 0 0 3px #ccc;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    .error{
+        color: red;
+    }
+    p{  
+        margin-top: 1rem;
+        color: #138496;
+    }
 }
