@@ -15,13 +15,18 @@ const Home = () => {
     const [posts, setPost] = useState([]);
 
 
+
+
     useEffect(() => {
+        const abortC = new AbortController();
         (async () => {
             const getPost = await getPostFromAPI()
             setPost(getPost);
             setViewSpninner(false);
-        }
-        )()
+
+        })()
+        return () => abortC.abort();
+
     }, []);
 
     const [stickyScrollTop, setStickyScrollTop] = useState(false);

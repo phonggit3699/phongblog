@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { authSignUpAPI } from '../API';
 import './css/form.css';
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import ValidateForm from "./validationForm";
 
 
@@ -12,16 +12,14 @@ const SignUpForm = () => {
     const [loading, setLoading] = useState(false);
     const [check, setCheck] = useState({});
 
+    
     const { HandleChange, HandleSubmit, values, errors } = ValidateForm();
-
-    console.log(errors);
-    console.log(check);
 
     const onSubmit = async (data) => {
         try {
             HandleSubmit();
-            if (Object.keys(errors).length !==0) { 
-                setLoading(false);  console.log('loi roi'); return 
+            if (Object.keys(errors).length !== 0) {
+                setLoading(false); console.log('loi roi'); return
             };
             setLoading(true)
             const authLogin = await authSignUpAPI(data);
@@ -32,11 +30,11 @@ const SignUpForm = () => {
             setLoading(false);
         }
     }
-
     return (
         <div className="loginForm container">
             <NavLink exact activeClassName="active" className="btn btn-primary" to="/">&#8592;Home</NavLink>
-            {check.status==="sucess" ? <p>Tạo thành công. Sẵn sàng đăng nhập!</p> : '' }
+            {check.status === "sucess" ? <p>Tạo thành công. Sẵn sàng đăng nhập!</p> : ''}
+            {check.status === "username already exsits" ? <p>Tài khoản đã tồn tại!</p> : ''}
             <form action="" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group mt-3">
                     <label htmlFor="username">Username: </label>

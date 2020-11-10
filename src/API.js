@@ -9,17 +9,20 @@ const URL_API_SPECIFIC_POST = "http://localhost:3001/api/post/";
 
 
 export async function getPostFromAPI() {
-    const respones = await fetch(URL_API);
+    const abortC = new AbortController();
+
+    const respones = await fetch(URL_API, { signal: abortC.signal });
     return respones.json();
 }
 
 export async function getSpecificPostFromAPI(id) {
-    const respones = await fetch(URL_API_SPECIFIC_POST+id);
+    const abortC = new AbortController();
+    const respones = await fetch(URL_API_SPECIFIC_POST + id, { signal: abortC.signal });
     return respones.json();
 }
 
 export async function createNewPostAPI(newPost) {
-    
+
     const status = await fetch(URL_API_CREATE, {
         method: "POST",
         headers: {
@@ -33,7 +36,7 @@ export async function createNewPostAPI(newPost) {
 
 
 export async function authLoginAPI(data) {
-    
+
     const status = await fetch(URL_API_LOGIN, {
         method: "POST",
         headers: {
@@ -46,7 +49,7 @@ export async function authLoginAPI(data) {
 
 
 export async function authSignUpAPI(data) {
-    
+
     const status = await fetch(URL_API_SIGNUP, {
         method: "POST",
         headers: {
