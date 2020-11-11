@@ -14,9 +14,6 @@ const Home = () => {
     const [viewSpinner, setViewSpninner] = useState(true);
     const [posts, setPost] = useState([]);
 
-
-
-
     useEffect(() => {
         const abortC = new AbortController();
         (async () => {

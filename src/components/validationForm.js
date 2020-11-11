@@ -4,7 +4,8 @@ export default function ValidateForm() {
     const [values, setValues] = useState([{
         username: '',
         password: '',
-        passowrd2: ''
+        passowrd2: '', 
+        remember: false
     }]);
 
     const [errors, setErrors] = useState([]);
@@ -14,6 +15,9 @@ export default function ValidateForm() {
         setValues({ ...values, [name]: value});
     }
 
+    const HandleClick = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.checked});
+    }
     const HandleSubmit = () => {
         let error = {};
         if (!values.username.trim()) {
@@ -40,5 +44,5 @@ export default function ValidateForm() {
         }
         setErrors(error);
     }
-    return { HandleChange, HandleSubmit, values, errors,setValues };
+    return { HandleChange, HandleSubmit, values, errors,HandleClick };
 }

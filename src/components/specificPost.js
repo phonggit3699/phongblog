@@ -33,6 +33,7 @@ const SpecificPost = () => {
                 <span>{`Tác giả: ${specificPost.author}`} </span>
                 <span>{dateAt} </span>
             </div>
+            <div className="fb-comments fbPlugin" data-href="http://localhost:3000" data-numposts="5" data-width="100%"></div>
         </div>
     );
 }

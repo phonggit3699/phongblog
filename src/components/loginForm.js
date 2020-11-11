@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { authLoginAPI } from '../API';
 import { NavLink, Redirect, useLocation } from "react-router-dom";
 import './css/form.css';
 import ValidateForm from "./validationForm";
-import GetNameLogin from './getNameLogin';
+import Cookies from 'universal-cookie';
+import AuthContext from '../authContext';
 
 const LoginForm = () => {
+    
+    const authContext = useContext(AuthContext);
+    const cookies = new Cookies();
     const { register, handleSubmit } = useForm();
     const [loading, setLoading] = useState(false);
     const [check, setCheck] = useState([]);
-    const { HandleChange, HandleSubmit, values, errors } = ValidateForm();
-    const { setLoginName } = GetNameLogin();
+    const { HandleChange, HandleSubmit, values, errors,HandleClick } = ValidateForm();
     let location = useLocation();
-    console.log(check.status);
+    let date = new Date();
+    date.setTime(date.getTime()+(20*60*1000));
+    let dateCookie = new Date(2020, 12, 10);
+    
     const onSubmit = async (data) => {
-        console.log(data);
         try {
             HandleSubmit();
             if (Object.keys(errors).length !== 0) {
@@ -23,22 +28,24 @@ const LoginForm = () => {
             };
             setLoading(true);
             const authLogin = await authLoginAPI(data);
-            setLoading(false);
             setCheck(authLogin);
+            setLoading(false);
         }
         catch (error) {
             setLoading(false);
         }
     }
-
-    // useEffect(() => {
-    //     if (check.status === 'sucess') {
-    //         setLoginName(check.username);
-    //     }
-    // }, [])
-
-    if (check.status === 'sucess') {
+    if(check.status === 'sucess' && values.remember && !loading){
+        cookies.set('utokenC', check.cookie, { path: '/', expires: dateCookie });
+        cookies.set('userName', check.username, { path: '/', expires: dateCookie });
+        authContext.setLoggedIn(!authContext.loggedIn);
+    }
+    if (check.status === 'sucess' && !loading) {
+        cookies.set('utokenS', check.cookie, { path: '/', expires: date });
+        cookies.set('userName', check.username, { path: '/', expires: date });
+        authContext.setLoggedIn(!authContext.loggedIn);
         return (
+            
             <Redirect
                 to={{
                     pathname: "/",
@@ -70,7 +77,14 @@ const LoginForm = () => {
                             onChange={HandleChange} />
                         <small className='error'>{errors ? errors.passowrd : ''}</small>
                     </div>
-                    <button disabled={loading} type="submit" className="btn btn-success">{loading ? "Loging..." : "Login"}</button>
+                    <div className="form-check mb-3">
+                        <label className="form-check-label">
+                            <input className="form-check-input" 
+                            type="checkbox" name="remember" 
+                            onClick={HandleClick} /> Remember me
+                        </label>
+                    </div>
+                    <button disabled={loading} type="submit" className="btn btn-success">{loading ? "Login..." : "Login"}</button>
                     <NavLink exact activeClassName="active" className="btn btn-info ml-2" to="/signup">Sign Up</NavLink>
                 </form>
             </div>

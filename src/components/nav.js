@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './css/nav.css';
 import { NavLink } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+import AuthContext from '../authContext';
 
 const Nav = () => {
-
+    const authContext = useContext(AuthContext);
+    const cookies = new Cookies();
     const [stickyNavBar, setStickyNavbar] = useState(false);
     const [show, setShow] = useState(false);
-    let loginName = ''
+    const cookie = cookies.getAll();
     const stickyNav = () => {
         if (window.scrollY >= 700) {
             setStickyNavbar(true);
@@ -19,6 +22,13 @@ const Nav = () => {
     const showUpNav = () => {
         setShow(!show);
     };
+
+    const logOut = () =>{
+        cookies.remove('utokenC');
+        cookies.remove('utokenS');
+        cookies.remove('userName');
+        authContext.setLoggedIn(!authContext.loggedIn);
+    }
     window.addEventListener('scroll', stickyNav);
 
     return (
@@ -29,7 +39,7 @@ const Nav = () => {
                     <nav className={show ? 'navShow' : 'navHidden'} >
                         <ul>
                             <li>
-                                <NavLink exact activeClassName="active" to="/" onClick={showUpNav}>Home</NavLink>
+                                <NavLink exact  activeClassName="active" to="/" onClick={showUpNav}>Home</NavLink>
                             </li>
                             <li>
                                 <NavLink activeClassName="active" to="/about" onClick={showUpNav}>About</NavLink>
@@ -39,14 +49,14 @@ const Nav = () => {
                             </li>
                             <li>
 
-                                {loginName ? <a href="#">{loginName}</a> : <NavLink activeClassName="active" to="/login" exact onClick={showUpNav}>Login</NavLink>}
+                                {cookie.utokenC || cookie.utokenS? <a href="#">{cookie.userName}</a> : <NavLink activeClassName="active" to="/login" exact onClick={showUpNav}>Login</NavLink>}
                                 <div className="subNav">
                                     <ul >
                                         <li>
-                                            <NavLink to="/signup" onClick={showUpNav}><i className="fas fa-user-plus"></i> Sign up</NavLink>
+                                        {cookie.utokenC || cookie.utokenS? <NavLink activeClassName="active" to="/info" href="#">Info</NavLink> : <NavLink activeClassName="active" to="/signup" exact onClick={showUpNav}>Sign Up</NavLink>}
                                         </li>
                                         <li>
-                                            <button type="button"><i className="fas fa-sign-out-alt"></i> Log out</button>
+                                            <button type="button" onClick={logOut}><i className="fas fa-sign-out-alt"></i> Log out</button>
                                         </li>
 
                                     </ul>
