@@ -81,7 +81,7 @@ header .logo-nav nav > ul li a:hover ~ .subNav {
 
 header .logo-nav nav .subNav {
   position: absolute;
-  bottom: -7.3rem;
+  bottom: -7.2rem;
   width: 8rem;
   height: auto;
   left: 0;

@@ -1,19 +1,8 @@
-:root {
-    --primary: #08aeea;
-    --secondary: #13d2b8;
-    --purple: #bd93f9;
-    --pink: #ff6bcb;
-    --blue: #8be9fd;
-    --gray: #333;
-    --font: "Poppins", sans-serif;
-    --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
-    --shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-}
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
+
+
+    $primary: #08aeea;
+    $secondary: #13d2b8;
+
 .theme {
     display: block;
     position: absolute;
@@ -38,7 +27,7 @@
     }
     .dashed-loading:before {
         z-index: 5;
-        border: 3px dashed var(--blue);
+        border: 3px dashed $primary;
         border-left: 3px solid transparent;
         border-bottom: 3px solid transparent;
         -webkit-animation: dashed 1s linear infinite;
@@ -46,7 +35,7 @@
     }
     .dashed-loading:after {
         z-index: 10;
-        border: 3px solid var(--blue);
+        border: 3px solid $secondary;
         border-left: 3px solid transparent;
         border-bottom: 3px solid transparent;
         -webkit-animation: dashed 1s ease infinite;
@@ -57,8 +46,6 @@
             transform: rotate(360deg);
         }
     }
-
-  
 }
 
 .hiddenSpinner{

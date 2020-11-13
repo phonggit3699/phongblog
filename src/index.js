@@ -7,6 +7,7 @@ import AuthContext from './authContext';
 
 const AppWrapper = () => {
   const [loggedIn, setLoggedIn] = useState(false)
+  console.log(loggedIn)
   return (
     <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
       <App />

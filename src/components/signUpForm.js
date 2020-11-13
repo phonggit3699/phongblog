@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { authSignUpAPI } from '../API';
 import './css/form.css';
 import { NavLink} from "react-router-dom";
-import ValidateForm from "./validationForm";
+import {ValidateForm }from "./validationForm";
 
 
 

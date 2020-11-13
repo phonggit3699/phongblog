@@ -49,7 +49,7 @@ const Nav = () => {
                             </li>
                             <li>
 
-                                {cookie.utokenC || cookie.utokenS? <a href="#">{cookie.userName}</a> : <NavLink activeClassName="active" to="/login" exact onClick={showUpNav}>Login</NavLink>}
+                                {cookie.utokenC || cookie.utokenS? <NavLink to='/info'>{cookie.userName}</NavLink> : <NavLink activeClassName="active" to="/login" exact onClick={showUpNav}>Login</NavLink>}
                                 <div className="subNav">
                                     <ul >
                                         <li>

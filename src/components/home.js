@@ -1,30 +1,62 @@
 import './css/home.css';
 import Posts from './post';
 import { animateScroll as scroll } from 'react-scroll';
-import React, { useState, useEffect } from 'react';
-import { getPostFromAPI } from '../API';
+import React, { useState, useEffect, useMemo } from 'react';
+import { getPostFromAPI, getTotalPostFromAPI } from '../API';
 import 'dotenv';
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Spinner from './spinner';
+import { makeStyles } from '@material-ui/core/styles';
+import Pagination from '@material-ui/lab/Pagination';
+import PaginationItem from '@material-ui/lab/PaginationItem';
 
-// import { get } from 'react-hook-form';
-
-
-const Home = () => {
+const Home = ({ location }) => {
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& > *': {
+                marginTop: theme.spacing(2),
+            },
+        },
+    }));
     const [viewSpinner, setViewSpninner] = useState(true);
     const [posts, setPost] = useState([]);
+    const [offset, setOffset] = useState({
+        skip: 0, limit: 10
+    });
+    const query = new URLSearchParams(location.search);
+    const page = parseInt(query.get('page') || '1', 10);
+    //Number '10' is limited of page
+    const [pPage, setpPage] = useState(0);
+
+    useMemo(() => {
+        const offsetPage = (page - 1) * offset.limit; 
+        setOffset( { skip: offsetPage, limit: 10 });
+    }, [page])
 
     useEffect(() => {
-        const abortC = new AbortController();
-        (async () => {
-            const getPost = await getPostFromAPI()
-            setPost(getPost);
-            setViewSpninner(false);
+        let isMounted = true;
+        getPostFromAPI(offset).then((data) => {
+            if (isMounted) {
+                setPost(data);
+                setViewSpninner(false);
+            }
+        })
+        return () =>  isMounted = false ;
+    }, [page]);
 
-        })()
-        return () => abortC.abort();
+    useEffect(() => {
+        let isMounted = true;
+        getTotalPostFromAPI().then((num) => {
+            if (isMounted) {
+                const p = Math.ceil(parseInt(num) / offset.limit)
+                setpPage(p);
+            }
+        })
+        return () => { isMounted = false };
+    }, [])
 
-    }, []);
+
+  
 
     const [stickyScrollTop, setStickyScrollTop] = useState(false);
     const stickyScrollTopF = () => {
@@ -60,7 +92,21 @@ const Home = () => {
                         <NavLink to={`/page/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></NavLink>
                     ))}
                 </div>
-
+                <div className={`Pagination ${useStyles.root}`}>
+                    <Pagination
+                        variant="outlined"
+                        shape="rounded"
+                        page={page}
+                        count={pPage}
+                        renderItem={(item) => (
+                            <PaginationItem
+                                component={Link}
+                                to={`/${item.page === 1 ? '' : `?page=${item.page}`}`}
+                                {...item}
+                            />
+                        )}
+                    />
+                </div>
             </div>
             <button type="button" onClick={scrollToTop} className={`scrollTop  ${stickyScrollTop ? 'stickyScrollTop' : ''}`}>&#8682;</button>
 
