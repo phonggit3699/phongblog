@@ -80,32 +80,8 @@
   color: black;
 }
 
-.home-container .scrollTop {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: none;
-  font-size: 2rem;
-  -webkit-box-shadow: 0 0 14px #888888;
-          box-shadow: 0 0 14px #888888;
-  outline: none;
-}
-
-.home-container .scrollTop:hover {
-  background-color: black;
-  color: white;
-}
-
 .home-container .Pagination {
   margin-top: 3rem;
-}
-
-.home-container .stickyScrollTop {
-  display: block;
 }
 
 @-webkit-keyframes down {

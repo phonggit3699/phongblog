@@ -18,7 +18,7 @@ const LoginForm = ({ location }) => {
     const date = new Date();
     date.setTime(date.getTime() + (20 * 60 * 1000));
     const dateCookie = new Date(2020, 12, 10);
-    const onSubmit = async (data) => {
+    const onSubmit = useCallback(async (data) => {
         try {
 
             HandleSubmit();
@@ -33,7 +33,7 @@ const LoginForm = ({ location }) => {
         catch (error) {
             setLoading(false);
         }
-    }
+    }, [values]);
 
     console.log(check, errors);
     if (check.status === 'sucess' && values.remember && !loading) {
@@ -65,35 +65,35 @@ const LoginForm = ({ location }) => {
                 <NavLink exact activeClassName="active" className="btn btn-primary" to="/">&#8592;Home</NavLink>
                 {check.status === "Wrong password" ? <p>Sai mật khẩu!</p> : ''}
                 {check.status === "username doesn't exsits" ? <p>Không tìm thấy tài khoản này!</p> : ''}
-                    <form action="" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-group mt-3">
-                            <label htmlFor="username">Username: </label>
-                            <input type="text" className="form-control"
-                                value={values.username ? values.username : ''}
-                                name="username"
-                                required ref={register}
-                                onChange={HandleChange} />
-                            <small className='error'>{errors ? errors.username : ''}</small>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password: </label>
-                            <input type="password" className="form-control"
-                                value={values.password ? values.password : ''}
-                                name='password'
-                                required ref={register}
-                                onChange={HandleChange} />
-                            <small className='error'>{errors ? errors.passowrd : ''}</small>
-                        </div>
-                        <div className="form-check mb-3">
-                            <label className="form-check-label">
-                                <input className="form-check-input"
-                                    type="checkbox" name="remember"
-                                    onClick={HandleClick} /> Remember me
+                <form action="" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="form-group mt-3">
+                        <label htmlFor="username">Username: </label>
+                        <input type="text" className="form-control"
+                            value={values.username ? values.username : ''}
+                            name="username"
+                            required ref={register}
+                            onChange={HandleChange} />
+                        <small className='error'>{errors ? errors.username : ''}</small>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password: </label>
+                        <input type="password" className="form-control"
+                            value={values.password ? values.password : ''}
+                            name='password'
+                            required ref={register}
+                            onChange={HandleChange} />
+                        <small className='error'>{errors ? errors.passowrd : ''}</small>
+                    </div>
+                    <div className="form-check mb-3">
+                        <label className="form-check-label">
+                            <input className="form-check-input"
+                                type="checkbox" name="remember"
+                                onClick={HandleClick} /> Remember me
                         </label>
-                        </div>
-                        <button disabled={loading} type="submit" className="btn btn-success">{loading ? "Login..." : "Login"}</button>
-                        <NavLink exact activeClassName="active" className="btn btn-info ml-2" to="/signup">Sign Up</NavLink>
-                    </form>
+                    </div>
+                    <button disabled={loading} type="submit" className="btn btn-success">{loading ? "Login..." : "Login"}</button>
+                    <NavLink exact activeClassName="active" className="btn btn-info ml-2" to="/signup">Sign Up</NavLink>
+                </form>
             </div>
         )
     }

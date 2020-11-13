@@ -42,7 +42,8 @@
   padding: 0 1rem;
 }
 
-.specificPost-container .fbPlugin {
+.specificPost-container .fb-chat {
+  max-width: 750px;
   margin-top: 3rem;
 }
 /*# sourceMappingURL=specificPost.css.map */

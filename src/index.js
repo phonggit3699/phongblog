@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -7,9 +7,9 @@ import AuthContext from './authContext';
 
 const AppWrapper = () => {
   const [loggedIn, setLoggedIn] = useState(false)
-  console.log(loggedIn)
+  const hiddenNav = true;
   return (
-    <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
+    <AuthContext.Provider value={{ loggedIn,  setLoggedIn, hiddenNav}}>
       <App />
     </AuthContext.Provider>
   )

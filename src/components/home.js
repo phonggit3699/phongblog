@@ -1,6 +1,5 @@
 import './css/home.css';
 import Posts from './post';
-import { animateScroll as scroll } from 'react-scroll';
 import React, { useState, useEffect, useMemo } from 'react';
 import { getPostFromAPI, getTotalPostFromAPI } from '../API';
 import 'dotenv';
@@ -9,6 +8,7 @@ import Spinner from './spinner';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
+import {  scroller  } from 'react-scroll';
 
 const Home = ({ location }) => {
     const useStyles = makeStyles((theme) => ({
@@ -29,8 +29,8 @@ const Home = ({ location }) => {
     const [pPage, setpPage] = useState(0);
 
     useMemo(() => {
-        const offsetPage = (page - 1) * offset.limit; 
-        setOffset( { skip: offsetPage, limit: 10 });
+        const offsetPage = (page - 1) * offset.limit;
+        setOffset({ skip: offsetPage, limit: 10 });
     }, [page])
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const Home = ({ location }) => {
                 setViewSpninner(false);
             }
         })
-        return () =>  isMounted = false ;
+        return () => isMounted = false;
     }, [page]);
 
     useEffect(() => {
@@ -55,29 +55,19 @@ const Home = ({ location }) => {
         return () => { isMounted = false };
     }, [])
 
-
-  
-
-    const [stickyScrollTop, setStickyScrollTop] = useState(false);
-    const stickyScrollTopF = () => {
-        if (window.scrollY >= 700) {
-            setStickyScrollTop(true);
-
-        } else {
-            setStickyScrollTop(false)
-        }
-    }
-    window.addEventListener('scroll', stickyScrollTopF);
-    const scrollToTop = () => {
-        scroll.scrollToTop({
+    const scrollToContent = () => {
+        scroller.scrollTo('content', {
             duration: 800,
             delay: 0,
             smooth: 'easeInOutQuart'
-        });
+        })
     }
+
     return (
         <div className='home-container'>
-            {viewSpinner ? <Spinner /> : ''}
+            <div>
+                {viewSpinner ? <Spinner /> : ''}
+            </div>
             <div className='banner'>
                 <h1>&lt;&#8725; Xin chào các bạn&gt;</h1>
                 <h2>&lt;&#8725; Cùng tìm hiểu các thông tin về IT qua blog này nhé&gt;</h2>
@@ -87,7 +77,7 @@ const Home = ({ location }) => {
             <div className="content">
                 <h3>Thông tin về công nghệ thông tin</h3>
                 <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
-                <div className="items">
+                <div className="items  container">
                     {posts.map((post) => (
                         <NavLink to={`/page/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></NavLink>
                     ))}
@@ -98,8 +88,10 @@ const Home = ({ location }) => {
                         shape="rounded"
                         page={page}
                         count={pPage}
+                        onClick={scrollToContent}
                         renderItem={(item) => (
                             <PaginationItem
+                                
                                 component={Link}
                                 to={`/${item.page === 1 ? '' : `?page=${item.page}`}`}
                                 {...item}
@@ -108,8 +100,6 @@ const Home = ({ location }) => {
                     />
                 </div>
             </div>
-            <button type="button" onClick={scrollToTop} className={`scrollTop  ${stickyScrollTop ? 'stickyScrollTop' : ''}`}>&#8682;</button>
-
         </div>
 
     )

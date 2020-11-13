@@ -1,4 +1,4 @@
-const URL_API = "http://localhost:5000/api/post";
+const URL_API = "https://phongallpostapi.herokuapp.com/api/post";
 
 const URL_API_CREATE = "https://phongallpostapi.herokuapp.com/api/newPost";
 
@@ -7,7 +7,8 @@ const URL_API_LOGIN = "https://phongallpostapi.herokuapp.com/api/findAuth";
 const URL_API_SIGNUP = "https://phongallpostapi.herokuapp.com/api/newAuth";
 const URL_API_SPECIFIC_POST = "https://phongallpostapi.herokuapp.com/api/post/";
 
-const URL_API_COUNT = "http://localhost:5000/api/countPost";
+const URL_API_COUNT = "https://phongallpostapi.herokuapp.com/api/countPost";
+
 export async function getPostFromAPI(offset) {
 
     const respones = await fetch(URL_API, {

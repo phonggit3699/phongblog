@@ -1,0 +1,112 @@
+.about {
+    &-banner {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 4rem);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/bannerAbout.jpg");
+        background-repeat: none;
+        background-size: 100%;
+        background-position: center;
+        &-text {
+            transition: all 0.5s ease-in;
+            h2,
+            h3 {
+                color: white;
+                position: absolute;
+                font-size: 3rem;
+                left: 15%;
+                top: 30%;
+                animation: heyo 1s;
+            }
+            h3 {
+                left: 20%;
+                top: 40%;
+                animation: heyo2 1s;
+                span {
+                    color: #c912a7;
+                }
+            }
+        }
+
+        .btn-start {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10%;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 20px;
+            outline: none;
+            transition: all 0.5s ease;
+            font-size: 1.2rem;
+            background-color: white;
+            color: #980a7e;
+
+            &:active {
+                left: 50%;
+                bottom: 9%;
+            }
+            &:hover {
+                background-color: #010c27;
+                color: #e231c2;
+            }
+        }
+    }
+    &-me {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        .btn-scrollDown {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 2%;
+            border: none;
+            // padding: 0.8rem 2rem;
+            border-radius: 50%;
+            outline: none;
+            transition: all 0.5s ease;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1.2rem;
+            background-color: black;
+            color: white;
+
+            &:active {
+                left: 50%;
+                bottom: 1%;
+            }
+            &:hover {
+                background-color: #010c27;
+                color: #e231c2;
+            }
+        }
+    }
+    &-my-skill {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+}
+
+@keyframes heyo {
+    from {
+        transform: translateX(-6rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes heyo2 {
+    from {
+        transform: translateX(-6rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
