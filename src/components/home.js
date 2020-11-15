@@ -3,12 +3,12 @@ import Posts from './post';
 import React, { useState, useEffect, useMemo } from 'react';
 import { getPostFromAPI, getTotalPostFromAPI } from '../API';
 import 'dotenv';
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Spinner from './spinner';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
-import {  scroller  } from 'react-scroll';
+import { scroller } from 'react-scroll';
 
 const Home = ({ location }) => {
     const useStyles = makeStyles((theme) => ({
@@ -57,7 +57,7 @@ const Home = ({ location }) => {
 
     const scrollToContent = () => {
         scroller.scrollTo('content', {
-            duration: 800,
+            duration: 1000,
             delay: 0,
             smooth: 'easeInOutQuart'
         })
@@ -65,9 +65,7 @@ const Home = ({ location }) => {
 
     return (
         <div className='home-container'>
-            <div>
-                {viewSpinner ? <Spinner /> : ''}
-            </div>
+            {viewSpinner ? <Spinner /> : ''}
             <div className='banner'>
                 <h1>&lt;&#8725; Xin chào các bạn&gt;</h1>
                 <h2>&lt;&#8725; Cùng tìm hiểu các thông tin về IT qua blog này nhé&gt;</h2>
@@ -79,7 +77,7 @@ const Home = ({ location }) => {
                 <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
                 <div className="items  container">
                     {posts.map((post) => (
-                        <NavLink to={`/page/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></NavLink>
+                        <Link to={`/page/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></Link>
                     ))}
                 </div>
                 <div className={`Pagination ${useStyles.root}`}>
@@ -91,7 +89,6 @@ const Home = ({ location }) => {
                         onClick={scrollToContent}
                         renderItem={(item) => (
                             <PaginationItem
-                                
                                 component={Link}
                                 to={`/${item.page === 1 ? '' : `?page=${item.page}`}`}
                                 {...item}

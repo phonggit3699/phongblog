@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useContext, useCallback} from "react";
 import { useForm } from "react-hook-form";
 import { authLoginAPI } from '../API';
 import { NavLink, Redirect } from "react-router-dom";
@@ -18,17 +18,16 @@ const LoginForm = ({ location }) => {
     const date = new Date();
     date.setTime(date.getTime() + (20 * 60 * 1000));
     const dateCookie = new Date(2020, 12, 10);
+
     const onSubmit = useCallback(async (data) => {
         try {
-
             HandleSubmit();
             if (Object.keys(errors).length !== 0) {
-                setLoading(false); console.log('loi roi'); return
+                setLoading(false);  return;
             };
             setLoading(true);
             const authLogin = await authLoginAPI(data);
             setCheck(authLogin);
-            setLoading(false);
         }
         catch (error) {
             setLoading(false);
@@ -36,12 +35,12 @@ const LoginForm = ({ location }) => {
     }, [values]);
 
     console.log(check, errors);
-    if (check.status === 'sucess' && values.remember && !loading) {
+    if (check.status === 'sucess' && values.remember) {
         cookies.set('utokenC', check.cookie, { path: '/', expires: dateCookie });
         cookies.set('userName', check.username, { path: '/', expires: dateCookie });
         authContext.setLoggedIn(!authContext.loggedIn);
     }
-    if (check.status === 'sucess' && !loading) {
+    if (check.status === 'sucess') {
         cookies.set('utokenS', check.cookie, { path: '/', expires: date });
         cookies.set('userName', check.username, { path: '/', expires: dateCookie });
         authContext.setLoggedIn(!authContext.loggedIn);
@@ -52,12 +51,8 @@ const LoginForm = ({ location }) => {
                     pathname: "/",
                     state: { referrer: location }
                 }}
-
-
             />
-
         )
-
     }
     else {
         return (

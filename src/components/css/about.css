@@ -2,10 +2,10 @@
   position: relative;
   width: 100%;
   height: calc(100vh - 4rem);
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../images/bannerAbout.jpg");
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/bannerAbout.jpg");
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../images/bannerAbout.jpg");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/bannerAbout.jpg");
   background-repeat: none;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
 }
 
@@ -26,14 +26,11 @@
 }
 
 .about-banner-text h3 {
-  left: 20%;
   top: 40%;
-  -webkit-animation: heyo2 1s;
-          animation: heyo2 1s;
 }
 
 .about-banner-text h3 span {
-  color: #c912a7;
+  color: #004cff;
 }
 
 .about-banner .btn-start {
@@ -49,8 +46,8 @@
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   font-size: 1.2rem;
-  background-color: white;
-  color: #980a7e;
+  background-color: #00163f;
+  color: #0084f7;
 }
 
 .about-banner .btn-start:active {
@@ -59,14 +56,34 @@
 }
 
 .about-banner .btn-start:hover {
-  background-color: #010c27;
-  color: #e231c2;
+  background-color: rgba(39, 74, 202, 0.442);
+  color: white;
 }
 
 .about-me {
   position: relative;
   height: 100vh;
+  padding-top: 2rem;
+  margin-bottom: 4rem;
   width: 100%;
+}
+
+.about-me h3 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 2rem;
+  color: black;
+  text-align: center;
+  margin: 0 auto;
+  display: inline;
+  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
+  font-size: 2rem;
+}
+
+.about-me h3 span {
+  color: #004cff;
 }
 
 .about-me .btn-scrollDown {
@@ -76,15 +93,14 @@
           transform: translateX(-50%);
   bottom: 2%;
   border: none;
-  border-radius: 50%;
+  border-radius: 2rem;
   outline: none;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.2rem;
-  background-color: black;
-  color: white;
+  font-size: 1rem;
+  background-color: rgba(47, 105, 206, 0.7);
+  padding: 0.3rem 1rem;
+  color: #403d3d;
 }
 
 .about-me .btn-scrollDown:active {
@@ -93,21 +109,376 @@
 }
 
 .about-me .btn-scrollDown:hover {
-  background-color: #010c27;
-  color: #e231c2;
+  background-color: rgba(16, 62, 226, 0.823);
+  color: white;
+}
+
+.about-me-info-img {
+  margin-top: 5rem;
+  height: calc(100vh - 10rem);
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.about-me-info-img img {
+  margin-left: 3rem;
+  width: 450px;
+  height: 500px;
+  padding: 0.3rem;
+  background-color: rgba(39, 74, 202, 0.442);
+}
+
+.about-me-info-text {
+  padding: 0.5rem;
+  margin-top: 5rem;
+  height: calc(100vh - 10rem);
+}
+
+.about-me-info-text table {
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+.about-me-info-text table tbody tr td {
+  color: black;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.about-me-info-text table tbody tr td .fullName {
+  color: #004cff;
+}
+
+.about-me-info-text table tbody tr td span {
+  margin-left: 1rem;
+  color: #999;
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+.about-me-info-text table tbody tr td button {
+  margin-top: 3rem;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  background-color: #3f65ff;
+  color: #5d5959;
+}
+
+.about-me-info-text table tbody tr td button:hover {
+  color: white;
+}
+
+.about-my-resume {
+  padding-top: 2rem;
+  position: relative;
+  margin-bottom: 4rem;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.about-my-resume h3 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 0.5rem;
+  color: black;
+  text-align: center;
+  display: inline;
+  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
+  font-size: 2rem;
+}
+
+.about-my-resume-step {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 8rem;
+}
+
+.about-my-resume-step .education {
+  margin-bottom: 2rem;
+}
+
+.about-my-resume-step .education h4 {
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #3e64ff;
+}
+
+.about-my-resume-step .education-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.about-my-resume-step .education-content img {
+  background-color: #3e64ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+.about-my-resume-step .education-content-text {
+  margin-left: 1rem;
+}
+
+.about-my-resume-step .education-content-text h6 {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #3e64ff;
+}
+
+.about-my-resume-step .education-content-text h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+}
+
+.about-my-resume-step .education-content-text h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  line-height: 0;
+}
+
+.about-my-resume-step .education-content-text p {
+  margin-top: 1.5rem;
+  color: #999;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.about-my-resume .btn-scrollDown {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  background-color: rgba(47, 105, 206, 0.7);
+  padding: 0.3rem 1rem;
+  color: #403d3d;
+}
+
+.about-my-resume .btn-scrollDown:active {
+  left: 50%;
+  bottom: 1%;
+}
+
+.about-my-resume .btn-scrollDown:hover {
+  background-color: rgba(16, 62, 226, 0.823);
+  color: white;
 }
 
 .about-my-skill {
   position: relative;
-  height: 100vh;
-  width: 100%;
+  padding-top: 4rem;
+  height: 650px;
+}
+
+.about-my-skill .h3Fake .secondH3,
+.about-my-skill .h3Fake .firstH3 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 2rem;
+  color: black;
+  text-align: center;
+  margin: 0 auto;
+  display: inline;
+  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.about-my-skill .h3Fake .firstH3 {
+  color: #004cff;
+  left: 46%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.about-my-skill .language,
+.about-my-skill .framework {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-my-skill .language .content,
+.about-my-skill .framework .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 0 5px #ccc;
+          box-shadow: 0 0 5px #ccc;
+  border-radius: 20px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.about-my-skill .language .content:hover,
+.about-my-skill .framework .content:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.about-my-skill .language .content span,
+.about-my-skill .framework .content span {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.about-my-skill .language .js,
+.about-my-skill .framework .js {
+  background-color: rgba(253, 246, 36, 0.762);
+  color: #ffa600;
+}
+
+.about-my-skill .language .html,
+.about-my-skill .framework .html {
+  background-color: rgba(255, 145, 0, 0.796);
+  color: #e65100;
+}
+
+.about-my-skill .language .css,
+.about-my-skill .framework .css {
+  background-color: rgba(39, 74, 202, 0.442);
+  color: #0277bd;
+}
+
+.about-my-skill .language .sass,
+.about-my-skill .framework .sass {
+  background-color: rgba(223, 76, 208, 0.442);
+  color: #f06292;
+}
+
+.about-my-skill .framework {
+  margin-top: 3rem;
+}
+
+.about-my-skill .framework .nodejs {
+  background-color: rgba(32, 214, 22, 0.673);
+  color: #2e7d32;
+}
+
+.about-my-skill .framework .react {
+  background-color: rgba(0, 0, 0, 0.673);
+  color: #39c1d7;
+}
+
+.about-my-skill .framework .react img {
+  width: 96px;
+}
+
+.about-my-skill .framework .expressjs {
+  background-color: white;
+  color: black;
+}
+
+.about-my-skill .framework .expressjs img {
+  margin-top: 15px;
+  width: 96px;
+}
+
+.about-my-skill .framework .expressjs span {
+  margin-top: calc(1rem + 25.36px);
+}
+
+.about-my-skill .framework .mongodb {
+  background-color: #5d4037;
+  color: #4cad4f;
+}
+
+.about-my-skill .btn-scrollDown {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  background-color: rgba(47, 105, 206, 0.7);
+  padding: 0.3rem 1rem;
+  color: #403d3d;
+}
+
+.about-my-skill .btn-scrollDown:active {
+  left: 50%;
+  bottom: 1%;
+}
+
+.about-my-skill .btn-scrollDown:hover {
+  background-color: rgba(16, 62, 226, 0.823);
+  color: white;
+}
+
+.animationZoomIn {
+  -webkit-animation: zoomIn 1s;
+          animation: zoomIn 1s;
+}
+
+.animationZoomIn2 {
+  -webkit-animation: zoomIn2 1s;
+          animation: zoomIn2 1s;
+}
+
+.animationDropDown {
+  -webkit-animation: dropDown 1s;
+          animation: dropDown 1s;
+}
+
+.animationDropDown2 {
+  -webkit-animation: dropDown2 1s;
+          animation: dropDown2 1s;
 }
 
 @-webkit-keyframes heyo {
   from {
     -webkit-transform: translateX(-6rem);
             transform: translateX(-6rem);
-    opacity: 0;
   }
   to {
     -webkit-transform: translateX(0);
@@ -120,7 +491,6 @@
   from {
     -webkit-transform: translateX(-6rem);
             transform: translateX(-6rem);
-    opacity: 0;
   }
   to {
     -webkit-transform: translateX(0);
@@ -129,29 +499,195 @@
   }
 }
 
-@-webkit-keyframes heyo2 {
+@-webkit-keyframes zoomIn {
   from {
-    -webkit-transform: translateX(-6rem);
-            transform: translateX(-6rem);
+    font-size: 1rem;
     opacity: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    font-size: 2rem;
     opacity: 1;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 
-@keyframes heyo2 {
+@keyframes zoomIn {
   from {
-    -webkit-transform: translateX(-6rem);
-            transform: translateX(-6rem);
+    font-size: 1rem;
     opacity: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  to {
+    font-size: 2rem;
+    opacity: 1;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+@-webkit-keyframes zoomIn2 {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomIn2 {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes dropDown {
+  from {
+    margin-top: -4rem;
+  }
+  to {
+    margin-top: 0.5rem;
+  }
+}
+
+@keyframes dropDown {
+  from {
+    margin-top: -4rem;
+  }
+  to {
+    margin-top: 0.5rem;
+  }
+}
+
+@-webkit-keyframes dropDown2 {
+  from {
+    margin-top: 1rem;
+  }
+  to {
+    margin-top: 8rem;
+  }
+}
+
+@keyframes dropDown2 {
+  from {
+    margin-top: 1rem;
+  }
+  to {
+    margin-top: 8rem;
+  }
+}
+
+.animationSlideNext {
+  -webkit-animation: slideNext 1s;
+          animation: slideNext 1s;
+}
+
+.animationSlideH3 {
+  -webkit-animation: slideNextH3 1s;
+          animation: slideNextH3 1s;
+}
+
+.animationSlideH32 {
+  -webkit-animation: slideNextH32 1s;
+          animation: slideNextH32 1s;
+}
+
+.animationSlidePrev {
+  -webkit-animation: slidePrev 1s;
+          animation: slidePrev 1s;
+}
+
+@-webkit-keyframes slideNext {
+  from {
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
   }
   to {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    opacity: 1;
+  }
+}
+
+@keyframes slideNext {
+  from {
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideNextH3 {
+  from {
+    left: 40%;
+  }
+  to {
+    left: 46%;
+  }
+}
+
+@keyframes slideNextH3 {
+  from {
+    left: 40%;
+  }
+  to {
+    left: 46%;
+  }
+}
+
+@-webkit-keyframes slideNextH32 {
+  from {
+    left: 56%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slideNextH32 {
+  from {
+    left: 56%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@-webkit-keyframes slidePrev {
+  from {
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slidePrev {
+  from {
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 /*# sourceMappingURL=about.css.map */
