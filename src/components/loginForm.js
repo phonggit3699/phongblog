@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback} from "react";
+import React, { useState, useContext, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { authLoginAPI } from '../API';
 import { NavLink, Redirect } from "react-router-dom";
@@ -9,41 +9,42 @@ import AuthContext from '../authContext';
 
 const LoginForm = ({ location }) => {
 
+    const [loading, setLoading] = useState(false);
+    const [check, setCheck] = useState([]);
     const authContext = useContext(AuthContext);
     const cookies = new Cookies();
     const { register, handleSubmit } = useForm();
-    const [loading, setLoading] = useState(false);
-    const [check, setCheck] = useState([]);
     const { HandleChange, HandleSubmit, values, errors, HandleClick } = ValidateLoginForm();
     const date = new Date();
     date.setTime(date.getTime() + (20 * 60 * 1000));
     const dateCookie = new Date(2020, 12, 10);
 
     const onSubmit = useCallback(async (data) => {
+
         try {
             HandleSubmit();
             if (Object.keys(errors).length !== 0) {
-                setLoading(false);  return;
+                return;
             };
             setLoading(true);
             const authLogin = await authLoginAPI(data);
             setCheck(authLogin);
+            setLoading(false);
         }
         catch (error) {
             setLoading(false);
         }
     }, [values]);
 
-    console.log(check, errors);
     if (check.status === 'sucess' && values.remember) {
         cookies.set('utokenC', check.cookie, { path: '/', expires: dateCookie });
         cookies.set('userName', check.username, { path: '/', expires: dateCookie });
-        authContext.setLoggedIn(!authContext.loggedIn);
+        authContext.setLoggedIn(true);
     }
     if (check.status === 'sucess') {
         cookies.set('utokenS', check.cookie, { path: '/', expires: date });
         cookies.set('userName', check.username, { path: '/', expires: dateCookie });
-        authContext.setLoggedIn(!authContext.loggedIn);
+        authContext.setLoggedIn(true);
         return (
             <Redirect
                 push

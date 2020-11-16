@@ -1,3 +1,7 @@
+.about {
+  background-color: #f5f6f7;
+}
+
 .about-banner {
   position: relative;
   width: 100%;
@@ -62,8 +66,8 @@
 
 .about-me {
   position: relative;
-  height: 100vh;
   padding-top: 2rem;
+  padding-bottom: 5rem;
   margin-bottom: 4rem;
   width: 100%;
 }
@@ -86,52 +90,30 @@
   color: #004cff;
 }
 
-.about-me .btn-scrollDown {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  bottom: 2%;
-  border: none;
-  border-radius: 2rem;
-  outline: none;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  font-size: 1rem;
-  background-color: rgba(47, 105, 206, 0.7);
-  padding: 0.3rem 1rem;
-  color: #403d3d;
-}
-
-.about-me .btn-scrollDown:active {
-  left: 50%;
-  bottom: 1%;
-}
-
-.about-me .btn-scrollDown:hover {
-  background-color: rgba(16, 62, 226, 0.823);
-  color: white;
-}
-
 .about-me-info-img {
   margin-top: 5rem;
   height: calc(100vh - 10rem);
   overflow: hidden;
-  padding: 0.5rem;
 }
 
 .about-me-info-img img {
   margin-left: 3rem;
   width: 450px;
-  height: 500px;
+  height: calc(100vh - 10rem);
   padding: 0.3rem;
   background-color: rgba(39, 74, 202, 0.442);
+  border-radius: 20px;
 }
 
 .about-me-info-text {
+  -webkit-box-shadow: 0 0 5px #ccc;
+          box-shadow: 0 0 5px #ccc;
   padding: 0.5rem;
   margin-top: 5rem;
   height: calc(100vh - 10rem);
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
 }
 
 .about-me-info-text table {
@@ -156,7 +138,12 @@
   font-weight: lighter;
 }
 
-.about-me-info-text table tbody tr td button {
+.about-me-info-text .btnCV {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 12%;
   margin-top: 3rem;
   border: none;
   padding: 0.8rem 1rem;
@@ -166,10 +153,37 @@
   transition: all 0.5s ease;
   font-size: 1rem;
   background-color: #3f65ff;
-  color: #5d5959;
+  color: black;
 }
 
-.about-me-info-text table tbody tr td button:hover {
+.about-me-info-text .btnCV:hover {
+  color: white;
+}
+
+.about-me-info-text .btn-scrollDown {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 4%;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  background-color: rgba(47, 105, 206, 0.7);
+  padding: 0.3rem 1rem;
+  color: black;
+}
+
+.about-me-info-text .btn-scrollDown:active {
+  left: 50%;
+  bottom: 2%;
+}
+
+.about-me-info-text .btn-scrollDown:hover {
+  background-color: rgba(16, 62, 226, 0.823);
   color: white;
 }
 
@@ -195,9 +209,15 @@
 }
 
 .about-my-resume-step {
+  position: relative;
+  border-radius: 20px;
+  background-color: white;
+  padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
   margin-top: 8rem;
+  -webkit-box-shadow: 0 0 5px #ccc;
+          box-shadow: 0 0 5px #ccc;
 }
 
 .about-my-resume-step .education {
@@ -259,12 +279,12 @@
   text-align: justify;
 }
 
-.about-my-resume .btn-scrollDown {
+.about-my-resume-step .btn-scrollDown {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 0;
+  bottom: 2%;
   border: none;
   border-radius: 2rem;
   outline: none;
@@ -276,12 +296,12 @@
   color: #403d3d;
 }
 
-.about-my-resume .btn-scrollDown:active {
+.about-my-resume-step .btn-scrollDown:active {
   left: 50%;
   bottom: 1%;
 }
 
-.about-my-resume .btn-scrollDown:hover {
+.about-my-resume-step .btn-scrollDown:hover {
   background-color: rgba(16, 62, 226, 0.823);
   color: white;
 }
@@ -453,6 +473,10 @@
 .about-my-skill .btn-scrollDown:hover {
   background-color: rgba(16, 62, 226, 0.823);
   color: white;
+}
+
+.hiddenBtn {
+  display: none;
 }
 
 .animationZoomIn {

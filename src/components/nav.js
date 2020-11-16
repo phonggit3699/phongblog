@@ -36,7 +36,7 @@ const Nav = () => {
         cookies.remove('utokenC');
         cookies.remove('utokenS');
         cookies.remove('userName');
-        authContext.setLoggedIn(!authContext.loggedIn);
+        authContext.setLoggedIn(false);
     }
     const location =useLocation();
     

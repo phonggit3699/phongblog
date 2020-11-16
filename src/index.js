@@ -6,7 +6,7 @@ import AuthContext from './authContext';
 
 
 const AppWrapper = () => {
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState()
   const hiddenNav = true;
   return (
     <AuthContext.Provider value={{ loggedIn,  setLoggedIn, hiddenNav}}>

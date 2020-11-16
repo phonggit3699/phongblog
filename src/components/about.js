@@ -49,7 +49,7 @@ const About = () => {
     }
 
     window.addEventListener('scroll', getScrollYF);
-    console.log(getScrollY)
+    // console.log(getScrollY)
 
     return (
         <div className="about">
@@ -90,15 +90,12 @@ const About = () => {
                                         <td>Phone: </td>
                                         <td><span>0327018706</span></td>
                                     </tr>
-                                    <tr key="myCV">
-                                        <td></td>
-                                        <td><button>Download CV</button></td>
-                                    </tr>
                                 </tbody>
                             </table>
+                            <button className='btnCV'>Download CV</button>
+                            <button className={`btn-scrollDown ${getScrollY >= 900 ? 'hiddenBtn' : ''}`} onClick={scrollToResume} type='button'>Resume</button>
                         </div>
                     </div>
-                    <button className='btn-scrollDown' onClick={scrollToResume} type='button'>Resume</button>
                 </div>
 
             </Element>
@@ -130,12 +127,11 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-
+                    <button className={`btn-scrollDown ${getScrollY >= 1900 ? 'hiddenBtn' : ''}`} onClick={scrollToSkill} type='button'>My Skill</button>
                 </div>
-                <button className='btn-scrollDown' onClick={scrollToSkill} type='button'>My Skill</button>
             </Element>
             <Element className='about-my-skill'>
-                <div className='h3Fake'> 
+                <div className='h3Fake'>
                     <span className={`firstH3 ${getScrollY >= 2000 ? 'animationSlideH3' : ''}`}>My</span>
                     <span className={`secondH3 ${getScrollY >= 2000 ? 'animationSlideH32' : ''}`}>Skill</span>
                 </div>
@@ -175,7 +171,7 @@ const About = () => {
                         <span>Mongodb</span>
                     </div>
                 </div>
-                <button className='btn-scrollDown' onClick={scrollToSkill} type='button'>My Project</button>
+                <button className={`btn-scrollDown ${getScrollY >= 2500 ? 'hiddenBtn' : ''}`} onClick={scrollToSkill} type='button'>My Project</button>
             </Element>
         </div>
 
