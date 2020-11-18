@@ -34,25 +34,23 @@ const Home = ({ location }) => {
     }, [page])
 
     useEffect(() => {
-        let isMounted = true;
-        getPostFromAPI(offset).then((data) => {
-            if (isMounted) {
-                setPost(data);
-                setViewSpninner(false);
-            }
-        })
-        return () => isMounted = false;
+        async function getPostFromAPIF(offset){
+            const res = await getPostFromAPI(offset)
+            setPost(res.data);
+            setViewSpninner(false);
+            return res;
+        }
+        getPostFromAPIF(offset);
     }, [page]);
 
     useEffect(() => {
-        let isMounted = true;
-        getTotalPostFromAPI().then((num) => {
-            if (isMounted) {
-                const p = Math.ceil(parseInt(num) / offset.limit)
-                setpPage(p);
-            }
-        })
-        return () => { isMounted = false };
+        async function getTotalPostFromAPIF(){
+            const num = await getTotalPostFromAPI()
+            const p = Math.ceil(parseInt(num.data) / offset.limit)
+            setpPage(p);
+            return p;
+        }
+        getTotalPostFromAPIF();
     }, [])
 
     const scrollToContent = () => {

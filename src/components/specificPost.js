@@ -12,15 +12,14 @@ const SpecificPost = () => {
     const [viewSpinner, setViewSpninner] = useState(true);
 
     useEffect(() => {
-        let isMounted = true;
-        getSpecificPostFromAPI(match.params.id).then((data) => {
-            if (isMounted) {
-                setSpecificPost(data);
-                setViewSpninner(false);
-            }
-        })
+        async function getSpecificPostFromAPIF() {
+            const res = await getSpecificPostFromAPI(match.params.id);
+            setSpecificPost(res.data);
+            setViewSpninner(false);
+            return res;
+        }
+        getSpecificPostFromAPIF(); 
 
-        return () => isMounted = false;
     }, []);
 
     const dateAt = new Date(specificPost.Date).toLocaleDateString();

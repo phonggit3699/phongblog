@@ -29,6 +29,7 @@
         }
 
         .btn-start {
+            font-family: 'Goldman', cursive;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -59,6 +60,7 @@
         margin-bottom: 4rem;
         width: 100%;
         h3 {
+            font-family: 'Goldman', cursive;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -71,6 +73,7 @@
             font-size: 2rem;
             span {
                 color: #004cff;
+                font-family: 'Goldman', cursive;
             }
         }
 
@@ -84,7 +87,7 @@
                 height: calc(100vh - 10rem);
                 padding: 0.3rem;
                 background-color: rgba(39, 74, 202, 0.442);
-                border-radius: 20px;
+                border-radius: 10px;
             }
         }
         &-info-text {
@@ -93,7 +96,7 @@
             margin-top: 5rem;
             height: calc(100vh - 10rem);
             background-color: white;
-            border-radius: 20px;
+            border-radius: 10px;
             position: relative;
             table {
                 border-collapse: separate;
@@ -118,6 +121,7 @@
                 }
             }
             .btnCV {
+                font-family: 'Goldman', cursive;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
@@ -136,6 +140,7 @@
                 }
             }
             .btn-scrollDown {
+                font-family: 'Goldman', cursive;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
@@ -170,6 +175,7 @@
         padding-bottom: 2rem;
 
         h3 {
+            font-family: 'Goldman', cursive;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -183,7 +189,7 @@
 
         &-step {
             position: relative;
-            border-radius: 20px;
+            border-radius: 10px;
             background-color: white;
             padding: 2rem;
             max-width: 800px;
@@ -238,6 +244,7 @@
                 }
             }
             .btn-scrollDown {
+                font-family: 'Goldman', cursive;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
@@ -265,10 +272,11 @@
     &-my-skill {
         position: relative;
         padding-top: 4rem;
-        height: 650px;
+        padding-bottom: 4rem;
         .h3Fake {
             .secondH3,
             .firstH3 {
+                font-family: 'Goldman', cursive;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
@@ -279,11 +287,11 @@
                 display: inline;
                 border-bottom: 2px solid rgba(39, 74, 202, 0.442);
                 font-size: 2rem;
-                font-weight: 600;
+                font-weight: 500;
             }
             .firstH3 {
                 color: #004cff;
-                left: 46%;
+                left: 45.8%;
                 transform: translateX(-50%);
             }
         }
@@ -362,6 +370,7 @@
             }
         }
         .btn-scrollDown {
+            font-family: 'Goldman', cursive;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -487,7 +496,7 @@
         left: 40%;
     }
     to {
-        left: 46%;
+        left: 45.8%;
     }
 }
 

@@ -34,7 +34,7 @@ const Footer = () => {
     }
     return (
         <div className="footer">
-            <div className="container about">
+            <div className="container aboutInfo">
                 <h5>Copy right &#169; by Pham Van Phong</h5>
             </div>
             <div className="share">

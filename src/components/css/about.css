@@ -38,6 +38,7 @@
 }
 
 .about-banner .btn-start {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -73,6 +74,7 @@
 }
 
 .about-me h3 {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -88,6 +90,7 @@
 
 .about-me h3 span {
   color: #004cff;
+  font-family: 'Goldman', cursive;
 }
 
 .about-me-info-img {
@@ -102,7 +105,7 @@
   height: calc(100vh - 10rem);
   padding: 0.3rem;
   background-color: rgba(39, 74, 202, 0.442);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .about-me-info-text {
@@ -112,7 +115,7 @@
   margin-top: 5rem;
   height: calc(100vh - 10rem);
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   position: relative;
 }
 
@@ -139,6 +142,7 @@
 }
 
 .about-me-info-text .btnCV {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -161,6 +165,7 @@
 }
 
 .about-me-info-text .btn-scrollDown {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -196,6 +201,7 @@
 }
 
 .about-my-resume h3 {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -210,7 +216,7 @@
 
 .about-my-resume-step {
   position: relative;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: white;
   padding: 2rem;
   max-width: 800px;
@@ -280,6 +286,7 @@
 }
 
 .about-my-resume-step .btn-scrollDown {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -309,11 +316,12 @@
 .about-my-skill {
   position: relative;
   padding-top: 4rem;
-  height: 650px;
+  padding-bottom: 4rem;
 }
 
 .about-my-skill .h3Fake .secondH3,
 .about-my-skill .h3Fake .firstH3 {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -325,12 +333,12 @@
   display: inline;
   border-bottom: 2px solid rgba(39, 74, 202, 0.442);
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .about-my-skill .h3Fake .firstH3 {
   color: #004cff;
-  left: 46%;
+  left: 45.8%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -449,6 +457,7 @@
 }
 
 .about-my-skill .btn-scrollDown {
+  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -662,7 +671,7 @@
     left: 40%;
   }
   to {
-    left: 46%;
+    left: 45.8%;
   }
 }
 
@@ -671,7 +680,7 @@
     left: 40%;
   }
   to {
-    left: 46%;
+    left: 45.8%;
   }
 }
 
