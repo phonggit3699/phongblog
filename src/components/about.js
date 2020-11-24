@@ -44,6 +44,16 @@ const About = () => {
             spy: true
         })
     }
+
+    const scrollToProject = () => {
+        scroller.scrollTo('about-my-project', {
+            duration: 800,
+            delay: 0,
+            smooth: 'easeInOutQuart',
+            spy: true
+        })
+    }
+
     const getScrollYF = () => {
         setScrollY(window.scrollY)
     }
@@ -62,44 +72,41 @@ const About = () => {
             </Element>
             <Element className='about-me'>
                 <h3 className={getScrollY >= 200 ? 'animationZoomIn' : ''}>About <span>me</span></h3>
-                <div className='container'>
-                    <div className='about-me-info row'>
-                        <div className={`about-me-info-img col-sm-6 ${getScrollY >= 300 ? 'animationZoomIn2' : ''}`}>
-                            <img src={cat} alt="fire" />
-                        </div>
-                        <div className={`about-me-info-text col-sm-6 ${getScrollY >= 300 ? 'animationZoomIn2' : ''}`}>
-                            <table>
-                                <tbody>
-                                    <tr key="name">
-                                        <td>My Name: </td>
-                                        <td><span className="fullName">Pham Van Phong</span></td>
-                                    </tr>
-                                    <tr key="date">
-                                        <td>Date of birth: </td>
-                                        <td><span>03/06/1999</span></td>
-                                    </tr>
-                                    <tr key="address">
-                                        <td>Address: </td>
-                                        <td><span>Kim Dinh Kim Thanh Hai Duong</span></td>
-                                    </tr>
-                                    <tr key="email">
-                                        <td>Email: </td>
-                                        <td><span>phamvanphong3699@gmail.com</span></td>
-                                    </tr>
-                                    <tr key="phone">
-                                        <td>Phone: </td>
-                                        <td><span>0327018706</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <button className='btnCV'>Download CV</button>
-                            <button className={`btn-scrollDown ${getScrollY >= 900 ? 'hiddenBtn' : ''}`} onClick={scrollToResume} type='button'>Resume</button>
-                        </div>
+                <div className='content'>
+                    <div className={`content-info-img ${getScrollY >= 300 ? 'animationZoomIn2' : ''}`}>
+                        <img src={cat} alt="fire" />
+                    </div>
+                    <div className={`content-info-text ${getScrollY >= 300 ? 'animationZoomIn2' : ''}`}>
+                        <table>
+                            <tbody>
+                                <tr key="name">
+                                    <td>My Name: </td>
+                                    <td><span className="fullName">Pham Van Phong</span></td>
+                                </tr>
+                                <tr key="date">
+                                    <td>Date of birth: </td>
+                                    <td><span>03/06/1999</span></td>
+                                </tr>
+                                <tr key="address">
+                                    <td>Address: </td>
+                                    <td><span>Kim Dinh Kim Thanh Hai Duong</span></td>
+                                </tr>
+                                <tr key="email">
+                                    <td>Email: </td>
+                                    <td><span>phamvanphong3699@gmail.com</span></td>
+                                </tr>
+                                <tr key="phone">
+                                    <td>Phone: </td>
+                                    <td><span>0327018706</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button className='btnCV'>Download CV</button>
+                        <button className={`btn-scrollDown ${getScrollY >= 900 ? 'hiddenBtn' : ''}`} onClick={scrollToResume} type='button'>Resume</button>
                     </div>
                 </div>
 
             </Element>
-
             <Element className='about-my-resume'>
                 <h3 className={getScrollY >= 950 ? 'animationDropDown' : ''}>Resume</h3>
                 <div className={`about-my-resume-step ${getScrollY >= 950 ? 'animationDropDown2' : ''}`}>
@@ -131,8 +138,8 @@ const About = () => {
                 </div>
             </Element>
             <Element className='about-my-skill'>
-                <div className='h3Fake'>
-                    <span className={`firstH3 ${getScrollY >= 2000 ? 'animationSlideH3' : ''}`}>My</span>
+                <div className={`h3Fake ${getScrollY >= 2000 ? 'animationSlideH3' : ''}`}>
+                    <span className="firstH3">My</span>
                     <span className={`secondH3 ${getScrollY >= 2000 ? 'animationSlideH32' : ''}`}>Skill</span>
                 </div>
                 <div className={`language ${getScrollY >= 2000 ? 'animationSlideNext' : ''}`}>
@@ -171,6 +178,11 @@ const About = () => {
                         <span>Mongodb</span>
                     </div>
                 </div>
+                <button className={`btn-scrollDown ${getScrollY >= 3000 ? 'hiddenBtn' : ''}`} onClick={scrollToProject} type='button'>My Project</button>
+            </Element>
+            <Element className='about-my-project'>
+                <h3>My <span>Project</span></h3>
+                <div className=""></div>
                 <button className={`btn-scrollDown ${getScrollY >= 2500 ? 'hiddenBtn' : ''}`} onClick={scrollToSkill} type='button'>My Project</button>
             </Element>
         </div>

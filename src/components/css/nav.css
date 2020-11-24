@@ -249,6 +249,7 @@ header .logo-nav .hambergerButton {
   }
   header .logo-nav .navShow ul li {
     margin: 1.9rem 0;
+    text-align: center;
   }
   header .logo-nav .navShow ul li a {
     padding: 2rem 100vw;
@@ -282,6 +283,7 @@ header .logo-nav .hambergerButton {
   }
   header .logo-nav .navHidden ul li {
     margin: 1.9rem 0;
+    text-align: center;
   }
   header .logo-nav .navHidden ul li a {
     padding: 2rem 100vw;

@@ -1,16 +1,15 @@
 
 
     $primary: #08aeea;
-    $secondary: #13d2b8;
-
 .theme {
     display: block;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: white;
+
     .dashed-loading {
         height: 50px;
         z-index: 3;
@@ -19,8 +18,9 @@
     .dashed-loading:before {
         content: "";
         position: absolute;
-        top: 48%;
-        left: 48%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
         border-radius: 50%;
         width: 50px;
         height: 50px;
@@ -35,7 +35,7 @@
     }
     .dashed-loading:after {
         z-index: 10;
-        border: 3px solid $secondary;
+        border: 3px solid  $primary;
         border-left: 3px solid transparent;
         border-bottom: 3px solid transparent;
         -webkit-animation: dashed 1s ease infinite;
@@ -43,7 +43,7 @@
     }
     @keyframes dashed {
         to {
-            transform: rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
         }
     }
 }

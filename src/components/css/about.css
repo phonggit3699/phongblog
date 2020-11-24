@@ -1,3 +1,43 @@
+.about-me h3, .about-my-resume h3, .about-my-project h3 {
+  color: black;
+  text-align: center;
+  margin: 0 auto;
+  display: inline;
+  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.about-me h3 span, .about-my-resume h3 span, .about-my-project h3 span {
+  color: #004cff;
+}
+
+.about-my-project .btn-scrollDown {
+  position: absolute;
+  left: 51%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 4%;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  color: rgba(16, 62, 226, 0.823);
+}
+
+.about-my-project .btn-scrollDown:active {
+  left: 50%;
+  bottom: 2%;
+}
+
+.about-my-project .btn-scrollDown:hover {
+  background-color: rgba(16, 62, 226, 0.823);
+  color: white;
+}
+
 .about {
   background-color: #f5f6f7;
 }
@@ -38,7 +78,6 @@
 }
 
 .about-banner .btn-start {
-  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -66,91 +105,100 @@
 }
 
 .about-me {
-  position: relative;
+  margin-top: 4rem;
   padding-top: 2rem;
-  padding-bottom: 5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.about-me h3 {
-  font-family: 'Goldman', cursive;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  margin-top: 2rem;
-  color: black;
-  text-align: center;
-  margin: 0 auto;
-  display: inline;
-  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
-  font-size: 2rem;
+.about-me .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 1000px;
 }
 
-.about-me h3 span {
-  color: #004cff;
-  font-family: 'Goldman', cursive;
-}
-
-.about-me-info-img {
-  margin-top: 5rem;
-  height: calc(100vh - 10rem);
+.about-me .content-info-img {
+  margin-top: 4rem;
   overflow: hidden;
-}
-
-.about-me-info-img img {
-  margin-left: 3rem;
   width: 450px;
-  height: calc(100vh - 10rem);
-  padding: 0.3rem;
+  height: 500px;
   background-color: rgba(39, 74, 202, 0.442);
   border-radius: 10px;
 }
 
-.about-me-info-text {
+.about-me .content-info-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 0.3rem;
+}
+
+.about-me .content-info-text {
+  width: 500px;
+  height: 500px;
   -webkit-box-shadow: 0 0 5px #ccc;
           box-shadow: 0 0 5px #ccc;
   padding: 0.5rem;
-  margin-top: 5rem;
-  height: calc(100vh - 10rem);
+  margin-top: 4rem;
   background-color: white;
   border-radius: 10px;
   position: relative;
 }
 
-.about-me-info-text table {
+.about-me .content-info-text table {
   border-collapse: separate;
   border-spacing: 1rem;
 }
 
-.about-me-info-text table tbody tr td {
+.about-me .content-info-text table tbody tr td {
   color: black;
   font-weight: bolder;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-.about-me-info-text table tbody tr td .fullName {
+.about-me .content-info-text table tbody tr td .fullName {
   color: #004cff;
 }
 
-.about-me-info-text table tbody tr td span {
+.about-me .content-info-text table tbody tr td span {
   margin-left: 1rem;
   color: #999;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: lighter;
 }
 
-.about-me-info-text .btnCV {
-  font-family: 'Goldman', cursive;
+.about-me .content-info-text .btnCV {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: 12%;
-  margin-top: 3rem;
   border: none;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 2rem;
   outline: none;
   -webkit-transition: all 0.5s ease;
@@ -160,14 +208,13 @@
   color: black;
 }
 
-.about-me-info-text .btnCV:hover {
+.about-me .content-info-text .btnCV:hover {
   color: white;
 }
 
-.about-me-info-text .btn-scrollDown {
-  font-family: 'Goldman', cursive;
+.about-me .content-info-text .btn-scrollDown {
   position: absolute;
-  left: 50%;
+  left: 51%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: 4%;
@@ -177,41 +224,38 @@
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   font-size: 1rem;
-  background-color: rgba(47, 105, 206, 0.7);
   padding: 0.3rem 1rem;
-  color: black;
+  color: rgba(16, 62, 226, 0.823);
 }
 
-.about-me-info-text .btn-scrollDown:active {
+.about-me .content-info-text .btn-scrollDown:active {
   left: 50%;
   bottom: 2%;
 }
 
-.about-me-info-text .btn-scrollDown:hover {
+.about-me .content-info-text .btn-scrollDown:hover {
   background-color: rgba(16, 62, 226, 0.823);
   color: white;
 }
 
 .about-my-resume {
   padding-top: 2rem;
-  position: relative;
   margin-bottom: 4rem;
   width: 100%;
   padding-bottom: 2rem;
-}
-
-.about-my-resume h3 {
-  font-family: 'Goldman', cursive;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  margin-top: 0.5rem;
-  color: black;
-  text-align: center;
-  display: inline;
-  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
-  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .about-my-resume-step {
@@ -221,7 +265,7 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 8rem;
+  margin-top: 4rem;
   -webkit-box-shadow: 0 0 5px #ccc;
           box-shadow: 0 0 5px #ccc;
 }
@@ -232,7 +276,7 @@
 
 .about-my-resume-step .education h4 {
   font-weight: 800;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   margin-bottom: 30px;
   color: #3e64ff;
 }
@@ -266,13 +310,13 @@
 }
 
 .about-my-resume-step .education-content-text h4 {
-  font-size: 24px;
+  font-size: 1.4rem;
   font-weight: 700;
   color: black;
 }
 
 .about-my-resume-step .education-content-text h5 {
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #000;
   line-height: 0;
@@ -281,12 +325,11 @@
 .about-my-resume-step .education-content-text p {
   margin-top: 1.5rem;
   color: #999;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: justify;
 }
 
 .about-my-resume-step .btn-scrollDown {
-  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -298,9 +341,8 @@
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   font-size: 1rem;
-  background-color: rgba(47, 105, 206, 0.7);
   padding: 0.3rem 1rem;
-  color: #403d3d;
+  color: rgba(16, 62, 226, 0.823);
 }
 
 .about-my-resume-step .btn-scrollDown:active {
@@ -314,19 +356,40 @@
 }
 
 .about-my-skill {
-  position: relative;
-  padding-top: 4rem;
+  padding-top: 2rem;
+  margin-top: 4rem;
   padding-bottom: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about-my-skill .h3Fake {
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 7.5rem;
 }
 
 .about-my-skill .h3Fake .secondH3,
 .about-my-skill .h3Fake .firstH3 {
-  font-family: 'Goldman', cursive;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  margin-top: 2rem;
   color: black;
   text-align: center;
   margin: 0 auto;
@@ -338,16 +401,25 @@
 
 .about-my-skill .h3Fake .firstH3 {
   color: #004cff;
-  left: 45.8%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  border: none;
+  position: relative;
+}
+
+.about-my-skill .h3Fake .firstH3::after {
+  position: absolute;
+  bottom: -3%;
+  left: 0;
+  content: "";
+  width: 118%;
+  height: 2.1px;
+  background-color: rgba(39, 74, 202, 0.442);
 }
 
 .about-my-skill .language,
 .about-my-skill .framework {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
-  margin-top: 8rem;
+  margin-top: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -457,7 +529,6 @@
 }
 
 .about-my-skill .btn-scrollDown {
-  font-family: 'Goldman', cursive;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -482,6 +553,19 @@
 .about-my-skill .btn-scrollDown:hover {
   background-color: rgba(16, 62, 226, 0.823);
   color: white;
+}
+
+.about-my-project {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .hiddenBtn {
@@ -534,35 +618,23 @@
 
 @-webkit-keyframes zoomIn {
   from {
-    font-size: 1rem;
-    opacity: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   to {
-    font-size: 2rem;
-    opacity: 1;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes zoomIn {
   from {
-    font-size: 1rem;
-    opacity: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   to {
-    font-size: 2rem;
-    opacity: 1;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -611,7 +683,7 @@
     margin-top: 1rem;
   }
   to {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 }
 
@@ -620,7 +692,7 @@
     margin-top: 1rem;
   }
   to {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 }
 
@@ -644,6 +716,24 @@
           animation: slidePrev 1s;
 }
 
+@-webkit-keyframes slideNextH3 {
+  from {
+    width: 15rem;
+  }
+  to {
+    width: 7.5rem;
+  }
+}
+
+@keyframes slideNextH3 {
+  from {
+    width: 15rem;
+  }
+  to {
+    width: 7.5rem;
+  }
+}
+
 @-webkit-keyframes slideNext {
   from {
     -webkit-transform: translateX(-10rem);
@@ -663,42 +753,6 @@
   to {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes slideNextH3 {
-  from {
-    left: 40%;
-  }
-  to {
-    left: 45.8%;
-  }
-}
-
-@keyframes slideNextH3 {
-  from {
-    left: 40%;
-  }
-  to {
-    left: 45.8%;
-  }
-}
-
-@-webkit-keyframes slideNextH32 {
-  from {
-    left: 56%;
-  }
-  to {
-    left: 50%;
-  }
-}
-
-@keyframes slideNextH32 {
-  from {
-    left: 56%;
-  }
-  to {
-    left: 50%;
   }
 }
 

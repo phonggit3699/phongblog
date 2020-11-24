@@ -1,3 +1,38 @@
+%h3Text {
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    display: inline;
+    border-bottom: 2px solid rgba(39, 74, 202, 0.442);
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    span {
+        color: #004cff;
+    }
+}
+
+%btnScrollDownMix{
+    position: absolute;
+    left: 51%;
+    transform: translateX(-50%);
+    bottom: 4%;
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    transition: all 0.5s ease;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    color: rgba(16, 62, 226, 0.823);
+    &:active {
+        left: 50%;
+        bottom: 2%;
+    }
+    &:hover {
+        background-color: rgba(16, 62, 226, 0.823);
+        color: white;
+    }
+}
+
 .about {
     background-color: #f5f6f7;
     &-banner {
@@ -29,7 +64,6 @@
         }
 
         .btn-start {
-            font-family: 'Goldman', cursive;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -54,114 +88,105 @@
     }
     //About me --------------------------------------------------------------------------------
     &-me {
-        position: relative;
+        margin-top: 4rem;
         padding-top: 2rem;
-        padding-bottom: 5rem;
-        margin-bottom: 4rem;
+        margin-bottom: 6rem;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         h3 {
-            font-family: 'Goldman', cursive;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 2rem;
-            color: black;
-            text-align: center;
-            margin: 0 auto;
-            display: inline;
-            border-bottom: 2px solid rgba(39, 74, 202, 0.442);
-            font-size: 2rem;
-            span {
-                color: #004cff;
-                font-family: 'Goldman', cursive;
-            }
+            @extend %h3Text;
         }
-
-        &-info-img {
-            margin-top: 5rem;
-            height: calc(100vh - 10rem);
-            overflow: hidden;
-            img {
-                margin-left: 3rem;
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            width: 1000px;
+            &-info-img {
+                margin-top: 4rem;
+                overflow: hidden;
                 width: 450px;
-                height: calc(100vh - 10rem);
-                padding: 0.3rem;
+                height: 500px;
                 background-color: rgba(39, 74, 202, 0.442);
                 border-radius: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    padding: 0.3rem;
+                }
             }
-        }
-        &-info-text {
-            box-shadow: 0 0 5px #ccc;
-            padding: 0.5rem;
-            margin-top: 5rem;
-            height: calc(100vh - 10rem);
-            background-color: white;
-            border-radius: 10px;
-            position: relative;
-            table {
-                border-collapse: separate;
-                border-spacing: 1rem;
-                tbody {
-                    tr {
-                        td {
-                            color: black;
-                            font-weight: bolder;
-                            font-size: 1.2rem;
-                            .fullName {
-                                color: #004cff;
-                            }
-                            span {
-                                margin-left: 1rem;
-                                color: #999;
-                                font-size: 1.2rem;
-                                font-weight: lighter;
+            &-info-text {
+                width: 500px;
+                height: 500px;
+                box-shadow: 0 0 5px #ccc;
+                padding: 0.5rem;
+                margin-top: 4rem;
+                background-color: white;
+                border-radius: 10px;
+                position: relative;
+                table {
+                    border-collapse: separate;
+                    border-spacing: 1rem;
+                    tbody {
+                        tr {
+                            td {
+                                color: black;
+                                font-weight: bolder;
+                                font-size: 1.1rem;
+                                .fullName {
+                                    color: #004cff;
+                                }
+                                span {
+                                    margin-left: 1rem;
+                                    color: #999;
+                                    font-size: 1.1rem;
+                                    font-weight: lighter;
+                                }
                             }
                         }
                     }
                 }
-            }
-            .btnCV {
-                font-family: 'Goldman', cursive;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: 12%;
-                margin-top: 3rem;
-                border: none;
-                padding: 0.8rem 1rem;
-                border-radius: 2rem;
-                outline: none;
-                transition: all 0.5s ease;
-                font-size: 1rem;
-                background-color: #3f65ff;
-                color: black;
-                &:hover {
-                    color: white;
-                }
-            }
-            .btn-scrollDown {
-                font-family: 'Goldman', cursive;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: 4%;
-                border: none;
-                // padding: 0.8rem 2rem;
-                border-radius: 2rem;
-                outline: none;
-                transition: all 0.5s ease;
-                font-size: 1rem;
-                background-color: rgba(47, 105, 206, 0.7);
-                padding: 0.3rem 1rem;
-                color: black;
-
-                &:active {
+                .btnCV {
+                    position: absolute;
                     left: 50%;
-                    bottom: 2%;
+                    transform: translateX(-50%);
+                    bottom: 12%;
+                    border: none;
+                    padding: 0.6rem 0.8rem;
+                    border-radius: 2rem;
+                    outline: none;
+                    transition: all 0.5s ease;
+                    font-size: 1rem;
+                    background-color: #3f65ff;
+                    color: black;
+                    &:hover {
+                        color: white;
+                    }
                 }
-                &:hover {
-                    background-color: rgba(16, 62, 226, 0.823);
-                    color: white;
+                .btn-scrollDown {
+                    position: absolute;
+                    left: 51%;
+                    transform: translateX(-50%);
+                    bottom: 4%;
+                    border: none;
+                    border-radius: 2rem;
+                    outline: none;
+                    transition: all 0.5s ease;
+                    font-size: 1rem;
+                    padding: 0.3rem 1rem;
+                    color: rgba(16, 62, 226, 0.823);
+                    &:active {
+                        left: 50%;
+                        bottom: 2%;
+                    }
+                    &:hover {
+                        background-color: rgba(16, 62, 226, 0.823);
+                        color: white;
+                    }
                 }
             }
         }
@@ -169,22 +194,16 @@
     //My Resume--------------------------------------------------------------------------------
     &-my-resume {
         padding-top: 2rem;
-        position: relative;
         margin-bottom: 4rem;
         width: 100%;
         padding-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
         h3 {
-            font-family: 'Goldman', cursive;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 0.5rem;
-            color: black;
-            text-align: center;
-            display: inline;
-            border-bottom: 2px solid rgba(39, 74, 202, 0.442);
-            font-size: 2rem;
+            @extend %h3Text;
         }
 
         &-step {
@@ -194,14 +213,14 @@
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
-            margin-top: 8rem;
+            margin-top: 4rem;
             box-shadow: 0 0 5px #ccc;
 
             .education {
                 margin-bottom: 2rem;
                 h4 {
                     font-weight: 800;
-                    font-size: 2.2rem;
+                    font-size: 1.8rem;
                     margin-bottom: 30px;
                     color: #3e64ff;
                 }
@@ -224,12 +243,12 @@
                             color: #3e64ff;
                         }
                         h4 {
-                            font-size: 24px;
+                            font-size: 1.4rem;
                             font-weight: 700;
                             color: black;
                         }
                         h5 {
-                            font-size: 18px;
+                            font-size: 1.1rem;
                             font-weight: 700;
                             color: #000;
                             line-height: 0;
@@ -237,14 +256,13 @@
                         p {
                             margin-top: 1.5rem;
                             color: #999;
-                            font-size: 1.2rem;
+                            font-size: 1.1rem;
                             text-align: justify;
                         }
                     }
                 }
             }
             .btn-scrollDown {
-                font-family: 'Goldman', cursive;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
@@ -254,9 +272,8 @@
                 outline: none;
                 transition: all 0.5s ease;
                 font-size: 1rem;
-                background-color: rgba(47, 105, 206, 0.7);
                 padding: 0.3rem 1rem;
-                color: rgb(64, 61, 61);
+                color: rgba(16, 62, 226, 0.823);
                 &:active {
                     left: 50%;
                     bottom: 1%;
@@ -270,17 +287,22 @@
     }
     //My Skill--------------------------------------------------------
     &-my-skill {
-        position: relative;
-        padding-top: 4rem;
+        padding-top: 2rem;
+        margin-top: 4rem;
         padding-bottom: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
         .h3Fake {
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 7.5rem;
             .secondH3,
             .firstH3 {
-                font-family: 'Goldman', cursive;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                margin-top: 2rem;
                 color: black;
                 text-align: center;
                 margin: 0 auto;
@@ -291,16 +313,25 @@
             }
             .firstH3 {
                 color: #004cff;
-                left: 45.8%;
-                transform: translateX(-50%);
+                border: none;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    bottom: -3%;
+                    left: 0;
+                    content: "";
+                    width: 118%;
+                    height: 2.1px;
+                    background-color: rgba(39, 74, 202, 0.442);
+                }
             }
         }
 
         .language,
         .framework {
-            max-width: 800px;
+            width: 800px;
             margin: 0 auto;
-            margin-top: 8rem;
+            margin-top: 4rem;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -370,7 +401,6 @@
             }
         }
         .btn-scrollDown {
-            font-family: 'Goldman', cursive;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -391,6 +421,18 @@
                 background-color: rgba(16, 62, 226, 0.823);
                 color: white;
             }
+        }
+    }
+    &-my-project{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h3{
+            @extend %h3Text;
+        }
+        .btn-scrollDown{
+            @extend %btnScrollDownMix
         }
     }
 }
@@ -426,16 +468,10 @@
 
 @keyframes zoomIn {
     from {
-        font-size: 1rem;
-        opacity: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        transform: scale(0.5);
     }
     to {
-        font-size: 2rem;
-        opacity: 1;
-        left: 50%;
-        transform: translateX(-50%);
+        transform: scale(1);
     }
 }
 
@@ -462,7 +498,7 @@
         margin-top: 1rem;
     }
     to {
-        margin-top: 8rem;
+        margin-top: 4rem;
     }
 }
 
@@ -482,30 +518,21 @@
     animation: slidePrev 1s;
 }
 
+@keyframes slideNextH3 {
+    from {
+        width: 15rem;
+    }
+    to {
+        width: 7.5rem;
+    }
+}
+
 @keyframes slideNext {
     from {
         transform: translateX(-10rem);
     }
     to {
         transform: translateX(0);
-    }
-}
-
-@keyframes slideNextH3 {
-    from {
-        left: 40%;
-    }
-    to {
-        left: 45.8%;
-    }
-}
-
-@keyframes slideNextH32 {
-    from {
-        left: 56%;
-    }
-    to {
-        left: 50%;
     }
 }
 
