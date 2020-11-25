@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
-.about-me h3, .about-my-resume h3, .about-my-project h3 {
+.about-me h3, .about-my-resume h3, .about-my-project h3, .about-my-contact h3 {
   color: black;
   text-align: center;
   margin: 0 auto;
@@ -10,7 +10,7 @@
   font-weight: bold;
 }
 
-.about-me h3 span, .about-my-resume h3 span, .about-my-project h3 span {
+.about-me h3 span, .about-my-resume h3 span, .about-my-project h3 span, .about-my-contact h3 span {
   color: #004cff;
 }
 
@@ -248,7 +248,7 @@
   padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .about-my-resume-step .education {
@@ -342,9 +342,8 @@
 }
 
 .about-my-skill {
-  padding-top: 2rem;
   margin-top: 4rem;
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -380,7 +379,7 @@
 .about-my-skill .h3Fake .secondH3,
 .about-my-skill .h3Fake .firstH3 {
   font-weight: bold;
-  color: black;
+  color: #004cff;
   text-align: center;
   margin: 0 auto;
   display: inline;
@@ -389,7 +388,7 @@
 }
 
 .about-my-skill .h3Fake .firstH3 {
-  color: #004cff;
+  color: black;
   border: none;
   position: relative;
 }
@@ -534,6 +533,7 @@
           flex-direction: column;
   background-color: black;
   padding-bottom: 4rem;
+  padding-top: 4rem;
 }
 
 .about-my-project h3 {
@@ -541,102 +541,106 @@
   border-color: #004cff;
 }
 
-.about-my-project .carousel {
+.about-my-project .project-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 4rem;
-  max-width: 1300px;
+  width: 100vw;
 }
 
-.about-my-project .carousel .card {
-  background: #222;
-  border-radius: 6px;
-  padding: 25px 35px;
-  text-align: center;
-  overflow: hidden;
+.about-my-project .project-content .content {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.about-my-project .project-content .content:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border: 5px solid   #004cff;
+}
+
+.about-my-project .project-content .content img {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 400px;
+  border: 5px solid  #222;
+}
+
+.about-my-project .project-content .content .des {
+  margin: 0;
+  margin-top: 0.8rem;
+  color: white;
+}
+
+.about-my-project .project-content .content .technology {
+  color: white;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.about-my-project .project-content .content .linkProject {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.about-my-project .project-content .content .linkProject a {
+  border: 2px solid #004cff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.5rem;
+  color: #004cff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.about-my-project .carousel .card:hover {
-  background: #004cff;
+.about-my-project .project-content .content .linkProject a:hover {
+  background-color: #004cff;
+  color: white;
 }
 
-.about-my-project .carousel .card .box {
+.about-my-project .project-content .content .linkProject .gitHub {
+  margin-left: 1rem;
+  border: none;
+  border-bottom: 2px solid  #222;
+}
+
+.about-my-project .project-content .content .linkProject .gitHub:hover {
+  border-bottom: 2px solid #004cff;
+  background-color: #222;
+  color: #004cff;
+}
+
+.about-my-project .btn-scrollDown {
+  background-color: #222;
+  bottom: 2%;
+}
+
+.about-my-contact {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.about-my-project .carousel .card .box:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.about-my-project .carousel .card .box .text {
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin: 10px 0 7px 0;
-  color: white;
-}
-
-.about-my-project .carousel .card .box img {
-  height: 150px;
-  width: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid #004cff;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.about-my-project .carousel .card .box img:hover {
-  border-color: #fff;
-}
-
-.about-my-project .carousel .card .box p {
-  color: white;
-}
-
-.about-my-project .carousel .owl-dots {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.about-my-project .carousel .owl-dot {
-  height: 13px;
-  width: 13px;
-  margin: 0 5px;
-  outline: none !important;
-  border-radius: 50%;
-  border: 2px solid #004CFF !important;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.about-my-project .carousel .owl-dot span {
-  display: none !important;
-}
-
-.about-my-project .carousel .owl-dot.active {
-  width: 35px;
-  border-radius: 14px;
-}
-
-.about-my-project .carousel .owl-dot.active,
-.about-my-project .carousel .owl-dot:hover {
-  background: #004cff !important;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
 }
 
 .hiddenBtn {
@@ -644,13 +648,27 @@
 }
 
 .animationZoomIn {
-  -webkit-animation: zoomIn 1s;
-          animation: zoomIn 1s;
+  -webkit-animation: zoomIn 1s ease;
+          animation: zoomIn 1s ease;
 }
 
-.animationZoomIn2 {
-  -webkit-animation: zoomIn2 1s;
-          animation: zoomIn2 1s;
+.animationFlyInDelay0 {
+  -webkit-animation: flyIn  1s ease-in-out;
+          animation: flyIn  1s ease-in-out;
+}
+
+.animationFlyInDelay1 {
+  -webkit-animation: flyIn  1s  ease-in-out;
+          animation: flyIn  1s  ease-in-out;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.animationFlyInDelay2 {
+  -webkit-animation: flyIn 1s  ease-in-out;
+          animation: flyIn 1s  ease-in-out;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 .animationDropDown {
@@ -709,25 +727,29 @@
   }
 }
 
-@-webkit-keyframes zoomIn2 {
+@-webkit-keyframes flyIn {
   from {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0;
   }
   to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@keyframes zoomIn2 {
+@keyframes flyIn {
   from {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0;
   }
   to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -754,7 +776,7 @@
     margin-top: 1rem;
   }
   to {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }
 
@@ -763,7 +785,7 @@
     margin-top: 1rem;
   }
   to {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }
 
@@ -956,6 +978,72 @@
   }
   .about-my-skill .framework {
     margin-top: 0;
+  }
+  .about-my-project .project-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 4rem;
+    width: 100vw;
+  }
+  .about-my-project .project-content .content {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .about-my-project .project-content .content:hover img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    border: 5px solid   #004cff;
+  }
+  .about-my-project .project-content .content img {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 400px;
+    border: 5px solid  #222;
+  }
+  .about-my-project .project-content .content .des {
+    margin: 0;
+    margin-top: 0.8rem;
+    color: white;
+  }
+  .about-my-project .project-content .content .technology {
+    color: white;
+    margin: 0;
+    margin-top: 0.5rem;
+  }
+  .about-my-project .project-content .content .linkProject {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-project .project-content .content .linkProject a {
+    border: 2px solid #004cff;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: #004cff;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .about-my-project .project-content .content .linkProject a:hover {
+    background-color: #004cff;
+    color: white;
+  }
+  .about-my-project .project-content .content .linkProject .gitHub {
+    margin-left: 1rem;
+    border: none;
+    border-bottom: 2px solid  #222;
+  }
+  .about-my-project .project-content .content .linkProject .gitHub:hover {
+    border-bottom: 2px solid #004cff;
+    background-color: #222;
+    color: #004cff;
+  }
+  .about-my-project .btn-scrollDown {
+    bottom: 1%;
   }
 }
 /*# sourceMappingURL=about.css.map */

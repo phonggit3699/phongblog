@@ -39,7 +39,7 @@
 
 .home-container .banner .arrowDown {
   color: white;
-  font-size: 40px;
+  font-size: 2rem;
   -webkit-animation: down infinite linear;
           animation: down infinite linear;
   -webkit-animation-duration: 1.5s;

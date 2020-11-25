@@ -11,9 +11,7 @@ import react from './images/react.png';
 import expressjs from './images/expressjs.png';
 import sass from './images/sass.png';
 import mongodb from './images/mongodb.png';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import phongBlog from './images/phongBlog.jpg'
 
 
 
@@ -21,14 +19,12 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 const About = () => {
     const [getScrollY, setScrollY] = useState(0);
 
-    const carouselProject = useRef(null);
-
     useMemo(() => {
         const getScrollYF = () => {
             setScrollY(window.scrollY)
             return window.scrollY;
         }
-        window.addEventListener('scroll', getScrollYF, {passive: true});
+        window.addEventListener('scroll', getScrollYF, { passive: true });
     }, []);
 
     const scrollToAboutMe = () => {
@@ -67,49 +63,31 @@ const About = () => {
         })
     }
 
-
-    // console.log(getScrollY)
-
-    // owl carousel script
-    function owlCarouselScript (){
-        carouselProject.ReactOwlCarousel({
-            margin: 20,
-            loop: true,
-            autoplayTimeOut: 2000,
-            autoplayHoverPause: true,
-            responsive: {
-                0:{
-                    items: 1,
-                    nav: false
-                },
-                600:{
-                    items: 2,
-                    nav: false
-                },
-                1000:{
-                    items: 3,
-                    nav: false
-                }
-            }
-        });
+    const scrollToContact = () => {
+        scroller.scrollTo('about-my-contact', {
+            duration: 800,
+            delay: 0,
+            smooth: 'easeInOutQuart',
+            spy: true
+        })
     }
 
     return (
         <div className="about">
             <Element className='about-banner'>
                 <div className='about-banner-text'>
-                    <h2>Hello, my name is <br/> <span>Pham Van Phong</span></h2>
+                    <h2>Hello, my name is <br /> <span>Pham Van Phong</span></h2>
                     <h3>And I'm Front-end developer </h3>
                 </div>
                 <button className='btn-start' onClick={scrollToAboutMe} type='button'>Get Started</button>
             </Element>
             <Element className='about-me'>
-                <h3 className={getScrollY >= 200 ? 'animationZoomIn' : ''}>About <span>me</span></h3>
+                <h3 className={getScrollY > 200 ? 'animationZoomIn' : ''}><span>About</span> me</h3>
                 <div className='content'>
-                    <div className={`content-info-img ${getScrollY >= 300 ? 'animationZoomIn2' : ''}`}>
+                    <div className={`content-info-img ${getScrollY > 300 ? 'animationZoomIn' : ''}`}>
                         <img src={cat} alt="fire" />
                     </div>
-                    <div className={`content-info-text ${getScrollY >= 300 ? 'animationZoomIn2' : ''}`}>
+                    <div className={`content-info-text ${getScrollY > 300 ? 'animationZoomIn' : ''}`}>
                         <table>
                             <tbody>
                                 <tr key="name">
@@ -171,11 +149,11 @@ const About = () => {
                 </div>
             </Element>
             <Element className='about-my-skill'>
-                <div className={`h3Fake ${getScrollY >= 2000 ? 'animationSlideH3' : ''}`}>
+                <div className={`h3Fake ${getScrollY > 2000 ? 'animationSlideH3' : ''}`}>
                     <span className="firstH3">My</span>
-                    <span className={`secondH3 ${getScrollY >= 2000 ? 'animationSlideH32' : ''}`}>Skill</span>
+                    <span className={`secondH3 ${getScrollY > 2000 ? 'animationSlideH32' : ''}`}>Skill</span>
                 </div>
-                <div className={`language ${getScrollY >= 2000 ? 'animationSlideNext' : ''}`}>
+                <div className={`language ${getScrollY > 2000 ? 'animationSlideNext' : ''}`}>
                     <div className='content html'>
                         <img src={html5} alt="html" />
                         <span>Html</span>
@@ -193,7 +171,7 @@ const About = () => {
                         <span>Sass</span>
                     </div>
                 </div>
-                <div className={`framework ${getScrollY >= 2000 ? 'animationSlidePrev' : ''}`}>
+                <div className={`framework ${getScrollY > 2000 ? 'animationSlidePrev' : ''}`}>
                     <div className='content nodejs'>
                         <img src={nodejs} alt="nodejs" />
                         <span>NodeJs</span>
@@ -214,9 +192,69 @@ const About = () => {
                 <button className="btn-scrollDown" onClick={scrollToProject} type='button'>My Project</button>
             </Element>
             <Element className='about-my-project'>
-                <h3>My <span>Project</span></h3>
-         
-                <button className="btn-scrollDown" onClick={scrollToSkill} type='button'>Contact</button>
+                <h3 className={getScrollY > 2800 ? 'animationFlyInDelay0' : ''}>My <span>Project</span></h3>
+                <div className='project-content'>
+                    <div className={`content ${getScrollY > 2800 ? 'animationFlyInDelay0' : ''}`}>
+                        <img src={phongBlog} alt="phongBlog" />
+                        <p className='des'>Trang được tạo </p>
+                        <p className='technology'><span>Technologies used: ReactJs</span></p>
+                        <div className='linkProject'>
+                            <a href="localhost:3000/about">See Live</a>
+                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
+                        </div>
+                    </div>
+                    <div className={`content ${getScrollY > 2800 ? 'animationFlyInDelay1' : ''}`}>
+                        <img src={phongBlog} alt="phongBlog" />
+                        <p className='des'>Trang được tạo </p>
+                        <p className='technology'><span>Technologies used: ReactJs</span></p>
+                        <div className='linkProject'>
+                            <a href="localhost:3000/about">See Live</a>
+                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
+                        </div>
+                    </div>
+                    <div className={`content ${getScrollY > 2800 ? 'animationFlyInDelay2' : ''}`}>
+                        <img src={phongBlog} alt="phongBlog" />
+                        <p className='des'>Trang được tạo </p>
+                        <p className='technology'><span>Technologies used: ReactJs</span></p>
+                        <div className='linkProject'>
+                            <a href="localhost:3000/about">See Live</a>
+                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div className='project-content'>
+                    <div className={`content ${getScrollY > 3000 ? 'animationFlyInDelay0' : ''}`}>
+                        <img src={phongBlog} alt="phongBlog" />
+                        <p className='des'>Trang được tạo </p>
+                        <p className='technology'><span>Technologies used: ReactJs</span></p>
+                        <div className='linkProject'>
+                            <a href="localhost:3000/about">See Live</a>
+                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
+                        </div>
+                    </div>
+                    <div className={`content ${getScrollY > 3000 ? 'animationFlyInDelay1' : ''}`}>
+                        <img src={phongBlog} alt="phongBlog" />
+                        <p className='des'>Trang được tạo </p>
+                        <p className='technology'><span>Technologies used: ReactJs</span></p>
+                        <div className='linkProject'>
+                            <a href="localhost:3000/about">See Live</a>
+                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
+                        </div>
+                    </div>
+                    <div className={`content ${getScrollY > 3000 ? 'animationFlyInDelay2' : ''}`}>
+                        <img src={phongBlog} alt="phongBlog" />
+                        <p className='des'>Trang được tạo </p>
+                        <p className='technology'><span>Technologies used: ReactJs</span></p>
+                        <div className='linkProject'>
+                            <a href="localhost:3000/about">See Live</a>
+                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <button className="btn-scrollDown" onClick={scrollToContact} type='button'>Contact</button>
+            </Element>
+            <Element className='about-my-contact'>
+                <h3 className={getScrollY > 2800 ? 'animationFlyInDelay0' : ''}><span>Contact</span> me</h3>
             </Element>
         </div>
     )

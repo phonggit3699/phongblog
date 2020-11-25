@@ -201,7 +201,7 @@
             padding: 2rem;
             max-width: 900px;
             margin: 0 auto;
-            margin-top: 4rem;
+            margin-top: 3rem;
 
             .education {
                 border-radius: 10px;
@@ -279,9 +279,8 @@
     }
     //My Skill--------------------------------------------------------
     &-my-skill {
-        padding-top: 2rem;
         margin-top: 4rem;
-        padding-bottom: 6rem;
+        padding-bottom: 8rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -299,7 +298,7 @@
             .secondH3,
             .firstH3 {
                 font-weight: bold;
-                color: black;
+                color: #004cff;
                 text-align: center;
                 margin: 0 auto;
                 display: inline;
@@ -307,7 +306,7 @@
                 font-size: 2rem;
             }
             .firstH3 {
-                color: #004cff;
+                color: black;
                 border: none;
                 position: relative;
                 &::after {
@@ -399,6 +398,7 @@
             @extend %btnScrollDownMix;
         }
     }
+    //My Proeject--------------------------------------------------------
     &-my-project {
         position: relative;
         display: flex;
@@ -407,82 +407,88 @@
         flex-direction: column;
         background-color: black;
         padding-bottom: 4rem;
+        padding-top: 4rem;
         h3 {
             @extend %h3Text;
             color: white;
             border-color: #004cff;
         }
-        .carousel {
+        .project-content{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
             margin-top: 4rem;
-            max-width: 1300px;
-            .card {
-                background: #222;
-                border-radius: 6px;
-                padding: 25px 35px;
-                text-align: center;
-                overflow: hidden;
-                transition: all 0.3s ease;
-                &:hover {
-                    background: #004cff;
+            width: 100vw;
+            .content{
+                background-color: #222;
+                border-radius: 10px;
+                padding: 1rem;
+                padding-bottom: 1.5rem;
+            &:hover img{
+                transform:  scale(1.2);
+                border: 5px solid   #004cff;
+            }
+                img{
+                    transition: all 0.5s ease;
+                    width: 400px;
+                    border: 5px solid  #222;
                 }
-                .box {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    transition: all 0.3s ease;
-                    &:hover {
-                        transform: scale(1.05);
-                    }
-                    .text {
-                        font-size: 1.8rem;
-                        font-weight: 500;
-                        margin: 10px 0 7px 0;
-                        color: white;
-                    }
-                    img {
-                        height: 150px;
-                        width: 150px;
-                        object-fit: cover;
-                        border-radius: 50%;
-                        border: 5px solid #004cff;
+                .des{
+                    margin: 0;
+                    margin-top: 0.8rem;
+                    color: white;
+                }
+                .technology{
+                    color: white;
+                    margin: 0;
+                    margin-top: 0.5rem;
+                }
+                .linkProject{
+                    margin: 0;
+                    margin-top: 1rem;
+                    
+                    a{
+                        border: 2px solid #004cff;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        padding: 0.5rem;
+                        color: #004cff;
                         transition: all 0.3s ease;
-                        &:hover {
-                            border-color: #fff;
+                        &:hover{
+                            background-color: #004cff;
+                            color: white;
                         }
                     }
-                    p {
-                        color: white;
+                    .gitHub{
+                        margin-left: 1rem;
+                        border: none;
+                        border-bottom: 2px solid  #222;
+                        &:hover{
+                            border-bottom: 2px solid #004cff;
+                            background-color: #222;
+                            color: #004cff;
+
+                        }
                     }
                 }
-            }
-            .owl-dots {
-                text-align: center;
-                margin-top: 20px;
-            }
-            .owl-dot {
-                height: 13px;
-                width: 13px;
-                margin: 0 5px;
-                outline: none !important;
-                border-radius: 50%;
-                border: 2px solid#004CFF !important;
-                transition: all 0.3s ease;
-                span {
-                    display: none !important;
-                }
-            }
-            .owl-dot.active {
-                width: 35px;
-                border-radius: 14px;
-            }
-            .owl-dot.active,
-            .owl-dot:hover {
-                background: #004cff !important;
             }
         }
         .btn-scrollDown {
             @extend %btnScrollDownMix;
+            background-color: #222;
+            bottom: 2%;
+        }
+    }
+    &-my-contact {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 4rem;
+        padding-top: 4rem;
+        h3 {
+            @extend %h3Text;
         }
     }
 }
@@ -492,12 +498,23 @@
 }
 
 .animationZoomIn {
-    animation: zoomIn 1s;
+    animation: zoomIn 1s ease;
 }
 
-.animationZoomIn2 {
-    animation: zoomIn2 1s;
+.animationFlyInDelay0 {
+    animation: flyIn  1s ease-in-out;
 }
+
+.animationFlyInDelay1 {
+    animation: flyIn  1s  ease-in-out;
+    animation-delay: 0.2s;
+}
+
+.animationFlyInDelay2 {
+    animation: flyIn 1s  ease-in-out;
+    animation-delay: 0.4s;
+}
+
 
 .animationDropDown {
     animation: dropDown 1s;
@@ -525,12 +542,14 @@
     }
 }
 
-@keyframes zoomIn2 {
+@keyframes flyIn {
     from {
-        transform: scale(0.5);
+        transform: translateY(50%);
+        opacity: 0;
     }
     to {
-        transform: scale(1);
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -548,7 +567,7 @@
         margin-top: 1rem;
     }
     to {
-        margin-top: 4rem;
+        margin-top: 3rem;
     }
 }
 
@@ -696,6 +715,69 @@
             }
             .framework {
                 margin-top: 0;
+            }
+        }
+        &-my-project {
+            .project-content{
+                flex-direction: column;
+                margin-top: 4rem;
+                width: 100vw;
+                .content{
+                    background-color: #222;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    padding-bottom: 1.5rem;
+                    margin-top: 1.5rem;
+                &:hover img{
+                    transform:  scale(1.2);
+                    border: 5px solid   #004cff;
+                }
+                    img{
+                        transition: all 0.5s ease;
+                        width: 400px;
+                        border: 5px solid  #222;
+                    }
+                    .des{
+                        margin: 0;
+                        margin-top: 0.8rem;
+                        color: white;
+                    }
+                    .technology{
+                        color: white;
+                        margin: 0;
+                        margin-top: 0.5rem;
+                    }
+                    .linkProject{
+                        margin: 0;
+                        margin-top: 1rem;
+                        
+                        a{
+                            border: 2px solid #004cff;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            padding: 0.5rem;
+                            color: #004cff;
+                            transition: all 0.3s ease;
+                            &:hover{
+                                background-color: #004cff;
+                                color: white;
+                            }
+                        }
+                        .gitHub{
+                            margin-left: 1rem;
+                            border: none;
+                            border-bottom: 2px solid  #222;
+                            &:hover{
+                                border-bottom: 2px solid #004cff;
+                                background-color: #222;
+                                color: #004cff;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-scrollDown {
+                bottom: 1%;
             }
         }
     }
