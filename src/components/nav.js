@@ -6,6 +6,7 @@ import AuthContext from '../authContext';
 import { animateScroll as scroll } from 'react-scroll';
 import { useLocation } from "react-router-dom";
 
+
 const Nav = () => {
     const authContext = useContext(AuthContext);
     const cookies = new Cookies();
@@ -31,7 +32,7 @@ const Nav = () => {
         scroll.scrollToTop({
             duration: 800,
             delay: 0,
-            smooth: 'easeInOutQuart',
+            smooth: 'easeOutQuint',
             spy: true 
         });
     }

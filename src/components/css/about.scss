@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
 %h3Text {
     color: black;
     text-align: center;
@@ -6,14 +7,15 @@
     border-bottom: 2px solid rgba(39, 74, 202, 0.442);
     font-size: 2rem;
     margin-top: 0.5rem;
+    font-weight: bold;
     span {
         color: #004cff;
     }
 }
 
-%btnScrollDownMix{
+%btnScrollDownMix {
     position: absolute;
-    left: 51%;
+    left: 50%;
     transform: translateX(-50%);
     bottom: 4%;
     border: none;
@@ -34,7 +36,8 @@
 }
 
 .about {
-    background-color: #f5f6f7;
+    font-family: "Poppins", sans-serif;
+    background-color: white;
     &-banner {
         position: relative;
         width: 100%;
@@ -54,12 +57,13 @@
                 left: 15%;
                 top: 30%;
                 animation: heyo 1s;
-            }
-            h3 {
-                top: 40%;
                 span {
                     color: #004cff;
+                    font-weight: 600;
                 }
+            }
+            h3 {
+                top: 48%;
             }
         }
 
@@ -104,11 +108,11 @@
             justify-content: space-between;
             align-items: center;
             flex-direction: row;
-            width: 1000px;
+            width: 1050px;
             &-info-img {
                 margin-top: 4rem;
                 overflow: hidden;
-                width: 450px;
+                width: 500px;
                 height: 500px;
                 background-color: rgba(39, 74, 202, 0.442);
                 border-radius: 10px;
@@ -168,35 +172,18 @@
                     }
                 }
                 .btn-scrollDown {
-                    position: absolute;
-                    left: 51%;
-                    transform: translateX(-50%);
-                    bottom: 4%;
-                    border: none;
-                    border-radius: 2rem;
-                    outline: none;
-                    transition: all 0.5s ease;
-                    font-size: 1rem;
-                    padding: 0.3rem 1rem;
-                    color: rgba(16, 62, 226, 0.823);
-                    &:active {
-                        left: 50%;
-                        bottom: 2%;
-                    }
-                    &:hover {
-                        background-color: rgba(16, 62, 226, 0.823);
-                        color: white;
-                    }
+                    @extend %btnScrollDownMix;
                 }
             }
         }
     }
     //My Resume--------------------------------------------------------------------------------
     &-my-resume {
+        background-color: black;
         padding-top: 2rem;
         margin-bottom: 4rem;
         width: 100%;
-        padding-bottom: 2rem;
+        padding-bottom: 6rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -204,22 +191,26 @@
 
         h3 {
             @extend %h3Text;
+            color: white;
+            border-color: #004cff;
         }
 
         &-step {
             position: relative;
-            border-radius: 10px;
-            background-color: white;
+
             padding: 2rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             margin-top: 4rem;
-            box-shadow: 0 0 5px #ccc;
 
             .education {
+                border-radius: 10px;
+                padding: 1.5rem;
+                background-color: #222;
+                width: 100%;
                 margin-bottom: 2rem;
                 h4 {
-                    font-weight: 800;
+                    font-weight: bolder;
                     font-size: 1.8rem;
                     margin-bottom: 30px;
                     color: #3e64ff;
@@ -245,12 +236,12 @@
                         h4 {
                             font-size: 1.4rem;
                             font-weight: 700;
-                            color: black;
+                            color: white;
                         }
                         h5 {
                             font-size: 1.1rem;
                             font-weight: 700;
-                            color: #000;
+                            color: white;
                             line-height: 0;
                         }
                         p {
@@ -274,6 +265,7 @@
                 font-size: 1rem;
                 padding: 0.3rem 1rem;
                 color: rgba(16, 62, 226, 0.823);
+                background-color: rgb(54, 53, 53);
                 &:active {
                     left: 50%;
                     bottom: 1%;
@@ -289,11 +281,13 @@
     &-my-skill {
         padding-top: 2rem;
         margin-top: 4rem;
-        padding-bottom: 4rem;
+        padding-bottom: 6rem;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        transition: all 0.5s ease;
+        position: relative;
 
         .h3Fake {
             margin-top: 0.5rem;
@@ -301,15 +295,16 @@
             justify-content: space-between;
             align-items: center;
             width: 7.5rem;
+
             .secondH3,
             .firstH3 {
+                font-weight: bold;
                 color: black;
                 text-align: center;
                 margin: 0 auto;
                 display: inline;
                 border-bottom: 2px solid rgba(39, 74, 202, 0.442);
                 font-size: 2rem;
-                font-weight: 500;
             }
             .firstH3 {
                 color: #004cff;
@@ -317,10 +312,10 @@
                 position: relative;
                 &::after {
                     position: absolute;
-                    bottom: -3%;
+                    bottom: -3.1%;
                     left: 0;
                     content: "";
-                    width: 118%;
+                    width: 110%;
                     height: 2.1px;
                     background-color: rgba(39, 74, 202, 0.442);
                 }
@@ -401,38 +396,93 @@
             }
         }
         .btn-scrollDown {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 0;
-            border: none;
-            border-radius: 2rem;
-            outline: none;
-            transition: all 0.5s ease;
-            font-size: 1rem;
-            background-color: rgba(47, 105, 206, 0.7);
-            padding: 0.3rem 1rem;
-            color: rgb(64, 61, 61);
-            &:active {
-                left: 50%;
-                bottom: 1%;
-            }
-            &:hover {
-                background-color: rgba(16, 62, 226, 0.823);
-                color: white;
-            }
+            @extend %btnScrollDownMix;
         }
     }
-    &-my-project{
+    &-my-project {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        h3{
+        flex-direction: column;
+        background-color: black;
+        padding-bottom: 4rem;
+        h3 {
             @extend %h3Text;
+            color: white;
+            border-color: #004cff;
         }
-        .btn-scrollDown{
-            @extend %btnScrollDownMix
+        .carousel {
+            margin-top: 4rem;
+            max-width: 1300px;
+            .card {
+                background: #222;
+                border-radius: 6px;
+                padding: 25px 35px;
+                text-align: center;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                &:hover {
+                    background: #004cff;
+                }
+                .box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                    .text {
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                        margin: 10px 0 7px 0;
+                        color: white;
+                    }
+                    img {
+                        height: 150px;
+                        width: 150px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 5px solid #004cff;
+                        transition: all 0.3s ease;
+                        &:hover {
+                            border-color: #fff;
+                        }
+                    }
+                    p {
+                        color: white;
+                    }
+                }
+            }
+            .owl-dots {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .owl-dot {
+                height: 13px;
+                width: 13px;
+                margin: 0 5px;
+                outline: none !important;
+                border-radius: 50%;
+                border: 2px solid#004CFF !important;
+                transition: all 0.3s ease;
+                span {
+                    display: none !important;
+                }
+            }
+            .owl-dot.active {
+                width: 35px;
+                border-radius: 14px;
+            }
+            .owl-dot.active,
+            .owl-dot:hover {
+                background: #004cff !important;
+            }
+        }
+        .btn-scrollDown {
+            @extend %btnScrollDownMix;
         }
     }
 }
@@ -542,5 +592,111 @@
     }
     to {
         transform: translateX(0);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .about {
+        font-family: "Poppins", sans-serif;
+        background-color: white;
+        &-banner {
+            &-text {
+                h2,
+                h3 {
+                    font-size: 2rem;
+                    left: 5%;
+                    top: 30%;
+                }
+                h3 {
+                    top: 48%;
+                }
+            }
+            .btn-start {
+                padding: 0.5rem 1rem;
+            }
+        }
+        &-me {
+            .content {
+                flex-direction: column;
+                &-info-img {
+                    width: 400px;
+                    height: 400px;
+                }
+                &-info-text {
+                    width: 450px;
+                    height: 450px;
+
+                    .btnCV {
+                        padding: 0.5rem 0.7rem;
+                    }
+                }
+            }
+        }
+        &-my-resume {
+            padding-bottom: 3rem;
+            &-step {
+                .education {
+                    &-content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        &-text {
+                            margin: 0;
+                            margin-top: 1rem;
+                            h6 {
+                                text-align: center;
+                            }
+                            h4 {
+                                text-align: center;
+                            }
+                            h5 {
+                                font-size: 0.9rem;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-my-skill {
+            .h3Fake {
+                .secondH3,
+                .firstH3 {
+                    font-size: 2rem;
+                }
+                .firstH3 {
+                    color: #004cff;
+                    border: none;
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        bottom: -2%;
+                        left: 0;
+                        content: "";
+                        width: 112%;
+                        height: 2.1px;
+                        background-color: rgba(39, 74, 202, 0.442);
+                    }
+                }
+            }
+
+            .language,
+            .framework {
+                width: 350px;
+                margin: 0 auto;
+                margin-top: 2rem;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-wrap: wrap;
+                .content {
+                    margin-top: 2rem;
+                }
+            }
+            .framework {
+                margin-top: 0;
+            }
+        }
     }
 }
