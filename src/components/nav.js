@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import './css/nav.css';
 import { NavLink } from 'react-router-dom';
 import Cookies from 'universal-cookie';
@@ -13,15 +13,18 @@ const Nav = () => {
     const [stickyNavBar, setStickyNavbar] = useState(false);
     const [show, setShow] = useState(false);
     const cookie = cookies.getAll();
-    const stickyNav = () => {
-        if (window.scrollY >= 700) {
-            setStickyNavbar(true);
+    
+    useMemo(() => {
+        const stickyNav = () => {
+            if (window.scrollY >= 700) {
+                setStickyNavbar(true);
 
-        } else {
-            setStickyNavbar(false)
+            } else {
+                setStickyNavbar(false)
+            }
         }
-    }
-    window.addEventListener('scroll', stickyNav);
+        window.addEventListener('scroll', stickyNav);
+    },[])
 
     const showUpNav = () => {
         setShow(!show);
@@ -33,7 +36,7 @@ const Nav = () => {
             duration: 800,
             delay: 0,
             smooth: 'easeOutQuint',
-            spy: true 
+            spy: true
         });
     }
 
@@ -44,8 +47,8 @@ const Nav = () => {
         cookies.remove('userName');
         authContext.setLoggedIn(false);
     }
-    const location =useLocation();
-    
+    const location = useLocation();
+
 
 
 

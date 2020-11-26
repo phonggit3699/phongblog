@@ -8,6 +8,7 @@
   font-size: 2rem;
   margin-top: 0.5rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .about-me h3 span, .about-my-resume h3 span, .about-my-project h3 span, .about-my-contact h3 span {
@@ -179,7 +180,7 @@
   border-spacing: 1rem;
 }
 
-.about-me .content-info-text table tbody tr td {
+.about-me .content-info-text table tbody tr td .info {
   color: black;
   font-weight: bolder;
   font-size: 1.1rem;
@@ -563,16 +564,16 @@
 }
 
 .about-my-project .project-content .content:hover img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  border: 5px solid   #004cff;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  border: 5px solid #004cff;
 }
 
 .about-my-project .project-content .content img {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   width: 400px;
-  border: 5px solid  #222;
+  border: 5px solid #222;
 }
 
 .about-my-project .project-content .content .des {
@@ -610,7 +611,7 @@
 .about-my-project .project-content .content .linkProject .gitHub {
   margin-left: 1rem;
   border: none;
-  border-bottom: 2px solid  #222;
+  border-bottom: 2px solid #222;
 }
 
 .about-my-project .project-content .content .linkProject .gitHub:hover {
@@ -641,6 +642,29 @@
           flex-direction: column;
   padding-bottom: 4rem;
   padding-top: 4rem;
+  color: black;
+}
+
+.about-my-contact h3 {
+  -webkit-animation: Ring 1s infinite ease;
+          animation: Ring 1s infinite ease;
+}
+
+.about-my-contact h4 {
+  margin-top: 4rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.about-my-contact p {
+  margin: 0;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.about-my-contact p i {
+  -webkit-animation: Ring 1s infinite;
+          animation: Ring 1s infinite;
 }
 
 .hiddenBtn {
@@ -653,20 +677,20 @@
 }
 
 .animationFlyInDelay0 {
-  -webkit-animation: flyIn  1s ease-in-out;
-          animation: flyIn  1s ease-in-out;
+  -webkit-animation: flyIn 1s ease-in-out;
+          animation: flyIn 1s ease-in-out;
 }
 
 .animationFlyInDelay1 {
-  -webkit-animation: flyIn  1s  ease-in-out;
-          animation: flyIn  1s  ease-in-out;
+  -webkit-animation: flyIn 1s ease-in-out;
+          animation: flyIn 1s ease-in-out;
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
 
 .animationFlyInDelay2 {
-  -webkit-animation: flyIn 1s  ease-in-out;
-          animation: flyIn 1s  ease-in-out;
+  -webkit-animation: flyIn 1s ease-in-out;
+          animation: flyIn 1s ease-in-out;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
@@ -871,11 +895,66 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
-  .about {
-    font-family: "Poppins", sans-serif;
-    background-color: white;
+@-webkit-keyframes Ring {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+            transform: scale(0.1) rotate(30deg);
   }
+  50% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  75% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes Ring {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+            transform: scale(0.1) rotate(30deg);
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  75% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  .about-my-project .project-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 4rem;
+    width: 100vw;
+  }
+  .about-my-project .project-content .content {
+    margin-top: 1.5rem;
+  }
+  .about-my-project .project-content .content img {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
   .about-banner-text h2,
   .about-banner-text h3 {
     font-size: 2rem;
@@ -883,7 +962,7 @@
     top: 30%;
   }
   .about-banner-text h3 {
-    top: 48%;
+    top: 45%;
   }
   .about-banner .btn-start {
     padding: 0.5rem 1rem;
@@ -902,7 +981,11 @@
     width: 450px;
     height: 450px;
   }
+  .about-me .content-info-text .info {
+    display: none;
+  }
   .about-me .content-info-text .btnCV {
+    font-size: 1rem;
     padding: 0.5rem 0.7rem;
   }
   .about-my-resume {
@@ -997,13 +1080,13 @@
   .about-my-project .project-content .content:hover img {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
-    border: 5px solid   #004cff;
+    border: 5px solid #004cff;
   }
   .about-my-project .project-content .content img {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     width: 400px;
-    border: 5px solid  #222;
+    border: 5px solid #222;
   }
   .about-my-project .project-content .content .des {
     margin: 0;
@@ -1035,7 +1118,7 @@
   .about-my-project .project-content .content .linkProject .gitHub {
     margin-left: 1rem;
     border: none;
-    border-bottom: 2px solid  #222;
+    border-bottom: 2px solid #222;
   }
   .about-my-project .project-content .content .linkProject .gitHub:hover {
     border-bottom: 2px solid #004cff;
@@ -1044,6 +1127,306 @@
   }
   .about-my-project .btn-scrollDown {
     bottom: 1%;
+  }
+  .about-my-contact h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    font-size: 2rem;
+    left: 5%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 45%;
+  }
+  .about-banner .btn-start {
+    padding: 0.5rem 1rem;
+  }
+  .about-me .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-me .content-info-img {
+    width: 400px;
+    height: 400px;
+  }
+  .about-me .content-info-text {
+    width: 450px;
+    height: 450px;
+  }
+  .about-me .content-info-text .info {
+    display: none;
+  }
+  .about-me .content-info-text .btnCV {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .about-my-resume {
+    padding-bottom: 3rem;
+  }
+  .about-my-resume-step .education-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-my-resume-step .education-content-text {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-resume-step .education-content-text h6 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h4 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h5 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .about-my-skill .h3Fake .secondH3,
+  .about-my-skill .h3Fake .firstH3 {
+    font-size: 2rem;
+  }
+  .about-my-skill .h3Fake .firstH3 {
+    color: #004cff;
+    border: none;
+    position: relative;
+  }
+  .about-my-skill .h3Fake .firstH3::after {
+    position: absolute;
+    bottom: -2%;
+    left: 0;
+    content: "";
+    width: 112%;
+    height: 2.1px;
+    background-color: rgba(39, 74, 202, 0.442);
+  }
+  .about-my-skill .language,
+  .about-my-skill .framework {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .about-my-skill .language .content,
+  .about-my-skill .framework .content {
+    margin-top: 2rem;
+  }
+  .about-my-skill .framework {
+    margin-top: 0;
+  }
+  .about-my-project .project-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 4rem;
+    width: 100vw;
+  }
+  .about-my-project .project-content .content {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .about-my-project .project-content .content:hover img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    border: 5px solid #004cff;
+  }
+  .about-my-project .project-content .content img {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 400px;
+    border: 5px solid #222;
+  }
+  .about-my-project .project-content .content .des {
+    margin: 0;
+    margin-top: 0.8rem;
+    color: white;
+  }
+  .about-my-project .project-content .content .technology {
+    color: white;
+    margin: 0;
+    margin-top: 0.5rem;
+  }
+  .about-my-project .project-content .content .linkProject {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-project .project-content .content .linkProject a {
+    border: 2px solid #004cff;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: #004cff;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .about-my-project .project-content .content .linkProject a:hover {
+    background-color: #004cff;
+    color: white;
+  }
+  .about-my-project .project-content .content .linkProject .gitHub {
+    margin-left: 1rem;
+    border: none;
+    border-bottom: 2px solid #222;
+  }
+  .about-my-project .project-content .content .linkProject .gitHub:hover {
+    border-bottom: 2px solid #004cff;
+    background-color: #222;
+    color: #004cff;
+  }
+  .about-my-project .btn-scrollDown {
+    bottom: 1%;
+  }
+  .about-my-contact h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    font-size: 2rem;
+    left: 5%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 48%;
+  }
+  .about-banner .btn-start {
+    padding: 0.5rem 1rem;
+  }
+  .about-me .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-me .content-info-img {
+    width: 300px;
+    height: 300px;
+  }
+  .about-me .content-info-text {
+    width: 330px;
+    height: 330px;
+  }
+  .about-me .content-info-text table {
+    border-collapse: separate;
+    border-spacing: 0.8rem;
+  }
+  .about-me .content-info-text table tbody tr td {
+    font-size: 1rem;
+  }
+  .about-me .content-info-text table tbody tr td .info {
+    display: none;
+  }
+  .about-me .content-info-text table tbody tr td .fullName {
+    color: #004cff;
+  }
+  .about-me .content-info-text table tbody tr td span {
+    margin-left: 0.5rem;
+    color: #999;
+    font-size: 1rem;
+    font-weight: lighter;
+  }
+  .about-me .content-info-text .btnCV {
+    font-size: 10px;
+    padding: 0.4rem 0.6rem;
+  }
+  .about-me .content-info-text .btn-scrollDown {
+    font-size: 10px;
+    padding: 0.2rem 0.4rem;
+  }
+  .about-my-resume {
+    padding-bottom: 3rem;
+  }
+  .about-my-resume-step .education-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-my-resume-step .education-content-text {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-resume-step .education-content-text h6 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h4 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h5 {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text p {
+    text-align: center;
+  }
+  .about-my-project .project-content .content {
+    padding: 0.8rem;
+  }
+  .about-my-project .project-content .content img {
+    width: 300px;
+  }
+  .about-my-project .project-content .content .des {
+    margin: 0;
+    margin-top: 0.8rem;
+    color: white;
+    font-size: 0.8rem;
+  }
+  .about-my-project .project-content .content .technology {
+    color: white;
+    margin: 0;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .about-my-project .project-content .content .linkProject a {
+    font-size: 0.8rem;
+  }
+  .about-my-contact h4 {
+    font-size: 1.2rem;
+  }
+  .about-my-contact p {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=about.css.map */

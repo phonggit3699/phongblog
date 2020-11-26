@@ -44,7 +44,7 @@
             color: red;
         }
         .items {
-            max-width: 750px;
+            width: 750px;
         }
         .specificPost{
             text-decoration: none;
@@ -79,7 +79,47 @@
             h3{
                 font-size: 1rem;
             }
+        
+        }
+        .content {
+            .items {
+                width: 450px;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
         }
 
     }
+}
+
+@media only screen and (max-width: 376px) {
+    .home-container {
+        .banner {
+            h1{
+                font-size: 2rem;
+            }
+            h2{
+                font-size: 0.9rem;
+            }
+            h3{
+                font-size: 0.8rem;
+            }
+            
+        }
+        .content {
+            h3 {
+                font-size: 1.3rem;
+            }
+            span {
+                font-size: 0.9rem;
+            }
+            .items {
+                width: 350px;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+
+    }
+    
 }

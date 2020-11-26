@@ -8,6 +8,7 @@
     font-size: 2rem;
     margin-top: 0.5rem;
     font-weight: bold;
+    text-transform: uppercase;
     span {
         color: #004cff;
     }
@@ -138,9 +139,11 @@
                     tbody {
                         tr {
                             td {
-                                color: black;
-                                font-weight: bolder;
-                                font-size: 1.1rem;
+                                .info {
+                                    color: black;
+                                    font-weight: bolder;
+                                    font-size: 1.1rem;
+                                }
                                 .fullName {
                                     color: #004cff;
                                 }
@@ -413,61 +416,60 @@
             color: white;
             border-color: #004cff;
         }
-        .project-content{
+        .project-content {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
             margin-top: 4rem;
             width: 100vw;
-            .content{
+            .content {
                 background-color: #222;
                 border-radius: 10px;
                 padding: 1rem;
                 padding-bottom: 1.5rem;
-            &:hover img{
-                transform:  scale(1.2);
-                border: 5px solid   #004cff;
-            }
-                img{
+                &:hover img {
+                    transform: scale(1.3);
+                    border: 5px solid #004cff;
+                }
+                img {
                     transition: all 0.5s ease;
                     width: 400px;
-                    border: 5px solid  #222;
+                    border: 5px solid #222;
                 }
-                .des{
+                .des {
                     margin: 0;
                     margin-top: 0.8rem;
                     color: white;
                 }
-                .technology{
+                .technology {
                     color: white;
                     margin: 0;
                     margin-top: 0.5rem;
                 }
-                .linkProject{
+                .linkProject {
                     margin: 0;
                     margin-top: 1rem;
-                    
-                    a{
+
+                    a {
                         border: 2px solid #004cff;
                         border-radius: 5px;
                         text-decoration: none;
                         padding: 0.5rem;
                         color: #004cff;
                         transition: all 0.3s ease;
-                        &:hover{
+                        &:hover {
                             background-color: #004cff;
                             color: white;
                         }
                     }
-                    .gitHub{
+                    .gitHub {
                         margin-left: 1rem;
                         border: none;
-                        border-bottom: 2px solid  #222;
-                        &:hover{
+                        border-bottom: 2px solid #222;
+                        &:hover {
                             border-bottom: 2px solid #004cff;
                             background-color: #222;
                             color: #004cff;
-
                         }
                     }
                 }
@@ -479,6 +481,7 @@
             bottom: 2%;
         }
     }
+    //My Contact--------------------------------------------------------
     &-my-contact {
         position: relative;
         display: flex;
@@ -487,8 +490,24 @@
         flex-direction: column;
         padding-bottom: 4rem;
         padding-top: 4rem;
+        color: black;
+
         h3 {
             @extend %h3Text;
+            animation: Ring 1s infinite ease;
+        }
+        h4 {
+            margin-top: 4rem;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        p {
+            margin: 0;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            i {
+                animation: Ring 1s infinite;
+            }
         }
     }
 }
@@ -502,19 +521,18 @@
 }
 
 .animationFlyInDelay0 {
-    animation: flyIn  1s ease-in-out;
+    animation: flyIn 1s ease-in-out;
 }
 
 .animationFlyInDelay1 {
-    animation: flyIn  1s  ease-in-out;
+    animation: flyIn 1s ease-in-out;
     animation-delay: 0.2s;
 }
 
 .animationFlyInDelay2 {
-    animation: flyIn 1s  ease-in-out;
+    animation: flyIn 1s ease-in-out;
     animation-delay: 0.4s;
 }
-
 
 .animationDropDown {
     animation: dropDown 1s;
@@ -614,10 +632,43 @@
     }
 }
 
-@media only screen and (max-width: 550px) {
+@keyframes Ring {
+    0% {
+        opacity: 0;
+        transform: scale(0.1) rotate(30deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 1330px) {
     .about {
-        font-family: "Poppins", sans-serif;
-        background-color: white;
+        &-my-project {
+            .project-content {
+                flex-direction: column;
+                margin-top: 4rem;
+                width: 100vw;
+                .content {
+                    margin-top: 1.5rem;
+                    img {
+                        width: 800px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .about {
         &-banner {
             &-text {
                 h2,
@@ -627,7 +678,7 @@
                     top: 30%;
                 }
                 h3 {
-                    top: 48%;
+                    top: 45%;
                 }
             }
             .btn-start {
@@ -644,8 +695,11 @@
                 &-info-text {
                     width: 450px;
                     height: 450px;
-
+                    .info {
+                        display: none;
+                    }
                     .btnCV {
+                        font-size: 1rem;
                         padding: 0.5rem 0.7rem;
                     }
                 }
@@ -718,56 +772,56 @@
             }
         }
         &-my-project {
-            .project-content{
+            .project-content {
                 flex-direction: column;
                 margin-top: 4rem;
                 width: 100vw;
-                .content{
+                .content {
                     background-color: #222;
                     border-radius: 10px;
                     padding: 1rem;
                     padding-bottom: 1.5rem;
                     margin-top: 1.5rem;
-                &:hover img{
-                    transform:  scale(1.2);
-                    border: 5px solid   #004cff;
-                }
-                    img{
+                    &:hover img {
+                        transform: scale(1.2);
+                        border: 5px solid #004cff;
+                    }
+                    img {
                         transition: all 0.5s ease;
                         width: 400px;
-                        border: 5px solid  #222;
+                        border: 5px solid #222;
                     }
-                    .des{
+                    .des {
                         margin: 0;
                         margin-top: 0.8rem;
                         color: white;
                     }
-                    .technology{
+                    .technology {
                         color: white;
                         margin: 0;
                         margin-top: 0.5rem;
                     }
-                    .linkProject{
+                    .linkProject {
                         margin: 0;
                         margin-top: 1rem;
-                        
-                        a{
+
+                        a {
                             border: 2px solid #004cff;
                             border-radius: 5px;
                             text-decoration: none;
                             padding: 0.5rem;
                             color: #004cff;
                             transition: all 0.3s ease;
-                            &:hover{
+                            &:hover {
                                 background-color: #004cff;
                                 color: white;
                             }
                         }
-                        .gitHub{
+                        .gitHub {
                             margin-left: 1rem;
                             border: none;
-                            border-bottom: 2px solid  #222;
-                            &:hover{
+                            border-bottom: 2px solid #222;
+                            &:hover {
                                 border-bottom: 2px solid #004cff;
                                 background-color: #222;
                                 color: #004cff;
@@ -778,6 +832,317 @@
             }
             .btn-scrollDown {
                 bottom: 1%;
+            }
+        }
+        &-my-contact {
+            h4 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .about {
+        &-banner {
+            &-text {
+                h2,
+                h3 {
+                    font-size: 2rem;
+                    left: 5%;
+                    top: 30%;
+                }
+                h3 {
+                    top: 45%;
+                }
+            }
+            .btn-start {
+                padding: 0.5rem 1rem;
+            }
+        }
+        &-me {
+            .content {
+                flex-direction: column;
+                &-info-img {
+                    width: 400px;
+                    height: 400px;
+                }
+                &-info-text {
+                    width: 450px;
+                    height: 450px;
+                    .info {
+                        display: none;
+                    }
+                    .btnCV {
+                        font-size: 1rem;
+                        padding: 0.5rem 0.7rem;
+                    }
+                }
+            }
+        }
+        &-my-resume {
+            padding-bottom: 3rem;
+            &-step {
+                .education {
+                    &-content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        &-text {
+                            margin: 0;
+                            margin-top: 1rem;
+                            h6 {
+                                text-align: center;
+                            }
+                            h4 {
+                                text-align: center;
+                            }
+                            h5 {
+                                font-size: 0.9rem;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-my-skill {
+            .h3Fake {
+                .secondH3,
+                .firstH3 {
+                    font-size: 2rem;
+                }
+                .firstH3 {
+                    color: #004cff;
+                    border: none;
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        bottom: -2%;
+                        left: 0;
+                        content: "";
+                        width: 112%;
+                        height: 2.1px;
+                        background-color: rgba(39, 74, 202, 0.442);
+                    }
+                }
+            }
+
+            .language,
+            .framework {
+                width: 350px;
+                margin: 0 auto;
+                margin-top: 2rem;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-wrap: wrap;
+                .content {
+                    margin-top: 2rem;
+                }
+            }
+            .framework {
+                margin-top: 0;
+            }
+        }
+        &-my-project {
+            .project-content {
+                flex-direction: column;
+                margin-top: 4rem;
+                width: 100vw;
+                .content {
+                    background-color: #222;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    padding-bottom: 1.5rem;
+                    margin-top: 1.5rem;
+                    &:hover img {
+                        transform: scale(1.2);
+                        border: 5px solid #004cff;
+                    }
+                    img {
+                        transition: all 0.5s ease;
+                        width: 400px;
+                        border: 5px solid #222;
+                    }
+                    .des {
+                        margin: 0;
+                        margin-top: 0.8rem;
+                        color: white;
+                    }
+                    .technology {
+                        color: white;
+                        margin: 0;
+                        margin-top: 0.5rem;
+                    }
+                    .linkProject {
+                        margin: 0;
+                        margin-top: 1rem;
+
+                        a {
+                            border: 2px solid #004cff;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            padding: 0.5rem;
+                            color: #004cff;
+                            transition: all 0.3s ease;
+                            &:hover {
+                                background-color: #004cff;
+                                color: white;
+                            }
+                        }
+                        .gitHub {
+                            margin-left: 1rem;
+                            border: none;
+                            border-bottom: 2px solid #222;
+                            &:hover {
+                                border-bottom: 2px solid #004cff;
+                                background-color: #222;
+                                color: #004cff;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-scrollDown {
+                bottom: 1%;
+            }
+        }
+        &-my-contact {
+            h4 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .about {
+        &-banner {
+            &-text {
+                h2,
+                h3 {
+                    font-size: 2rem;
+                    left: 5%;
+                    top: 30%;
+                }
+                h3 {
+                    top: 48%;
+                }
+            }
+            .btn-start {
+                padding: 0.5rem 1rem;
+            }
+        }
+        &-me {
+            .content {
+                flex-direction: column;
+                &-info-img {
+                    width: 300px;
+                    height: 300px;
+                }
+                &-info-text {
+                    width: 330px;
+                    height: 330px;
+                    table {
+                        border-collapse: separate;
+                        border-spacing: 0.8rem;
+                        tbody {
+                            tr {
+                                td {
+                                    .info {
+                                        display: none;
+                                    }
+
+                                    font-size: 1rem;
+                                    .fullName {
+                                        color: #004cff;
+                                    }
+                                    span {
+                                        margin-left: 0.5rem;
+                                        color: #999;
+                                        font-size: 1rem;
+                                        font-weight: lighter;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btnCV {
+                        font-size: 10px;
+                        padding: 0.4rem 0.6rem;
+                    }
+                    .btn-scrollDown {
+                        font-size: 10px;
+                        padding: 0.2rem 0.4rem;
+                    }
+                }
+            }
+        }
+        &-my-resume {
+            padding-bottom: 3rem;
+            &-step {
+                .education {
+                    &-content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        &-text {
+                            margin: 0;
+                            margin-top: 1rem;
+                            h6 {
+                                text-align: center;
+                            }
+                            h4 {
+                                text-align: center;
+                            }
+                            h5 {
+                                font-size: 0.7rem;
+                                text-align: center;
+                            }
+                            p {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-my-project {
+            .project-content {
+                .content {
+                    padding: 0.8rem;
+                    img {
+                        width: 300px;
+                    }
+                    .des {
+                        margin: 0;
+                        margin-top: 0.8rem;
+                        color: white;
+                        font-size: 0.8rem;
+                    }
+                    .technology {
+                        color: white;
+                        margin: 0;
+                        margin-top: 0.5rem;
+                        font-size: 0.8rem;
+                    }
+                    .linkProject {
+                        a {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+        &-my-contact {
+            h4 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 1rem;
             }
         }
     }

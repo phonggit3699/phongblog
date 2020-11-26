@@ -13,7 +13,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 750px;
+  width: 750px;
 }
 
 .specificPost-container img {

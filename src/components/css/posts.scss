@@ -2,6 +2,10 @@
     margin-top: 20px;
     border-bottom: 1px rgb(191, 190, 190) solid;
     padding-bottom: 1rem;
+
+    h4{
+        font-weight: 600;
+    }
     
     .img-des{
         display: flex;
@@ -24,25 +28,40 @@
 
 @media only screen and (max-width: 550px){
     .posts-container{
-        overflow: hidden;
-        padding-bottom: 0.5rem;
+        h4{
+            text-align: center;
+            font-weight: 600;
+        }
+        .img-des{
+            flex-direction: column;
+            img{
+                margin-top: 1rem;
+                width: 100%;
+            }
+            .des{
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 376px){
+    .posts-container{
         h4{
             text-align: center;
         }
         .img-des{
-            img{
-                width: 27.5rem;
-                height: 27.5rem;
-            }
-           
-            
-            align-items: center;
             flex-direction: column;
+            img{
+                margin-top: 1rem;
+                width: 100%;
+            }
             .des{
-                margin-left: 20px;
-                margin-right: 20px;
-                max-height: 210px;
-                overflow: hidden;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 2rem;
             }
         }
     }

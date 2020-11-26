@@ -72,7 +72,7 @@
 }
 
 .home-container .content .items {
-  max-width: 750px;
+  width: 750px;
 }
 
 .home-container .content .specificPost {
@@ -115,6 +115,34 @@
   }
   .home-container .banner h3 {
     font-size: 1rem;
+  }
+  .home-container .content .items {
+    width: 450px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .home-container .banner h1 {
+    font-size: 2rem;
+  }
+  .home-container .banner h2 {
+    font-size: 0.9rem;
+  }
+  .home-container .banner h3 {
+    font-size: 0.8rem;
+  }
+  .home-container .content h3 {
+    font-size: 1.3rem;
+  }
+  .home-container .content span {
+    font-size: 0.9rem;
+  }
+  .home-container .content .items {
+    width: 350px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 /*# sourceMappingURL=home.css.map */
