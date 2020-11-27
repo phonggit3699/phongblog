@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './css/nav.css';
 import { NavLink } from 'react-router-dom';
 import Cookies from 'universal-cookie';
@@ -13,8 +13,8 @@ const Nav = () => {
     const [stickyNavBar, setStickyNavbar] = useState(false);
     const [show, setShow] = useState(false);
     const cookie = cookies.getAll();
-    
-    useMemo(() => {
+
+    useEffect(() => {
         const stickyNav = () => {
             if (window.scrollY >= 700) {
                 setStickyNavbar(true);
@@ -24,6 +24,9 @@ const Nav = () => {
             }
         }
         window.addEventListener('scroll', stickyNav);
+        return ()=>{
+            window.removeEventListener('scroll', stickyNav);
+        }
     },[])
 
     const showUpNav = () => {

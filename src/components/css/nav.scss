@@ -37,7 +37,7 @@ header {
                     a {
                         text-decoration: none;
                         color: white;
-                        padding: 1.35rem;
+                        padding: 1.43rem;
                         font-size: 16px;
                         &:hover {
                             background-color: white;
@@ -53,7 +53,7 @@ header {
             .subNav {
                 position: absolute;
                 bottom: -7.2rem;
-                width: 8rem;
+                width: 8.5rem;
                 height: auto;
                 left: 0;
                 text-align: center;
@@ -100,6 +100,7 @@ header {
             }
         }
         .active {
+            padding: 1.43rem;
             background-color: white;
             color: black;
         }

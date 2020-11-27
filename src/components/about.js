@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/about.css';
 import { scroller, Element } from 'react-scroll';
 import cat from './images/cat.jpg';
@@ -19,15 +19,16 @@ import phongBlog from './images/phongBlog.jpg'
 const About = () => {
     const [getScrollY, setScrollY] = useState(0);
 
-    useMemo(() => {
+    useEffect(() => {
         const getScrollYF = () => {
             setScrollY(window.scrollY)
-            return window.scrollY;
         }
-        window.addEventListener('scroll', getScrollYF, { passive: true });
+        window.addEventListener('scroll', getScrollYF);
+        document.title = "About | FongBlog"
+        return ()=>{
+            window.removeEventListener('scroll', getScrollYF);
+        }
     }, []);
-
-
 
     const scrollToAboutMe = () => {
         scroller.scrollTo('about-me', {
@@ -85,23 +86,23 @@ const About = () => {
                         <table>
                             <tbody>
                                 <tr key="name">
-                                    <td><i className="fas fa-wind"></i> <span className='info'>My Name: </span> </td>
+                                    <td><i className="fas fa-wind"></i><span className='info'>My Name: </span> </td>
                                     <td><span className="fullName">Pham Van Phong</span></td>
                                 </tr>
                                 <tr key="date">
-                                    <td><i className="fas fa-birthday-cake"></i> <span className='info'> Date of birth: </span></td>
+                                    <td><i className="fas fa-birthday-cake"></i><span className='info'> Date of birth: </span></td>
                                     <td><span>03/06/1999</span></td>
                                 </tr>
                                 <tr key="address">
-                                    <td><i className="fas fa-map-marker-alt"></i> <span className='info'> Address: </span> </td>
+                                    <td><i className="fas fa-map-marker-alt"></i><span className='info'>Address: </span> </td>
                                     <td><span>Kim Dinh Kim Thanh Hai Duong</span></td>
                                 </tr>
                                 <tr key="email">
-                                    <td><i className="fas fa-envelope"></i> <span className='info'> Email: </span></td>
+                                    <td><i className="fas fa-envelope"></i><span className='info'>Email: </span></td>
                                     <td><span>phamvanphong3699@gmail.com</span></td>
                                 </tr>
                                 <tr key="phone">
-                                    <td><i className="fas fa-phone"></i> <span className='info'> Phone: </span></td>
+                                    <td><i className="fas fa-phone"></i><span className='info'>Phone: </span></td>
                                     <td><span>0327018706</span></td>
                                 </tr>
                             </tbody>

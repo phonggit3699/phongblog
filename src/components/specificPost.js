@@ -15,17 +15,19 @@ const SpecificPost = () => {
         async function getSpecificPostFromAPIF() {
             const res = await getSpecificPostFromAPI(match.params.id);
             setSpecificPost(res.data);
+            document.title = `${res.data.title} | FongBlog`;
             setViewSpninner(false);
-            return res;
+            
         }
         getSpecificPostFromAPIF(); 
-
+        
     }, []);
+
 
     const dateAt = new Date(specificPost.Date).toLocaleDateString();
 
     return (
-        <div className="specificPost-container container">
+        <div className="specificPost-container">
             {viewSpinner ? <Spinner /> : ''}
             <h2>{specificPost.title}</h2>
             <img src={specificPost.img} alt='ImgSpecificPost' />

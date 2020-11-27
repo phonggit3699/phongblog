@@ -67,6 +67,8 @@
     }
 }
 
+//Responesive ------------------------------------
+
 @media only screen and (max-width: 550px) {
     .home-container {
         .banner {
@@ -92,7 +94,7 @@
     }
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 470px) {
     .home-container {
         .banner {
             h1{
@@ -123,3 +125,34 @@
     }
     
 }
+
+@media only screen and (max-width: 325px) {
+    .home-container {
+        .banner {
+            h1{
+                font-size: 1.5rem;
+            }
+            h2{
+                font-size: 0.7rem;
+            }
+            h3{
+                font-size: 0.6rem;
+            }
+            
+        }
+        .content {
+            h3 {
+                font-size: 1.2rem;
+            }
+            span {
+                font-size: 0.7rem;
+            }
+            .items {
+                width: 250px;
+            }
+        }
+
+    }
+    
+}
+

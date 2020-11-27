@@ -649,8 +649,39 @@
     }
 }
 
+//Responesive ------------------------------------
+@media only screen and (max-width: 1805px) {
+    .about {
+        &-banner {
+            &-text {
+                h2,
+                h3 {
+                    left: 15%;
+                    top: 30%;
+                }
+                h3 {
+                    top: 49%;
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1330px) {
     .about {
+        &-me {
+            .content {
+                flex-direction: column;
+                &-info-img {
+                    width: 800px;
+                    height: 800px;
+                }
+                &-info-text {
+                    width: 800px;
+                    height: 800px;
+                }
+            }
+        }
         &-my-project {
             .project-content {
                 flex-direction: column;
@@ -667,7 +698,63 @@
     }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 855px) {
+    .about {
+        
+        &-banner {
+            &-text {
+                h2,
+                h3 {
+                    font-size: 2rem;
+                    left: 10%;
+                    top: 30%;
+                }
+                h3 {
+                    top: 44%;
+                }
+            }
+            .btn-start {
+                padding: 0.5rem 1rem;
+            }
+        }
+        &-me {
+            .content {
+                flex-direction: column;
+                &-info-img {
+                    width: 600px;
+                    height: 600px;
+                }
+                &-info-text {
+                    width: 600px;
+                    height: 600px;
+                    .info {
+                        display: none;
+                    }
+                    .btnCV {
+                        font-size: 1rem;
+                        padding: 0.5rem 0.7rem;
+                    }
+                }
+            }
+        }
+        &-my-project {
+            .project-content {
+                flex-direction: column;
+                margin-top: 4rem;
+                width: 100vw;
+                .content {
+                    img {
+                        transition: all 0.5s ease;
+                        width: 600px;
+                        border: 5px solid #222;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 555px) {
     .about {
         &-banner {
             &-text {
@@ -678,7 +765,7 @@
                     top: 30%;
                 }
                 h3 {
-                    top: 45%;
+                    top: 44%;
                 }
             }
             .btn-start {
@@ -693,14 +780,17 @@
                     height: 400px;
                 }
                 &-info-text {
-                    width: 450px;
-                    height: 450px;
+                    width: 400px;
+                    height: 400px;
                     .info {
                         display: none;
                     }
                     .btnCV {
-                        font-size: 1rem;
+                        font-size: 0.9rem;
                         padding: 0.5rem 0.7rem;
+                    }
+                    .btn-scrollDown {
+                        font-size: 0.8rem;
                     }
                 }
             }
@@ -739,12 +829,12 @@
                     font-size: 2rem;
                 }
                 .firstH3 {
-                    color: #004cff;
+                    color:black;
                     border: none;
                     position: relative;
                     &::after {
                         position: absolute;
-                        bottom: -2%;
+                        bottom: -3%;
                         left: 0;
                         content: "";
                         width: 112%;
@@ -842,193 +932,18 @@
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 452px) {
     .about {
         &-banner {
             &-text {
                 h2,
                 h3 {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                     left: 5%;
                     top: 30%;
                 }
                 h3 {
-                    top: 45%;
-                }
-            }
-            .btn-start {
-                padding: 0.5rem 1rem;
-            }
-        }
-        &-me {
-            .content {
-                flex-direction: column;
-                &-info-img {
-                    width: 400px;
-                    height: 400px;
-                }
-                &-info-text {
-                    width: 450px;
-                    height: 450px;
-                    .info {
-                        display: none;
-                    }
-                    .btnCV {
-                        font-size: 1rem;
-                        padding: 0.5rem 0.7rem;
-                    }
-                }
-            }
-        }
-        &-my-resume {
-            padding-bottom: 3rem;
-            &-step {
-                .education {
-                    &-content {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        flex-direction: column;
-                        &-text {
-                            margin: 0;
-                            margin-top: 1rem;
-                            h6 {
-                                text-align: center;
-                            }
-                            h4 {
-                                text-align: center;
-                            }
-                            h5 {
-                                font-size: 0.9rem;
-                                text-align: center;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        &-my-skill {
-            .h3Fake {
-                .secondH3,
-                .firstH3 {
-                    font-size: 2rem;
-                }
-                .firstH3 {
-                    color: #004cff;
-                    border: none;
-                    position: relative;
-                    &::after {
-                        position: absolute;
-                        bottom: -2%;
-                        left: 0;
-                        content: "";
-                        width: 112%;
-                        height: 2.1px;
-                        background-color: rgba(39, 74, 202, 0.442);
-                    }
-                }
-            }
-
-            .language,
-            .framework {
-                width: 350px;
-                margin: 0 auto;
-                margin-top: 2rem;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                flex-wrap: wrap;
-                .content {
-                    margin-top: 2rem;
-                }
-            }
-            .framework {
-                margin-top: 0;
-            }
-        }
-        &-my-project {
-            .project-content {
-                flex-direction: column;
-                margin-top: 4rem;
-                width: 100vw;
-                .content {
-                    background-color: #222;
-                    border-radius: 10px;
-                    padding: 1rem;
-                    padding-bottom: 1.5rem;
-                    margin-top: 1.5rem;
-                    &:hover img {
-                        transform: scale(1.2);
-                        border: 5px solid #004cff;
-                    }
-                    img {
-                        transition: all 0.5s ease;
-                        width: 400px;
-                        border: 5px solid #222;
-                    }
-                    .des {
-                        margin: 0;
-                        margin-top: 0.8rem;
-                        color: white;
-                    }
-                    .technology {
-                        color: white;
-                        margin: 0;
-                        margin-top: 0.5rem;
-                    }
-                    .linkProject {
-                        margin: 0;
-                        margin-top: 1rem;
-
-                        a {
-                            border: 2px solid #004cff;
-                            border-radius: 5px;
-                            text-decoration: none;
-                            padding: 0.5rem;
-                            color: #004cff;
-                            transition: all 0.3s ease;
-                            &:hover {
-                                background-color: #004cff;
-                                color: white;
-                            }
-                        }
-                        .gitHub {
-                            margin-left: 1rem;
-                            border: none;
-                            border-bottom: 2px solid #222;
-                            &:hover {
-                                border-bottom: 2px solid #004cff;
-                                background-color: #222;
-                                color: #004cff;
-                            }
-                        }
-                    }
-                }
-            }
-            .btn-scrollDown {
-                bottom: 1%;
-            }
-        }
-        &-my-contact {
-            h4 {
-                font-size: 1.5rem;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 376px) {
-    .about {
-        &-banner {
-            &-text {
-                h2,
-                h3 {
-                    font-size: 2rem;
-                    left: 5%;
-                    top: 30%;
-                }
-                h3 {
-                    top: 48%;
+                    top: 44%;
                 }
             }
             .btn-start {
@@ -1043,8 +958,8 @@
                     height: 300px;
                 }
                 &-info-text {
-                    width: 330px;
-                    height: 330px;
+                    width: 300px;
+                    height: 300px;
                     table {
                         border-collapse: separate;
                         border-spacing: 0.8rem;
@@ -1147,3 +1062,124 @@
         }
     }
 }
+
+@media only screen and (max-width: 325px) {
+    .about {
+        &-banner {
+            &-text {
+                h2,
+                h3 {
+                    font-size: 2rem;
+                    left: 5%;
+                    top: 30%;
+                }
+                h3 {
+                    top: 46%;
+                }
+            }
+            .btn-start {
+                padding: 0.5rem 1rem;
+            }
+        }
+        &-me {
+            .content {
+                flex-direction: column;
+                &-info-img {
+                    width: 260px;
+                    height: 260px;
+                }
+                &-info-text {
+                    width: 260px;
+                    height: 260px;
+                    table {
+                        border-collapse: separate;
+                        border-spacing: 0.6rem;
+                        tbody {
+                            tr {
+                                td {
+                                    .info {
+                                        display: none;
+                                    }
+
+                                    font-size: 0.8rem;
+                                    .fullName {
+                                        color: #004cff;
+                                    }
+                                    span {
+                                        margin-left: 0.5rem;
+                                        color: #999;
+                                        font-size: 0.9rem;
+                                        font-weight: lighter;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btnCV {
+                        font-size: 8px;
+                        padding: 0.4rem 0.6rem;
+                    }
+                    .btn-scrollDown {
+                        font-size: 8px;
+                        padding: 0.2rem 0.4rem;
+                    }
+                }
+            }
+        }
+        &-my-skill{
+            .language,
+            .framework {
+                width: 280px;
+            }
+        }
+        &-my-resume {
+            padding-bottom: 3rem;
+            &-step {
+                .education {
+                    padding: 1rem;
+                    &-content {
+                        &-text {
+                            margin: 0;
+                            margin-top: 1rem;
+                            h6 {
+                                text-align: center;
+                            }
+                            h4 {
+                                font-size: 1rem;
+                                text-align: center;
+                            }
+                            h5 {
+                                font-size: 0.5rem;
+                                text-align: center;
+                            }
+                            p {
+                                text-align: center;
+                                font-size: 0.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-my-project {
+            .project-content {
+                .content {
+                    padding: 0.5rem;
+                    padding-bottom: 1rem;
+                    img {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+        &-my-contact {
+            h4 {
+                font-size: 0.9rem;
+            }
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+

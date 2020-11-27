@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { authSignUpAPI } from '../API';
 import './css/form.css';
@@ -12,6 +12,9 @@ const SignUpForm = () => {
     const [loading, setLoading] = useState(false);
     const [check, setCheck] = useState({});
 
+    useEffect(() => {
+        document.title = "Sign Up | FongBlog"
+    }, []);
     
     const { HandleChange, HandleSubmit, values, errors } = ValidateForm();
 

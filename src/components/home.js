@@ -18,6 +18,7 @@ const Home = ({ location }) => {
             },
         },
     }));
+
     const [viewSpinner, setViewSpninner] = useState(true);
     const [posts, setPost] = useState([]);
     const [offset, setOffset] = useState({
@@ -38,7 +39,6 @@ const Home = ({ location }) => {
             const res = await getPostFromAPI(offset)
             setPost(res.data);
             setViewSpninner(false);
-            return res;
         }
         getPostFromAPIF(offset);
     }, [page]);
@@ -48,9 +48,9 @@ const Home = ({ location }) => {
             const num = await getTotalPostFromAPI()
             const p = Math.ceil(parseInt(num.data) / offset.limit)
             setpPage(p);
-            return p;
         }
         getTotalPostFromAPIF();
+        document.title = "Home | FongBlog"
     }, [])
 
     const scrollToContent = () => {
@@ -73,7 +73,7 @@ const Home = ({ location }) => {
             <div className="content">
                 <h3>Thông tin về công nghệ thông tin</h3>
                 <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
-                <div className="items  container">
+                <div className="items">
                     {posts.map((post) => (
                         <Link to={`/page/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></Link>
                     ))}

@@ -5,11 +5,29 @@
     box-shadow: 0 0 3px #ccc;
     padding: 2rem 2rem;
     border-radius: 10px;
-    .error{
+    .error {
         color: red;
     }
-    p{  
+    p {
         margin-top: 1rem;
         color: #138496;
+    }
+}
+
+//Responesive ------------------------------------
+
+@media only screen and (max-width: 418px) {
+    .loginForm {
+
+        width: 330px;
+        padding: 1rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    .loginForm {
+
+        width: 260px;
+        padding: 1rem 1rem;
     }
 }

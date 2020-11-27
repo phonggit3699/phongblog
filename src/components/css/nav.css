@@ -65,7 +65,7 @@ header .logo-nav nav > ul li {
 header .logo-nav nav > ul li a {
   text-decoration: none;
   color: white;
-  padding: 1.35rem;
+  padding: 1.43rem;
   font-size: 16px;
 }
 
@@ -82,7 +82,7 @@ header .logo-nav nav > ul li a:hover ~ .subNav {
 header .logo-nav nav .subNav {
   position: absolute;
   bottom: -7.2rem;
-  width: 8rem;
+  width: 8.5rem;
   height: auto;
   left: 0;
   text-align: center;
@@ -136,6 +136,7 @@ header .logo-nav nav .subNav:hover {
 }
 
 header .logo-nav .active {
+  padding: 1.43rem;
   background-color: white;
   color: black;
 }

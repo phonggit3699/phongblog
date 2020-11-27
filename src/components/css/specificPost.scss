@@ -1,32 +1,66 @@
-.specificPost-container{
-    margin-top: 2rem;
+.specificPost-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 750px;
-    img{
-        max-width: 750px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    img {
+        max-width: 100%;
         margin: 2rem 0;
     }
-    p{
+    p {
+        text-indent: 2rem;
         text-align: justify;
         margin-top: 1rem;
         padding-bottom: 1rem;
     }
-    .inforPost{
+    .inforPost {
         margin-top: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 750px;
-        padding: 0 1rem;
+        width: 100%;
     }
-    .fb-chat{
-        max-width: 750px;
+    .fb-chat {
+        max-width: 100%;
         margin-top: 3rem;
     }
+}
 
+@media only screen and (max-width: 770px) {
+    .specificPost-container {
+        width: 700px;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+    .specificPost-container {
+        width: 450px;
+    }
+}
+
+
+
+@media only screen and (max-width: 461px) {
+    .specificPost-container {
+        width: 380px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .specificPost-container {
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    .specificPost-container {
+        width: 250px;
+    }
 }
 
 

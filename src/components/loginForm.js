@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useContext, useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { authLoginAPI } from '../API';
 import { NavLink, Redirect } from "react-router-dom";
@@ -18,6 +18,10 @@ const LoginForm = ({ location }) => {
     const date = new Date();
     date.setTime(date.getTime() + (20 * 60 * 1000));
     const dateCookie = new Date(2020, 12, 10);
+
+    useEffect(() => {
+        document.title = "Login | FongBlog"
+    }, []);
 
     const onSubmit = useCallback(async (data) => {
 
