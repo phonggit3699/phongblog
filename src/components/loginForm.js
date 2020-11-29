@@ -39,7 +39,7 @@ const LoginForm = ({ location }) => {
             setLoading(false);
         }
     }, [values]);
-
+    
     if (check.status === 'sucess' && values.remember) {
         cookies.set('utokenC', check.cookie, { path: '/', expires: dateCookie });
         cookies.set('userName', check.username, { path: '/', expires: dateCookie });

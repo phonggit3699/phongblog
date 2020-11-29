@@ -1,14 +1,17 @@
 .specificPost-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
     width: 750px;
     margin: 0 auto;
     margin-top: 2rem;
+    h2{
+        text-align: center;
+    }
+    h3{
+        margin-top: 2rem;
+    }
     img {
         max-width: 100%;
-        margin: 2rem 0;
+        text-align: center;
     }
     p {
         text-indent: 2rem;

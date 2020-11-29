@@ -419,10 +419,12 @@
         .project-content {
             display: flex;
             justify-content: space-evenly;
+            flex-wrap: wrap;
             align-items: center;
-            margin-top: 4rem;
+            margin-top: 1rem;
             width: 100vw;
             .content {
+                margin-top: 3.5rem;
                 background-color: #222;
                 border-radius: 10px;
                 padding: 1rem;
@@ -526,12 +528,12 @@
 
 .animationFlyInDelay1 {
     animation: flyIn 1s ease-in-out;
-    animation-delay: 0.2s;
+    animation-delay: 0.1s;
 }
 
 .animationFlyInDelay2 {
     animation: flyIn 1s ease-in-out;
-    animation-delay: 0.4s;
+    animation-delay: 0.2s;
 }
 
 .animationDropDown {
@@ -669,6 +671,22 @@
 
 @media only screen and (max-width: 1330px) {
     .about {
+        &-banner {
+            &-text {
+                h2,
+                h3 {
+                    font-size: 2rem;
+                    left: 10%;
+                    top: 30%;
+                }
+                h3 {
+                    top: 37%;
+                }
+            }
+            .btn-start {
+                padding: 0.5rem 1rem;
+            }
+        }
         &-me {
             .content {
                 flex-direction: column;
@@ -700,7 +718,6 @@
 
 @media only screen and (max-width: 855px) {
     .about {
-        
         &-banner {
             &-text {
                 h2,
@@ -710,7 +727,7 @@
                     top: 30%;
                 }
                 h3 {
-                    top: 44%;
+                    top: 39%;
                 }
             }
             .btn-start {
@@ -829,7 +846,7 @@
                     font-size: 2rem;
                 }
                 .firstH3 {
-                    color:black;
+                    color: black;
                     border: none;
                     position: relative;
                     &::after {
@@ -1126,7 +1143,7 @@
                 }
             }
         }
-        &-my-skill{
+        &-my-skill {
             .language,
             .framework {
                 width: 280px;
@@ -1182,4 +1199,3 @@
         }
     }
 }
-

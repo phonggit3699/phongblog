@@ -17,21 +17,31 @@ const SpecificPost = () => {
             setSpecificPost(res.data);
             document.title = `${res.data.title} | FongBlog`;
             setViewSpninner(false);
-            
+
         }
-        getSpecificPostFromAPIF(); 
-        
+        getSpecificPostFromAPIF();
+
     }, []);
 
+    console.log(specificPost.paragraph1);
 
-    const dateAt = new Date(specificPost.Date).toLocaleDateString();
+
+    const dateAt = new Date(specificPost.date).toLocaleDateString();
 
     return (
         <div className="specificPost-container">
             {viewSpinner ? <Spinner /> : ''}
             <h2>{specificPost.title}</h2>
+            <p>{specificPost.des}</p>
             <img src={specificPost.img} alt='ImgSpecificPost' />
-            <p>{specificPost.post}</p>
+            <h3>{specificPost.heading1}</h3>
+            <p>{specificPost.paragraph1}</p>
+            {specificPost.img2 && <img src={specificPost.img2} alt='ImgSpecificPost'/>}
+            {specificPost.heading2 && <h3 >{specificPost.heading2}</h3>}
+            {specificPost.paragraph2 && <p>{specificPost.paragraph2}</p>}
+            {specificPost.img3 && <img src={specificPost.img3} alt='ImgSpecificPost'/>}
+            {specificPost.heading3 && <h3 >{specificPost.heading3}</h3>}
+            {specificPost.paragraph3 && <p>{specificPost.paragraph3}</p>}
             <div className="inforPost">
                 <span>{`Tác giả: ${specificPost.author}`} </span>
                 <span>{dateAt} </span>

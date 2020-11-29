@@ -38,12 +38,13 @@ export async function getSpecificPostFromAPI(id) {
 
 export async function createNewPostAPI(specificPost) {
 
-    const status = await fetch(URL_API_CREATE, {
-        method: "POST",
+    const status = await axios({
+        method: 'POST',
+        url: URL_API_CREATE,
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(specificPost)
+        data: JSON.stringify(specificPost)
     });
     return status.json();
 

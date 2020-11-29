@@ -11,7 +11,9 @@ import react from './images/react.png';
 import expressjs from './images/expressjs.png';
 import sass from './images/sass.png';
 import mongodb from './images/mongodb.png';
-import phongBlog from './images/phongBlog.jpg'
+import phongBlog from './images/phongBlog.jpg';
+import todoList from './images/todoList.jpg';
+import postApi from './images/postApi.jpg';
 
 
 
@@ -25,7 +27,7 @@ const About = () => {
         }
         window.addEventListener('scroll', getScrollYF);
         document.title = "About | FongBlog"
-        return ()=>{
+        return () => {
             window.removeEventListener('scroll', getScrollYF);
         }
     }, []);
@@ -37,7 +39,7 @@ const About = () => {
             smooth: 'easeInOutQuart',
             spy: true
         })
-    }
+    };
 
     const scrollToResume = () => {
         scroller.scrollTo('about-my-resume', {
@@ -46,7 +48,7 @@ const About = () => {
             smooth: 'easeInOutQuart',
             spy: true
         })
-    }
+    };
 
     const scrollToSkill = () => {
         scroller.scrollTo('about-my-skill', {
@@ -55,7 +57,7 @@ const About = () => {
             smooth: 'easeInOutQuart',
             spy: true
         })
-    }
+    };
 
     const scrollToProject = () => {
         scroller.scrollTo('about-my-project', {
@@ -64,7 +66,122 @@ const About = () => {
             smooth: 'easeInOutQuart',
             spy: true
         })
-    }
+    };
+
+    //Array content of project
+    const projectContent = [
+        {
+            id: 1,
+            img: phongBlog,
+            des: "Trang được tạo ra nhằm mục đích showcase",
+            tech: "ReactJs",
+            linkLive: "localhost:3000/about",
+            linkGitHub: "https://github.com/phonggit3699/phongblog",
+
+        },
+        {
+            id: 2,
+            img: postApi,
+            des: "Trang được tạo ra nhằm mục đích showcase",
+            tech: "ExpressJs, MongoDB, Heroku",
+            linkLive: "https://phongallpostapi.herokuapp.com/api/post",
+            linkGitHub: "https://github.com/phonggit3699/postAPI",
+
+        },
+        {
+            id: 3,
+            img: todoList,
+            des: "Trang được tạo ra nhằm mục đích showcase",
+            tech: "ReactJs",
+            linkLive: "https://todo-list-95966.firebaseapp.com/",
+            linkGitHub: "https://github.com/phonggit3699/todos-list",
+
+        },
+        {
+            id: 4,
+            img: phongBlog,
+            des: "Trang được tạo ra nhằm mục đích showcase",
+            tech: "ReactJs, ExpressJs, MongoDB",
+            linkLive: "localhost:3000/about",
+            linkGitHub: "",
+
+        },
+        {
+            id: 5,
+            img: phongBlog,
+            des: "Trang được tạo ra nhằm mục đích showcase",
+            tech: "ReactJs, ExpressJs, MongoDB",
+            linkLive: "localhost:3000/about",
+            linkGitHub: "",
+
+        },
+        {
+            id: 6,
+            img: phongBlog,
+            des: "Trang được tạo ra nhằm mục đích showcase",
+            tech: "ReactJs, ExpressJs, MongoDB",
+            linkLive: "localhost:3000/about",
+            linkGitHub: "",
+
+        },
+    ];
+
+    //Array content of skill
+    const skillContent1 = [
+        {
+            id: 1,
+            img: html5,
+            name: "Html",
+            css: "html"
+        },
+        {
+            id: 2,
+            img: css3,
+            name: "Css",
+            css: "css"
+        },
+        {
+            id: 3,
+            img: js,
+            name: "Js",
+            css: "js"
+        },
+        {
+            id: 4,
+            img: sass,
+            name: "Sass",
+            css: "sass"
+
+        }
+
+    ];
+
+    const skillContent2 = [
+        {
+            id: 1,
+            img: nodejs,
+            name: "NodeJs",
+            css: "nodejs"
+        },
+        {
+            id: 2,
+            img: react,
+            name: "ReactJs",
+            css: "react"
+        },
+        {
+            id: 3,
+            img: expressjs,
+            name: "ExpressJs",
+            css: "expressjs"
+        },
+        {
+            id: 4,
+            img: mongodb,
+            name: "MongoDb",
+            css: "mongodb"
+        }
+    ];
 
 
     return (
@@ -149,102 +266,37 @@ const About = () => {
                     <span className={`secondH3 ${getScrollY > 2000 ? 'animationSlideH32' : ''}`}>Skill</span>
                 </div>
                 <div className={`language ${getScrollY > 2000 ? 'animationSlideNext' : ''}`}>
-                    <div className='content html'>
-                        <img src={html5} alt="html" />
-                        <span>Html</span>
-                    </div>
-                    <div className='content css'>
-                        <img src={css3} alt="css" />
-                        <span>Css</span>
-                    </div>
-                    <div className='content js'>
-                        <img src={js} alt="js" />
-                        <span>JavaScript</span>
-                    </div>
-                    <div className='content sass'>
-                        <img src={sass} alt="sass" />
-                        <span>Sass</span>
-                    </div>
+                    {skillContent1.map((item) => (
+                        <div key={item.id} className={`content ${item.css}`}>
+                            <img src={item.img} alt={item.name} />
+                            <span>{item.name}</span>
+                        </div>
+                    ))}
                 </div>
                 <div className={`framework ${getScrollY > 2000 ? 'animationSlidePrev' : ''}`}>
-                    <div className='content nodejs'>
-                        <img src={nodejs} alt="nodejs" />
-                        <span>NodeJs</span>
-                    </div>
-                    <div className='content react'>
-                        <img src={react} alt="react" />
-                        <span>React</span>
-                    </div>
-                    <div className='content expressjs'>
-                        <img src={expressjs} alt="expressjs" />
-                        <span>ExpressJs</span>
-                    </div>
-                    <div className='content mongodb'>
-                        <img src={mongodb} alt="mongodb" />
-                        <span>Mongodb</span>
-                    </div>
+                {skillContent2.map((item) => (
+                        <div key={item.id} className={`content ${item.css}`}>
+                            <img src={item.img} alt={item.name} />
+                            <span>{item.name}</span>
+                        </div>
+                    ))}
                 </div>
                 <button className="btn-scrollDown" onClick={scrollToProject} type='button'>My Project</button>
             </Element>
             <Element className='about-my-project'>
                 <h3 className={getScrollY > 2800 ? 'animationFlyInDelay0' : ''}>My <span>Project</span></h3>
                 <div className='project-content'>
-                    <div className={`content ${getScrollY > 2800 ? 'animationFlyInDelay0' : ''}`}>
-                        <img src={phongBlog} alt="phongBlog" />
-                        <p className='des'>Trang được tạo </p>
-                        <p className='technology'><span>Technologies used: ReactJs</span></p>
-                        <div className='linkProject'>
-                            <a href="localhost:3000/about">See Live</a>
-                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
+                    {projectContent.map((item) => (
+                        <div key={item.id} className={`content ${getScrollY > 2800 ? 'animationFlyInDelay0' : ''}`}>
+                            <img src={item.img} alt="phongBlog" />
+                            <p className='des'>{item.des}</p>
+                            <p className='technology'><span>Technologies used: {item.tech}</span></p>
+                            <div className='linkProject'>
+                                <a target="_blank" rel="noreferrer" href={item.linkLive}>See Live</a>
+                                <a className="gitHub" target="_blank" rel="noreferrer" href={item.linkGitHub}>Source Code</a>
+                            </div>
                         </div>
-                    </div>
-                    <div className={`content ${getScrollY > 2800 ? 'animationFlyInDelay1' : ''}`}>
-                        <img src={phongBlog} alt="phongBlog" />
-                        <p className='des'>Trang được tạo </p>
-                        <p className='technology'><span>Technologies used: ReactJs</span></p>
-                        <div className='linkProject'>
-                            <a href="localhost:3000/about">See Live</a>
-                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
-                        </div>
-                    </div>
-                    <div className={`content ${getScrollY > 2800 ? 'animationFlyInDelay2' : ''}`}>
-                        <img src={phongBlog} alt="phongBlog" />
-                        <p className='des'>Trang được tạo </p>
-                        <p className='technology'><span>Technologies used: ReactJs</span></p>
-                        <div className='linkProject'>
-                            <a href="localhost:3000/about">See Live</a>
-                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div className='project-content'>
-                    <div className={`content ${getScrollY > 3000 ? 'animationFlyInDelay0' : ''}`}>
-                        <img src={phongBlog} alt="phongBlog" />
-                        <p className='des'>Trang được tạo </p>
-                        <p className='technology'><span>Technologies used: ReactJs</span></p>
-                        <div className='linkProject'>
-                            <a href="localhost:3000/about">See Live</a>
-                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
-                        </div>
-                    </div>
-                    <div className={`content ${getScrollY > 3000 ? 'animationFlyInDelay1' : ''}`}>
-                        <img src={phongBlog} alt="phongBlog" />
-                        <p className='des'>Trang được tạo </p>
-                        <p className='technology'><span>Technologies used: ReactJs</span></p>
-                        <div className='linkProject'>
-                            <a href="localhost:3000/about">See Live</a>
-                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
-                        </div>
-                    </div>
-                    <div className={`content ${getScrollY > 3000 ? 'animationFlyInDelay2' : ''}`}>
-                        <img src={phongBlog} alt="phongBlog" />
-                        <p className='des'>Trang được tạo </p>
-                        <p className='technology'><span>Technologies used: ReactJs</span></p>
-                        <div className='linkProject'>
-                            <a href="localhost:3000/about">See Live</a>
-                            <a className="gitHub" href="localhost:3000/about">Source Code</a>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </Element>
             <Element className='about-my-contact'>
