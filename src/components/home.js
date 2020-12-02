@@ -68,7 +68,7 @@ const Home = ({ location }) => {
                 <h1>&lt;&#8725; Xin chào các bạn&gt;</h1>
                 <h2>&lt;&#8725; Cùng tìm hiểu các thông tin về IT qua blog này nhé&gt;</h2>
                 <h3>&lt;&#8725; More...&gt;</h3>
-                <p className="arrowDown">&#8595;</p>
+                <p onClick={scrollToContent} className="arrowDown">&#8595;</p>
             </div>
             <div className="content">
                 <h3>Thông tin về công nghệ thông tin</h3>

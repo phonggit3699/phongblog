@@ -14,14 +14,7 @@ const URL_API_COUNT = "https://phongallpostapi.herokuapp.com/api/countPost";
 
 
 export async function getPostFromAPI(offset) {
-    const respones = await axios({
-        method: 'POST',
-        url: URL_API,
-        headers: {
-            'content-type': 'application/json'
-        },
-        data: JSON.stringify(offset)
-    });
+    const respones = await axios.get(URL_API+'/'+ offset.skip + '/' + offset.limit);
     return respones;
     
 }
@@ -51,27 +44,31 @@ export async function createNewPostAPI(specificPost) {
 }
 
 
-export async function authLoginAPI(data) {
-
-    const status = await fetch(URL_API_LOGIN, {
-        method: "POST",
+export async function authLoginAPI(dataAuth) {
+    
+    const status = await axios({
+        method: 'POST',
+        url: URL_API_LOGIN,
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(data)
+        data: JSON.stringify(dataAuth)
     });
-    return status.json();
+
+    return status;
 }
 
 
-export async function authSignUpAPI(data) {
+export async function authSignUpAPI(dataAuth) {
 
-    const status = await fetch(URL_API_SIGNUP, {
-        method: "POST",
+    const status = await axios({
+        method: 'POST',
+        url: URL_API_SIGNUP,
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(data)
+        data: JSON.stringify(dataAuth)
     });
-    return status.json();
+
+    return status;
 }

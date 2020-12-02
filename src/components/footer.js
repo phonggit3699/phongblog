@@ -1,10 +1,10 @@
 import './css/footer.css';
-import React, {useState} from 'react'
-import fb from './images/fb.png';
-import ins from './images/ins.png';
-import ytb from './images/ytb.png';
-import github from './images/github.png';
-import gmail from './images/gmail.png';
+import React, {useState, useEffect} from 'react'
+import fb from './images/fbimg.png';
+import ins from './images/insimg.png';
+import ytb from './images/ytbimg.png';
+import github from './images/githubimg.png';
+import gmail from './images/gmailimg.png';
 import { animateScroll as scroll } from 'react-scroll';
 
 const Footer = () => {
@@ -15,16 +15,22 @@ const Footer = () => {
         document.execCommand('copy',true, 'phamvanphong3699@gmail.com');
         alert('Gmail copied to clipboard');
     };
- 
-    const stickyScrollTopF = () => {
-        if (window.scrollY >= 700) {
-            setStickyScrollTop(true);
-
-        } else {
-            setStickyScrollTop(false)
+    
+    useEffect(() => {
+        const stickyScrollTopF = () => {
+            if (window.scrollY >= 700) {
+                setStickyScrollTop(true);
+    
+            } else {
+                setStickyScrollTop(false)
+            }
         }
-    }
-    window.addEventListener('scroll', stickyScrollTopF);
+        window.addEventListener('scroll', stickyScrollTopF);
+        return () => {
+            window.removeEventListener('scroll', stickyScrollTopF);
+        }
+    }, [])
+
     const scrollToTop = () => {
         scroll.scrollToTop({
             duration: 800,

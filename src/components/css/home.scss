@@ -28,6 +28,7 @@
             font-size: 2rem;
             animation: down infinite linear;
             animation-duration: 1.5s;
+            cursor: pointer;
         }
     }
     // Content
@@ -63,7 +64,7 @@
         transform: translateY(0);
     }
     to {
-        transform: translateY(150px);
+        transform: translateY(100px);
     }
 }
 

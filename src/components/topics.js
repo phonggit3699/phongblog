@@ -6,7 +6,7 @@ const Topics = () =>{
     }, []);
     return(
         <div>
-            <h1>Chức năng đang được phát triển ahihi</h1>
+            <h1>This will come soon</h1>
         </div>
 
     )

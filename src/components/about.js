@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './css/about.css';
 import { scroller, Element } from 'react-scroll';
 import cat from './images/cat.jpg';
-import star from './images/star.png';
-import js from './images/js.png';
-import html5 from './images/html5.png';
-import css3 from './images/css3.png';
-import nodejs from './images/nodejs.png';
+import star from './images/starimg.png';
+import js from './images/jsimg.png';
+import html5 from './images/htmlimg.png';
+import css3 from './images/cssImg.png';
+import nodejs from './images/nodejsimg.png';
 import react from './images/react.png';
-import expressjs from './images/expressjs.png';
-import sass from './images/sass.png';
-import mongodb from './images/mongodb.png';
+import expressjs from './images/expressImg.png';
+import sass from './images/sassimg.png';
+import mongodb from './images/mongodbimg.png';
 import phongBlog from './images/phongBlog.jpg';
 import todoList from './images/todoList.jpg';
 import postApi from './images/postApi.jpg';
-
-
-
 
 const About = () => {
     const [getScrollY, setScrollY] = useState(0);
@@ -183,7 +180,6 @@ const About = () => {
         }
     ];
 
-
     return (
         <div className="about">
             <Element className='about-banner'>
@@ -274,7 +270,7 @@ const About = () => {
                     ))}
                 </div>
                 <div className={`framework ${getScrollY > 2000 ? 'animationSlidePrev' : ''}`}>
-                {skillContent2.map((item) => (
+                    {skillContent2.map((item) => (
                         <div key={item.id} className={`content ${item.css}`}>
                             <img src={item.img} alt={item.name} />
                             <span>{item.name}</span>
@@ -289,7 +285,7 @@ const About = () => {
                     {projectContent.map((item) => (
                         <div key={item.id} className={`content ${getScrollY > 2800 ? 'animationFlyInDelay0' : ''}`}>
                             <img src={item.img} alt="phongBlog" />
-                            <p className='des'>{item.des}</p>
+                            {/* <p className='des'>{item.des}</p> */}
                             <p className='technology'><span>Technologies used: {item.tech}</span></p>
                             <div className='linkProject'>
                                 <a target="_blank" rel="noreferrer" href={item.linkLive}>See Live</a>
@@ -307,6 +303,7 @@ const About = () => {
             </Element>
         </div>
     )
+
 }
 
 export default About;

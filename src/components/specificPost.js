@@ -23,9 +23,6 @@ const SpecificPost = () => {
 
     }, []);
 
-    console.log(specificPost.paragraph1);
-
-
     const dateAt = new Date(specificPost.date).toLocaleDateString();
 
     return (

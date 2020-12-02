@@ -32,7 +32,7 @@ const LoginForm = ({ location }) => {
             };
             setLoading(true);
             const authLogin = await authLoginAPI(data);
-            setCheck(authLogin);
+            setCheck(authLogin.data);
             setLoading(false);
         }
         catch (error) {

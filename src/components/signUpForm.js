@@ -22,12 +22,12 @@ const SignUpForm = () => {
         try {
             HandleSubmit();
             if (Object.keys(errors).length !== 0) {
-                setLoading(false); console.log('loi roi'); return
+                setLoading(false); return
             };
             setLoading(true)
             const authLogin = await authSignUpAPI(data);
             setLoading(false);
-            setCheck(authLogin)
+            setCheck(authLogin.data)
         }
         catch (error) {
             setLoading(false);

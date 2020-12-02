@@ -44,6 +44,7 @@
           animation: down infinite linear;
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
+  cursor: pointer;
 }
 
 .home-container .content {
@@ -90,8 +91,8 @@
             transform: translateY(0);
   }
   to {
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
   }
 }
 
@@ -101,8 +102,8 @@
             transform: translateY(0);
   }
   to {
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
   }
 }
 
