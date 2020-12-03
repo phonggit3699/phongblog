@@ -15,13 +15,21 @@
 .specificPost-container img {
   max-width: 100%;
   text-align: center;
+  margin-top: 2rem;
+}
+
+.specificPost-container pre {
+  background-color: #2D2D2D;
+}
+
+.specificPost-container pre code {
+  color: #999999;
 }
 
 .specificPost-container p {
   text-indent: 2rem;
   text-align: justify;
   margin-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .specificPost-container .inforPost {

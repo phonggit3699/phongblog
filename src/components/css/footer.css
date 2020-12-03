@@ -64,9 +64,10 @@
   border-radius: 50%;
   display: none;
   font-size: 2rem;
-  -webkit-box-shadow: 0 0 14px #888888;
-          box-shadow: 0 0 14px #888888;
+  -webkit-box-shadow: 0 0 5px #888888;
+          box-shadow: 0 0 5px #888888;
   outline: none;
+  background-color: white;
 }
 
 .footer .scrollTop:hover {

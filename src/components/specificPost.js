@@ -23,6 +23,16 @@ const SpecificPost = () => {
 
     }, []);
 
+
+    function createMarkup(html) {
+        return { __html: html };
+    }
+
+    const usingHtmlInDB = function MyComponent(html) {
+        return <div dangerouslySetInnerHTML={createMarkup(html)}/>;
+    }
+
+
     const dateAt = new Date(specificPost.date).toLocaleDateString();
 
     return (
@@ -32,13 +42,13 @@ const SpecificPost = () => {
             <p>{specificPost.des}</p>
             <img src={specificPost.img} alt='ImgSpecificPost' />
             <h3>{specificPost.heading1}</h3>
-            <p>{specificPost.paragraph1}</p>
-            {specificPost.img2 && <img src={specificPost.img2} alt='ImgSpecificPost'/>}
+            {usingHtmlInDB(specificPost.paragraph1)}
+            {specificPost.img2 && <img src={specificPost.img2} alt='ImgSpecificPost' />}
             {specificPost.heading2 && <h3 >{specificPost.heading2}</h3>}
-            {specificPost.paragraph2 && <p>{specificPost.paragraph2}</p>}
-            {specificPost.img3 && <img src={specificPost.img3} alt='ImgSpecificPost'/>}
+            {usingHtmlInDB(specificPost.paragraph2)}
+            {specificPost.img3 && <img src={specificPost.img3} alt='ImgSpecificPost' />}
             {specificPost.heading3 && <h3 >{specificPost.heading3}</h3>}
-            {specificPost.paragraph3 && <p>{specificPost.paragraph3}</p>}
+            {usingHtmlInDB(specificPost.paragraph3)}
             <div className="inforPost">
                 <span>{`Tác giả: ${specificPost.author}`} </span>
                 <span>{dateAt} </span>
