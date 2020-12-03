@@ -72,7 +72,7 @@ const About = () => {
             img: phongBlog,
             des: "Trang được tạo ra nhằm mục đích showcase",
             tech: "ReactJs",
-            linkLive: "localhost:3000/about",
+            linkLive: "https://fongblog-3699.web.app",
             linkGitHub: "https://github.com/phonggit3699/phongblog",
 
         },
@@ -284,7 +284,7 @@ const About = () => {
                 <div className='project-content'>
                     {projectContent.map((item) => (
                         <div key={item.id} className={`content ${getScrollY > 2800 ? 'animationFlyInDelay0' : ''}`}>
-                            <img src={item.img} alt="phongBlog" />
+                            <a href={item.linkLive} target="_blank" rel="noreferrer" className='imgLink'><img src={item.img} alt="phongBlog" /></a>
                             {/* <p className='des'>{item.des}</p> */}
                             <p className='technology'><span>Technologies used: {item.tech}</span></p>
                             <div className='linkProject'>
