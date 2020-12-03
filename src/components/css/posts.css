@@ -25,7 +25,7 @@
   height: 15rem;
 }
 
-.posts-container .img-des .des {
+.posts-container .img-des div {
   margin-left: 20px;
   text-align: justify;
   max-height: 216px;
@@ -46,7 +46,7 @@
     margin-top: 1rem;
     width: 100%;
   }
-  .posts-container .img-des .des {
+  .posts-container .img-des div {
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-top: 2rem;
@@ -67,7 +67,7 @@
     margin-top: 1rem;
     width: 100%;
   }
-  .posts-container .img-des .des {
+  .posts-container .img-des div {
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-top: 2rem;

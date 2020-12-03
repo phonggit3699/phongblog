@@ -4,8 +4,10 @@
   margin-top: 2rem;
 }
 
-.specificPost-container h2 {
+.specificPost-container .title {
   text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .specificPost-container h3 {

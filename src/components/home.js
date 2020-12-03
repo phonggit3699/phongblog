@@ -51,7 +51,8 @@ const Home = ({ location }) => {
         }
         getTotalPostFromAPIF();
         document.title = "Home | FongBlog"
-    }, [])
+    }, []);
+
 
     const scrollToContent = () => {
         scroller.scrollTo('content', {

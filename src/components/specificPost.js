@@ -38,8 +38,8 @@ const SpecificPost = () => {
     return (
         <div className="specificPost-container">
             {viewSpinner ? <Spinner /> : ''}
-            <h2>{specificPost.title}</h2>
-            <p>{specificPost.des}</p>
+            <h2 className='title'>{specificPost.title}</h2>
+            {usingHtmlInDB(specificPost.des)}
             <img src={specificPost.img} alt='ImgSpecificPost' />
             <h3>{specificPost.heading1}</h3>
             {usingHtmlInDB(specificPost.paragraph1)}
