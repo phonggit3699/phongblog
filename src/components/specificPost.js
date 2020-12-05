@@ -1,15 +1,28 @@
+import './css/specificPost.css';
 import React, { useState, useEffect } from 'react';
 import { getSpecificPostFromAPI } from '../API';
 import Spinner from './spinner';
 import { useRouteMatch } from "react-router-dom";
-import './css/specificPost.css';
-const SpecificPost = () => {
+import RelatedPosts from './relatedPosts'
+const SpecificPost = ({ history }) => {
 
     const match = useRouteMatch();
 
     const [specificPost, setSpecificPost] = useState([]);
 
     const [viewSpinner, setViewSpninner] = useState(true);
+
+    useEffect(() => {
+        const unlisten = history.listen(() => {
+            window.scrollTo({
+                top: 0
+            });
+        });
+        return () => {
+            unlisten();
+        }
+    }, []);
+
 
     useEffect(() => {
         async function getSpecificPostFromAPIF() {
@@ -21,7 +34,7 @@ const SpecificPost = () => {
         }
         getSpecificPostFromAPIF();
 
-    }, []);
+    }, [match.params.id]);
 
 
     function createMarkup(html) {
@@ -29,7 +42,7 @@ const SpecificPost = () => {
     }
 
     const usingHtmlInDB = function MyComponent(html) {
-        return <div dangerouslySetInnerHTML={createMarkup(html)}/>;
+        return <div dangerouslySetInnerHTML={createMarkup(html)} />;
     }
 
 
@@ -41,19 +54,13 @@ const SpecificPost = () => {
             <h2 className='title'>{specificPost.title}</h2>
             {usingHtmlInDB(specificPost.des)}
             <img src={specificPost.img} alt='ImgSpecificPost' />
-            <h3>{specificPost.heading1}</h3>
-            {usingHtmlInDB(specificPost.paragraph1)}
-            {specificPost.img2 && <img src={specificPost.img2} alt='ImgSpecificPost' />}
-            {specificPost.heading2 && <h3 >{specificPost.heading2}</h3>}
-            {usingHtmlInDB(specificPost.paragraph2)}
-            {specificPost.img3 && <img src={specificPost.img3} alt='ImgSpecificPost' />}
-            {specificPost.heading3 && <h3 >{specificPost.heading3}</h3>}
-            {usingHtmlInDB(specificPost.paragraph3)}
+            {usingHtmlInDB(specificPost.post)}
+            <small>Thể loại: {specificPost.category}</small>
             <div className="inforPost">
                 <span>{`Tác giả: ${specificPost.author}`} </span>
                 <span>{dateAt} </span>
             </div>
-
+            <RelatedPosts category={specificPost.category} />
             <div className="fb-comments fb-chat" data-href="http://localhost:3000/page" data-numposts="3" data-width="100%"></div>
 
         </div>

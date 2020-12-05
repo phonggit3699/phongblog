@@ -27,7 +27,7 @@ function App() {
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
                     <Route path="/topics" component={Topics} />
-                    <Route path="/page/:id" component={specific} />
+                    <Route path="/post/:id" component={specific} />
                     <Route path="/login" component={LoginForm} />
                     <Route path="/signup" component={SignUpForm} />
                 </Switch>

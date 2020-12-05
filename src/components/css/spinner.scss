@@ -1,6 +1,4 @@
-
-
-    $primary: #08aeea;
+$primary: #08aeea;
 .theme {
     display: block;
     position: absolute;
@@ -30,15 +28,13 @@
         border: 3px dashed $primary;
         border-left: 3px solid transparent;
         border-bottom: 3px solid transparent;
-        -webkit-animation: dashed 1s linear infinite;
         animation: dashed 1s linear infinite;
     }
     .dashed-loading:after {
         z-index: 10;
-        border: 3px solid  $primary;
+        border: 3px solid $primary;
         border-left: 3px solid transparent;
         border-bottom: 3px solid transparent;
-        -webkit-animation: dashed 1s ease infinite;
         animation: dashed 1s ease infinite;
     }
     @keyframes dashed {
@@ -46,11 +42,4 @@
             transform: translate(-50%, -50%) rotate(360deg);
         }
     }
-}
-
-.hiddenSpinner{
-    display: none ;
-}
-.showUp{
-    display: block;
 }

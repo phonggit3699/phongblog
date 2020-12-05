@@ -18,9 +18,11 @@
   max-width: 100%;
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .specificPost-container pre {
+  padding: 1rem;
   background-color: #2D2D2D;
 }
 
@@ -51,6 +53,7 @@
 .specificPost-container .fb-chat {
   max-width: 100%;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 @media only screen and (max-width: 770px) {

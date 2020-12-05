@@ -24,6 +24,7 @@ const Home = ({ location }) => {
     const [offset, setOffset] = useState({
         skip: 0, limit: 10
     });
+
     const query = new URLSearchParams(location.search);
     const page = parseInt(query.get('page') || '1', 10);
     //Number '10' is limited of page
@@ -55,7 +56,7 @@ const Home = ({ location }) => {
 
 
     const scrollToContent = () => {
-        scroller.scrollTo('content', {
+        scroller.scrollTo('title', {
             duration: 1000,
             delay: 0,
             smooth: 'easeInOutQuart'
@@ -76,7 +77,7 @@ const Home = ({ location }) => {
                 <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
                 <div className="items">
                     {posts.map((post) => (
-                        <Link to={`/page/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></Link>
+                        <Link to={`/post/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></Link>
                     ))}
                 </div>
                 <div className={`Pagination ${useStyles.root}`}>

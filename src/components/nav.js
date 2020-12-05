@@ -3,7 +3,6 @@ import './css/nav.css';
 import { NavLink } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import AuthContext from '../authContext';
-import { animateScroll as scroll } from 'react-scroll';
 import { useLocation } from "react-router-dom";
 
 
@@ -35,11 +34,8 @@ const Nav = () => {
 
     const showUpNavAndScrollTop = () => {
         setShow(!show);
-        scroll.scrollToTop({
-            duration: 800,
-            delay: 0,
-            smooth: 'easeOutQuint',
-            spy: true
+        window.scrollTo({
+            top: 0
         });
     }
 
@@ -51,9 +47,6 @@ const Nav = () => {
         authContext.setLoggedIn(false);
     }
     const location = useLocation();
-
-
-
 
     return (
         <div>

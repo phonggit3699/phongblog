@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect} from 'react';
 import './css/about.css';
 import { scroller, Element } from 'react-scroll';
 import cat from './images/cat.jpg';
