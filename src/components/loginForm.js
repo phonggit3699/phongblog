@@ -21,6 +21,7 @@ const LoginForm = ({ location }) => {
 
     useEffect(() => {
         document.title = "Login | FongBlog"
+        window.scrollTo(0, 0);
     }, []);
 
     const onSubmit = useCallback(async (data) => {
@@ -39,7 +40,7 @@ const LoginForm = ({ location }) => {
             setLoading(false);
         }
     }, [values]);
-    
+
     if (check.status === 'sucess' && values.remember) {
         cookies.set('utokenC', check.cookie, { path: '/', expires: dateCookie });
         cookies.set('userName', check.username, { path: '/', expires: dateCookie });

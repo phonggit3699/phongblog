@@ -57,7 +57,17 @@
         margin-top: 3rem;
     }
 
+    .displayNone{
+        opacity: 0;
+    }
+    
+    .displayBlock{
+        opacity: 1;
+    }
 }
+
+
+
 
 @keyframes down {
     from {

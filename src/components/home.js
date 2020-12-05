@@ -36,7 +36,7 @@ const Home = ({ location }) => {
     }, [page])
 
     useEffect(() => {
-        async function getPostFromAPIF(offset){
+        async function getPostFromAPIF(offset) {
             const res = await getPostFromAPI(offset)
             setPost(res.data);
             setViewSpninner(false);
@@ -45,18 +45,19 @@ const Home = ({ location }) => {
     }, [page]);
 
     useEffect(() => {
-        async function getTotalPostFromAPIF(){
+        window.scrollTo(0, 0);
+        document.title = "Home | FongBlog"
+        async function getTotalPostFromAPIF() {
             const num = await getTotalPostFromAPI()
             const p = Math.ceil(parseInt(num.data) / offset.limit)
             setpPage(p);
         }
         getTotalPostFromAPIF();
-        document.title = "Home | FongBlog"
     }, []);
 
 
     const scrollToContent = () => {
-        scroller.scrollTo('title', {
+        scroller.scrollTo('content', {
             duration: 1000,
             delay: 0,
             smooth: 'easeInOutQuart'
@@ -66,35 +67,37 @@ const Home = ({ location }) => {
     return (
         <div className='home-container'>
             {viewSpinner ? <Spinner /> : ''}
-            <div className='banner'>
-                <h1>&lt;&#8725; Xin chào các bạn&gt;</h1>
-                <h2>&lt;&#8725; Cùng tìm hiểu các thông tin về IT qua blog này nhé&gt;</h2>
-                <h3>&lt;&#8725; More...&gt;</h3>
-                <p onClick={scrollToContent} className="arrowDown">&#8595;</p>
-            </div>
-            <div className="content">
-                <h3>Thông tin về công nghệ thông tin</h3>
-                <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
-                <div className="items">
-                    {posts.map((post) => (
-                        <Link to={`/post/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></Link>
-                    ))}
+            <div className={viewSpinner ? 'displayNone' : 'displayBlock'}>
+                <div className='banner'>
+                    <h1>&lt;&#8725; Xin chào các bạn&gt;</h1>
+                    <h2>&lt;&#8725; Cùng tìm hiểu các thông tin về IT qua blog này nhé&gt;</h2>
+                    <h3>&lt;&#8725; More...&gt;</h3>
+                    <p onClick={scrollToContent} className="arrowDown">&#8595;</p>
                 </div>
-                <div className={`Pagination ${useStyles.root}`}>
-                    <Pagination
-                        variant="outlined"
-                        shape="rounded"
-                        page={page}
-                        count={pPage}
-                        onClick={scrollToContent}
-                        renderItem={(item) => (
-                            <PaginationItem
-                                component={Link}
-                                to={`/${item.page === 1 ? '' : `?page=${item.page}`}`}
-                                {...item}
-                            />
-                        )}
-                    />
+                <div className="content">
+                    <h3>Thông tin về công nghệ thông tin</h3>
+                    <span>Chúc bạn một ngày tuyệt vời ❤🧡💛💚💙💜🤎!</span>
+                    <div className="items">
+                        {posts.map((post) => (
+                            <Link to={`/post/${post._id}`} key={post._id} className="specificPost"><Posts post={post} /></Link>
+                        ))}
+                    </div>
+                    <div className={`Pagination ${useStyles.root}`}>
+                        <Pagination
+                            variant="outlined"
+                            shape="rounded"
+                            page={page}
+                            count={pPage}
+                            onClick={scrollToContent}
+                            renderItem={(item) => (
+                                <PaginationItem
+                                    component={Link}
+                                    to={`/${item.page === 1 ? '' : `?page=${item.page}`}`}
+                                    {...item}
+                                />
+                            )}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,19 +2,20 @@ import './css/relatedPosts.css'
 import React, { useState, useEffect } from 'react';
 import { getCategoryPostFromAPI } from '../API';
 import { Link } from "react-router-dom";
-import { animateScroll as scroll } from 'react-scroll';
 
 const RelatedPosts = ({ category }) => {
+
+    const getCategory = category;
 
     const [getRelatedPosts, setRelatedPosts] = useState([]);
 
     useEffect(() => {
         async function getCategoryPostFromAPIF() {
-            const res = await getCategoryPostFromAPI(category);
+            const res = await getCategoryPostFromAPI(getCategory);
             setRelatedPosts(res.data);
         }
         getCategoryPostFromAPIF();
-    }, [category])
+    }, [getCategory])
 
     return (
         <div className='relatedPosts-container'>

@@ -32,14 +32,6 @@ const Nav = () => {
         setShow(!show);
     };
 
-    const showUpNavAndScrollTop = () => {
-        setShow(!show);
-        window.scrollTo({
-            top: 0
-        });
-    }
-
-
     const logOut = () => {
         cookies.remove('utokenC');
         cookies.remove('utokenS');
@@ -56,13 +48,13 @@ const Nav = () => {
                     <nav className={show ? 'navShow' : 'navHidden'} >
                         <ul>
                             <li>
-                                <NavLink exact activeClassName="active" to="/" onClick={showUpNavAndScrollTop}>Home</NavLink>
+                                <NavLink exact activeClassName="active" to="/" onClick={showUpNav}>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName="active" to="/about" onClick={showUpNavAndScrollTop}>About</NavLink>
+                                <NavLink activeClassName="active" to="/about" onClick={showUpNav}>About</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName="active" to="/topics" onClick={showUpNavAndScrollTop}>Topics</NavLink>
+                                <NavLink activeClassName="active" to="/topics" onClick={showUpNav}>Topics</NavLink>
                             </li>
                             <li>
 

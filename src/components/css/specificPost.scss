@@ -1,5 +1,4 @@
 .specificPost-container {
-
     width: 750px;
     margin: 0 auto;
     margin-top: 2rem;
@@ -40,6 +39,14 @@
         max-width: 100%;
         margin-top: 3rem;
         margin-bottom: 3rem;
+    }
+
+    .displayNone{
+        display: none;
+    }
+    
+    .displayBlock{
+        display: block;
     }
 }
 

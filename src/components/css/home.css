@@ -85,6 +85,14 @@
   margin-top: 3rem;
 }
 
+.home-container .displayNone {
+  opacity: 0;
+}
+
+.home-container .displayBlock {
+  opacity: 1;
+}
+
 @-webkit-keyframes down {
   from {
     -webkit-transform: translateY(0);

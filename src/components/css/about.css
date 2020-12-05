@@ -671,6 +671,14 @@
           animation: Ring 1s infinite;
 }
 
+.about .displayNone {
+  opacity: 0;
+}
+
+.about .displayBlock {
+  opacity: 1;
+}
+
 .hiddenBtn {
   display: none;
 }
