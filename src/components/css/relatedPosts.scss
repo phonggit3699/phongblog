@@ -1,0 +1,35 @@
+.relatedPosts-container{
+    margin-top: 4rem;
+    width: 100%;
+    margin-bottom: 3rem;
+    &-content{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        .box{
+            text-decoration: none;
+            color: rgb(0, 170, 255);
+            margin-top: 1rem;
+            &:hover{
+                color: blue;
+            }
+            img{
+                width: 168px;
+                height: 94px;
+                margin: 0;
+                
+            }
+            .relatedTitle{
+                font-size: 14px;
+                text-indent: 0;
+                max-width: 168px;
+                text-align: left;
+                margin: 0;
+                margin-top: 0.3rem;
+            }
+        }
+    }
+
+}

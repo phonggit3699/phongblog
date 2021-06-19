@@ -1,0 +1,81 @@
+.footer {
+  background-color: black;
+}
+
+.footer .aboutInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px #a29696 solid;
+}
+
+.footer .aboutInfo h5 {
+  color: white;
+  font-weight: inherit;
+  font-size: 1rem;
+}
+
+.footer .share {
+  padding-top: 1.5rem;
+}
+
+.footer .share .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .share .image a img {
+  width: 40px;
+}
+
+.footer .share .image img {
+  width: 40px;
+  cursor: pointer;
+}
+
+.footer .share textarea {
+  background-color: black;
+  border: none;
+  -webkit-transform: translateX(-4rem);
+          transform: translateX(-4rem);
+}
+
+.footer .scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  font-size: 2rem;
+  -webkit-box-shadow: 0 0 5px #888888;
+          box-shadow: 0 0 5px #888888;
+  outline: none;
+  background-color: white;
+}
+
+.footer .scrollTop:hover {
+  background-color: black;
+  color: white;
+}
+
+.footer .stickyScrollTop {
+  display: block;
+}
+/*# sourceMappingURL=footer.css.map */

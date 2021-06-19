@@ -1,0 +1,96 @@
+.specificPost-container {
+  width: 750px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.specificPost-container .title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.specificPost-container h3 {
+  margin-top: 2rem;
+}
+
+.specificPost-container img {
+  max-width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.specificPost-container pre {
+  padding: 1rem;
+  background-color: #2D2D2D;
+}
+
+.specificPost-container pre code {
+  color: #999999;
+}
+
+.specificPost-container p {
+  text-indent: 2rem;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+.specificPost-container .inforPost {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.specificPost-container .fb-chat {
+  max-width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.specificPost-container .displayNone {
+  display: none;
+}
+
+.specificPost-container .displayBlock {
+  display: block;
+}
+
+@media only screen and (max-width: 770px) {
+  .specificPost-container {
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .specificPost-container {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 461px) {
+  .specificPost-container {
+    width: 380px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .specificPost-container {
+    width: 330px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .specificPost-container {
+    width: 250px;
+  }
+}
+/*# sourceMappingURL=specificPost.css.map */

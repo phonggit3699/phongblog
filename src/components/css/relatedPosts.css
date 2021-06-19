@@ -1,0 +1,46 @@
+.relatedPosts-container {
+  margin-top: 4rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.relatedPosts-container-content {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.relatedPosts-container-content .box {
+  text-decoration: none;
+  color: #00aaff;
+  margin-top: 1rem;
+}
+
+.relatedPosts-container-content .box:hover {
+  color: blue;
+}
+
+.relatedPosts-container-content .box img {
+  width: 168px;
+  height: 94px;
+  margin: 0;
+}
+
+.relatedPosts-container-content .box .relatedTitle {
+  font-size: 14px;
+  text-indent: 0;
+  max-width: 168px;
+  text-align: left;
+  margin: 0;
+  margin-top: 0.3rem;
+}
+/*# sourceMappingURL=relatedPosts.css.map */

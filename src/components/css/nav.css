@@ -1,0 +1,300 @@
+header {
+  background-color: black;
+  height: 4rem;
+  width: 100%;
+  z-index: 3;
+}
+
+header .logo-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo-nav .logo {
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .logo-nav .logo h1 {
+  font-size: 2rem;
+}
+
+header .logo-nav nav {
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo-nav nav > ul {
+  margin-left: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  list-style: none;
+}
+
+header .logo-nav nav > ul li {
+  position: relative;
+}
+
+header .logo-nav nav > ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 1.43rem;
+  font-size: 16px;
+}
+
+header .logo-nav nav > ul li a:hover {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+header .logo-nav nav > ul li a:hover ~ .subNav {
+  display: block;
+}
+
+header .logo-nav nav .subNav {
+  position: absolute;
+  bottom: -7.2rem;
+  width: 8.5rem;
+  height: auto;
+  left: 0;
+  text-align: center;
+  display: none;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+header .logo-nav nav .subNav ul {
+  list-style: none;
+}
+
+header .logo-nav nav .subNav ul li {
+  border-bottom: 1px #d1cfcf solid;
+  height: 3rem;
+  padding: 0.8rem 1rem;
+  background-color: white;
+}
+
+header .logo-nav nav .subNav ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 0.5rem;
+  background-color: white;
+}
+
+header .logo-nav nav .subNav ul li:last-child {
+  border-bottom: none;
+}
+
+header .logo-nav nav .subNav ul li button {
+  background-color: white;
+  outline: none;
+}
+
+header .logo-nav nav .subNav ul li:hover {
+  background-color: #f0f2f5;
+}
+
+header .logo-nav nav .subNav ul li:hover a {
+  background-color: #f0f2f5;
+}
+
+header .logo-nav nav .subNav ul li:hover button {
+  background-color: #f0f2f5;
+}
+
+header .logo-nav nav .subNav:hover {
+  display: block;
+}
+
+header .logo-nav .active {
+  padding: 1.43rem;
+  background-color: white;
+  color: black;
+}
+
+header .logo-nav .hambergerButton {
+  position: absolute;
+  top: 0.3rem;
+  right: 2rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  color: white;
+  outline: none;
+  display: none;
+}
+
+.sticky {
+  position: fixed;
+  -webkit-animation: show 0.5s linear;
+          animation: show 0.5s linear;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.clear {
+  clear: both;
+}
+
+@-webkit-keyframes show {
+  from {
+    -webkit-transform: translateY(-101%);
+            transform: translateY(-101%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show {
+  from {
+    -webkit-transform: translateY(-101%);
+            transform: translateY(-101%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  header {
+    position: relative;
+  }
+  header .logo-nav {
+    height: 64px;
+  }
+  header .logo-nav .logo {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  header .logo-nav .logo h1 {
+    font-size: 2rem;
+  }
+  header .logo-nav nav {
+    position: absolute;
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 100%;
+  }
+  header .logo-nav nav ul li {
+    width: 100%;
+  }
+  header .logo-nav nav ul li a {
+    width: 100%;
+  }
+  header .logo-nav nav ul li a:hover ~ .subNav {
+    display: none;
+  }
+  header .logo-nav nav .subNav {
+    display: none;
+  }
+  header .logo-nav .navShow {
+    position: absolute;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    top: 4rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    z-index: 999;
+  }
+  header .logo-nav .navShow ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .logo-nav .navShow ul li {
+    margin: 1.9rem 0;
+    text-align: center;
+  }
+  header .logo-nav .navShow ul li a {
+    padding: 2rem 100vw;
+    text-align: center;
+  }
+  header .logo-nav .navHidden {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: black;
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  header .logo-nav .navHidden ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .logo-nav .navHidden ul li {
+    margin: 1.9rem 0;
+    text-align: center;
+  }
+  header .logo-nav .navHidden ul li a {
+    padding: 2rem 100vw;
+    text-align: center;
+  }
+  header .logo-nav .navHidden ul li a:hover {
+    background-color: none;
+  }
+  header .logo-nav .hambergerButton {
+    display: block;
+  }
+}
+/*# sourceMappingURL=nav.css.map */

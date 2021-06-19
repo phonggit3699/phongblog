@@ -1,0 +1,1448 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+.about-me h3, .about-my-resume h3, .about-my-project h3, .about-my-contact h3 {
+  color: black;
+  text-align: center;
+  margin: 0 auto;
+  display: inline;
+  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.about-me h3 span, .about-my-resume h3 span, .about-my-project h3 span, .about-my-contact h3 span {
+  color: #004cff;
+}
+
+.about-me .content-info-text .btn-scrollDown, .about-my-skill .btn-scrollDown, .about-my-project .btn-scrollDown {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 4%;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  color: rgba(16, 62, 226, 0.823);
+}
+
+.about-me .content-info-text .btn-scrollDown:active, .about-my-skill .btn-scrollDown:active, .about-my-project .btn-scrollDown:active {
+  left: 50%;
+  bottom: 2%;
+}
+
+.about-me .content-info-text .btn-scrollDown:hover, .about-my-skill .btn-scrollDown:hover, .about-my-project .btn-scrollDown:hover {
+  background-color: rgba(16, 62, 226, 0.823);
+  color: white;
+}
+
+.about {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
+
+.about-banner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../images/bannerAbout.jpg");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/bannerAbout.jpg");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-banner-text {
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.about-banner-text h2,
+.about-banner-text h3 {
+  color: white;
+  position: absolute;
+  font-size: 3rem;
+  left: 15%;
+  top: 30%;
+  -webkit-animation: heyo 1s;
+          animation: heyo 1s;
+}
+
+.about-banner-text h2 span,
+.about-banner-text h3 span {
+  color: #004cff;
+  font-weight: 600;
+}
+
+.about-banner-text h3 {
+  top: 48%;
+}
+
+.about-banner .btn-start {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 10%;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 20px;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1.2rem;
+  background-color: #00163f;
+  color: #0084f7;
+}
+
+.about-banner .btn-start:active {
+  left: 50%;
+  bottom: 9%;
+}
+
+.about-banner .btn-start:hover {
+  background-color: rgba(39, 74, 202, 0.442);
+  color: white;
+}
+
+.about-me {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  margin-bottom: 6rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about-me .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 1050px;
+}
+
+.about-me .content-info-img {
+  margin-top: 4rem;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(39, 74, 202, 0.442);
+  border-radius: 10px;
+}
+
+.about-me .content-info-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 0.3rem;
+}
+
+.about-me .content-info-text {
+  width: 500px;
+  height: 500px;
+  -webkit-box-shadow: 0 0 5px #ccc;
+          box-shadow: 0 0 5px #ccc;
+  padding: 0.5rem;
+  margin-top: 4rem;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+.about-me .content-info-text table {
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+.about-me .content-info-text table tbody tr td .info {
+  color: black;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+.about-me .content-info-text table tbody tr td .fullName {
+  color: #004cff;
+}
+
+.about-me .content-info-text table tbody tr td span {
+  margin-left: 1rem;
+  color: #999;
+  font-size: 1.1rem;
+  font-weight: lighter;
+}
+
+.about-me .content-info-text .btnCV {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 12%;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  background-color: #3f65ff;
+  color: black;
+}
+
+.about-me .content-info-text .btnCV:hover {
+  color: white;
+}
+
+.about-my-resume {
+  background-color: black;
+  padding-top: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  padding-bottom: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about-my-resume h3 {
+  color: white;
+  border-color: #004cff;
+}
+
+.about-my-resume-step {
+  position: relative;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.about-my-resume-step .education {
+  border-radius: 10px;
+  padding: 1.5rem;
+  background-color: #222;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.about-my-resume-step .education h4 {
+  font-weight: bolder;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #3e64ff;
+}
+
+.about-my-resume-step .education-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.about-my-resume-step .education-content img {
+  background-color: #3e64ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+.about-my-resume-step .education-content-text {
+  margin-left: 1rem;
+}
+
+.about-my-resume-step .education-content-text h6 {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #3e64ff;
+}
+
+.about-my-resume-step .education-content-text h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.about-my-resume-step .education-content-text h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  line-height: 0;
+}
+
+.about-my-resume-step .education-content-text p {
+  margin-top: 1.5rem;
+  color: #999;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.about-my-resume-step .btn-scrollDown {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 2%;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  color: rgba(16, 62, 226, 0.823);
+  background-color: #363535;
+}
+
+.about-my-resume-step .btn-scrollDown:active {
+  left: 50%;
+  bottom: 1%;
+}
+
+.about-my-resume-step .btn-scrollDown:hover {
+  background-color: rgba(16, 62, 226, 0.823);
+  color: white;
+}
+
+.about-my-skill {
+  margin-top: 4rem;
+  padding-bottom: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.about-my-skill .h3Fake {
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 7.5rem;
+}
+
+.about-my-skill .h3Fake .secondH3,
+.about-my-skill .h3Fake .firstH3 {
+  font-weight: bold;
+  color: #004cff;
+  text-align: center;
+  margin: 0 auto;
+  display: inline;
+  border-bottom: 2px solid rgba(39, 74, 202, 0.442);
+  font-size: 2rem;
+}
+
+.about-my-skill .h3Fake .firstH3 {
+  color: black;
+  border: none;
+  position: relative;
+}
+
+.about-my-skill .h3Fake .firstH3::after {
+  position: absolute;
+  bottom: -3.1%;
+  left: 0;
+  content: "";
+  width: 110%;
+  height: 2.1px;
+  background-color: rgba(39, 74, 202, 0.442);
+}
+
+.about-my-skill .language,
+.about-my-skill .framework {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-my-skill .language .content,
+.about-my-skill .framework .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 0 5px #ccc;
+          box-shadow: 0 0 5px #ccc;
+  border-radius: 20px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.about-my-skill .language .content:hover,
+.about-my-skill .framework .content:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.about-my-skill .language .content span,
+.about-my-skill .framework .content span {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.about-my-skill .language .js,
+.about-my-skill .framework .js {
+  background-color: rgba(253, 246, 36, 0.762);
+  color: #ffa600;
+}
+
+.about-my-skill .language .html,
+.about-my-skill .framework .html {
+  background-color: rgba(255, 145, 0, 0.796);
+  color: #e65100;
+}
+
+.about-my-skill .language .css,
+.about-my-skill .framework .css {
+  background-color: rgba(39, 74, 202, 0.442);
+  color: #0277bd;
+}
+
+.about-my-skill .language .sass,
+.about-my-skill .framework .sass {
+  background-color: rgba(223, 76, 208, 0.442);
+  color: #f06292;
+}
+
+.about-my-skill .framework {
+  margin-top: 3rem;
+}
+
+.about-my-skill .framework .nodejs {
+  background-color: rgba(32, 214, 22, 0.673);
+  color: #2e7d32;
+}
+
+.about-my-skill .framework .react {
+  background-color: rgba(0, 0, 0, 0.673);
+  color: #39c1d7;
+}
+
+.about-my-skill .framework .react img {
+  width: 96px;
+}
+
+.about-my-skill .framework .expressjs {
+  background-color: white;
+  color: black;
+}
+
+.about-my-skill .framework .expressjs img {
+  margin-top: 15px;
+  width: 96px;
+}
+
+.about-my-skill .framework .expressjs span {
+  margin-top: calc(1rem + 25.36px);
+}
+
+.about-my-skill .framework .mongodb {
+  background-color: #5d4037;
+  color: #4cad4f;
+}
+
+.about-my-project {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: black;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+
+.about-my-project h3 {
+  color: white;
+  border-color: #004cff;
+}
+
+.about-my-project .project-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+  width: 100vw;
+}
+
+.about-my-project .project-content .content {
+  margin-top: 3.5rem;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  opacity: 0;
+}
+
+.about-my-project .project-content .content:hover .imgLink img {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  border: 5px solid #004cff;
+}
+
+.about-my-project .project-content .content .imgLink img {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 400px;
+  border: 5px solid #222;
+}
+
+.about-my-project .project-content .content .des {
+  margin: 0;
+  margin-top: 0.8rem;
+  color: white;
+}
+
+.about-my-project .project-content .content .technology {
+  color: white;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.about-my-project .project-content .content .linkProject {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.about-my-project .project-content .content .linkProject a {
+  border: 2px solid #004cff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.5rem;
+  color: #004cff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.about-my-project .project-content .content .linkProject a:hover {
+  background-color: #004cff;
+  color: white;
+}
+
+.about-my-project .project-content .content .linkProject .gitHub {
+  margin-left: 1rem;
+  border: none;
+  border-bottom: 2px solid #222;
+}
+
+.about-my-project .project-content .content .linkProject .gitHub:hover {
+  border-bottom: 2px solid #004cff;
+  background-color: #222;
+  color: #004cff;
+}
+
+.about-my-project .btn-scrollDown {
+  background-color: #222;
+  bottom: 2%;
+}
+
+.about-my-contact {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+  color: black;
+}
+
+.about-my-contact h3 {
+  -webkit-animation: Ring 1s infinite ease;
+          animation: Ring 1s infinite ease;
+}
+
+.about-my-contact h4 {
+  margin-top: 4rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.about-my-contact p {
+  margin: 0;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.about-my-contact p i {
+  -webkit-animation: Ring 1s infinite;
+          animation: Ring 1s infinite;
+}
+
+.about .displayNone {
+  opacity: 0;
+}
+
+.about .displayBlock {
+  opacity: 1;
+}
+
+.hiddenBtn {
+  display: none;
+}
+
+.animationZoomIn {
+  -webkit-animation: zoomIn 1s ease;
+          animation: zoomIn 1s ease;
+}
+
+.animationFlyInDelay0 {
+  -webkit-animation: flyIn 1s ease-in-out forwards;
+          animation: flyIn 1s ease-in-out forwards;
+}
+
+.animationFlyInDelay1 {
+  -webkit-animation: flyIn 1s ease-in-out forwards;
+          animation: flyIn 1s ease-in-out forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.animationFlyInDelay2 {
+  -webkit-animation: flyIn 1s ease-in-out forwards;
+          animation: flyIn 1s ease-in-out forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.animationDropDown {
+  -webkit-animation: dropDown 1s;
+          animation: dropDown 1s;
+}
+
+.animationDropDown2 {
+  -webkit-animation: dropDown2 1s;
+          animation: dropDown2 1s;
+}
+
+@-webkit-keyframes heyo {
+  from {
+    -webkit-transform: translateX(-6rem);
+            transform: translateX(-6rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heyo {
+  from {
+    -webkit-transform: translateX(-6rem);
+            transform: translateX(-6rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes flyIn {
+  from {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flyIn {
+  from {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes dropDown {
+  from {
+    margin-top: -4rem;
+  }
+  to {
+    margin-top: 0.5rem;
+  }
+}
+
+@keyframes dropDown {
+  from {
+    margin-top: -4rem;
+  }
+  to {
+    margin-top: 0.5rem;
+  }
+}
+
+@-webkit-keyframes dropDown2 {
+  from {
+    margin-top: 1rem;
+  }
+  to {
+    margin-top: 3rem;
+  }
+}
+
+@keyframes dropDown2 {
+  from {
+    margin-top: 1rem;
+  }
+  to {
+    margin-top: 3rem;
+  }
+}
+
+.animationSlideNext {
+  -webkit-animation: slideNext 1s;
+          animation: slideNext 1s;
+}
+
+.animationSlideH3 {
+  -webkit-animation: slideNextH3 1s;
+          animation: slideNextH3 1s;
+}
+
+.animationSlideH32 {
+  -webkit-animation: slideNextH32 1s;
+          animation: slideNextH32 1s;
+}
+
+.animationSlidePrev {
+  -webkit-animation: slidePrev 1s;
+          animation: slidePrev 1s;
+}
+
+@-webkit-keyframes slideNextH3 {
+  from {
+    width: 15rem;
+  }
+  to {
+    width: 7.5rem;
+  }
+}
+
+@keyframes slideNextH3 {
+  from {
+    width: 15rem;
+  }
+  to {
+    width: 7.5rem;
+  }
+}
+
+@-webkit-keyframes slideNext {
+  from {
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideNext {
+  from {
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slidePrev {
+  from {
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slidePrev {
+  from {
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes Ring {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+            transform: scale(0.1) rotate(30deg);
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  75% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes Ring {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+            transform: scale(0.1) rotate(30deg);
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  75% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 1805px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    left: 15%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 49%;
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    font-size: 2rem;
+    left: 10%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 37%;
+  }
+  .about-banner .btn-start {
+    padding: 0.5rem 1rem;
+  }
+  .about-me .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-me .content-info-img {
+    width: 800px;
+    height: 800px;
+  }
+  .about-me .content-info-text {
+    width: 800px;
+    height: 800px;
+  }
+  .about-my-project .project-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 4rem;
+    width: 100vw;
+  }
+  .about-my-project .project-content .content {
+    margin-top: 1.5rem;
+  }
+  .about-my-project .project-content .content .imgLink img {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 855px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    font-size: 2rem;
+    left: 10%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 39%;
+  }
+  .about-banner .btn-start {
+    padding: 0.5rem 1rem;
+  }
+  .about-me .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-me .content-info-img {
+    width: 600px;
+    height: 600px;
+  }
+  .about-me .content-info-text {
+    width: 600px;
+    height: 600px;
+  }
+  .about-me .content-info-text .info {
+    display: none;
+  }
+  .about-me .content-info-text .btnCV {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .about-my-project .project-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 4rem;
+    width: 100vw;
+  }
+  .about-my-project .project-content .content .imgLink img {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 600px;
+    border: 5px solid #222;
+  }
+}
+
+@media only screen and (max-width: 555px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    font-size: 2rem;
+    left: 5%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 44%;
+  }
+  .about-banner .btn-start {
+    padding: 0.5rem 1rem;
+  }
+  .about-me .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-me .content-info-img {
+    width: 400px;
+    height: 400px;
+  }
+  .about-me .content-info-text {
+    width: 400px;
+    height: 400px;
+  }
+  .about-me .content-info-text .info {
+    display: none;
+  }
+  .about-me .content-info-text .btnCV {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .about-me .content-info-text .btn-scrollDown {
+    font-size: 0.8rem;
+  }
+  .about-my-resume {
+    padding-bottom: 3rem;
+  }
+  .about-my-resume-step .education-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-my-resume-step .education-content-text {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-resume-step .education-content-text h6 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h4 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h5 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .about-my-skill .h3Fake .secondH3,
+  .about-my-skill .h3Fake .firstH3 {
+    font-size: 2rem;
+  }
+  .about-my-skill .h3Fake .firstH3 {
+    color: black;
+    border: none;
+    position: relative;
+  }
+  .about-my-skill .h3Fake .firstH3::after {
+    position: absolute;
+    bottom: -3%;
+    left: 0;
+    content: "";
+    width: 112%;
+    height: 2.1px;
+    background-color: rgba(39, 74, 202, 0.442);
+  }
+  .about-my-skill .language,
+  .about-my-skill .framework {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .about-my-skill .language .content,
+  .about-my-skill .framework .content {
+    margin-top: 2rem;
+  }
+  .about-my-skill .framework {
+    margin-top: 0;
+  }
+  .about-my-project .project-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 4rem;
+    width: 100vw;
+  }
+  .about-my-project .project-content .content {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .about-my-project .project-content .content .imgLink img {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 400px;
+    border: 5px solid #222;
+  }
+  .about-my-project .project-content .content .des {
+    margin: 0;
+    margin-top: 0.8rem;
+    color: white;
+  }
+  .about-my-project .project-content .content .technology {
+    color: white;
+    margin: 0;
+    margin-top: 0.5rem;
+  }
+  .about-my-project .project-content .content .linkProject {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-project .project-content .content .linkProject a {
+    border: 2px solid #004cff;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: #004cff;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .about-my-project .project-content .content .linkProject a:hover {
+    background-color: #004cff;
+    color: white;
+  }
+  .about-my-project .project-content .content .linkProject .gitHub {
+    margin-left: 1rem;
+    border: none;
+    border-bottom: 2px solid #222;
+  }
+  .about-my-project .project-content .content .linkProject .gitHub:hover {
+    border-bottom: 2px solid #004cff;
+    background-color: #222;
+    color: #004cff;
+  }
+  .about-my-project .btn-scrollDown {
+    bottom: 1%;
+  }
+  .about-my-contact h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 452px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    font-size: 1.8rem;
+    left: 5%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 44%;
+  }
+  .about-banner .btn-start {
+    padding: 0.5rem 1rem;
+  }
+  .about-me .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-me .content-info-img {
+    width: 300px;
+    height: 300px;
+  }
+  .about-me .content-info-text {
+    width: 300px;
+    height: 300px;
+  }
+  .about-me .content-info-text table {
+    border-collapse: separate;
+    border-spacing: 0.8rem;
+  }
+  .about-me .content-info-text table tbody tr td {
+    font-size: 1rem;
+  }
+  .about-me .content-info-text table tbody tr td .info {
+    display: none;
+  }
+  .about-me .content-info-text table tbody tr td .fullName {
+    color: #004cff;
+  }
+  .about-me .content-info-text table tbody tr td span {
+    margin-left: 0.5rem;
+    color: #999;
+    font-size: 1rem;
+    font-weight: lighter;
+  }
+  .about-me .content-info-text .btnCV {
+    font-size: 10px;
+    padding: 0.4rem 0.6rem;
+  }
+  .about-me .content-info-text .btn-scrollDown {
+    font-size: 10px;
+    padding: 0.2rem 0.4rem;
+  }
+  .about-my-resume {
+    padding-bottom: 3rem;
+  }
+  .about-my-resume-step .education-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-my-resume-step .education-content-text {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-resume-step .education-content-text h6 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h4 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h5 {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text p {
+    text-align: center;
+  }
+  .about-my-project .project-content .content {
+    padding: 0.8rem;
+  }
+  .about-my-project .project-content .content .imgLink img {
+    width: 300px;
+  }
+  .about-my-project .project-content .content .des {
+    margin: 0;
+    margin-top: 0.8rem;
+    color: white;
+    font-size: 0.8rem;
+  }
+  .about-my-project .project-content .content .technology {
+    color: white;
+    margin: 0;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .about-my-project .project-content .content .linkProject a {
+    font-size: 0.8rem;
+  }
+  .about-my-contact h4 {
+    font-size: 1.2rem;
+  }
+  .about-my-contact p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .about-banner-text h2,
+  .about-banner-text h3 {
+    font-size: 2rem;
+    left: 5%;
+    top: 30%;
+  }
+  .about-banner-text h3 {
+    top: 46%;
+  }
+  .about-banner .btn-start {
+    padding: 0.5rem 1rem;
+  }
+  .about-me .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-me .content-info-img {
+    width: 260px;
+    height: 260px;
+  }
+  .about-me .content-info-text {
+    width: 260px;
+    height: 260px;
+  }
+  .about-me .content-info-text table {
+    border-collapse: separate;
+    border-spacing: 0.6rem;
+  }
+  .about-me .content-info-text table tbody tr td {
+    font-size: 0.8rem;
+  }
+  .about-me .content-info-text table tbody tr td .info {
+    display: none;
+  }
+  .about-me .content-info-text table tbody tr td .fullName {
+    color: #004cff;
+  }
+  .about-me .content-info-text table tbody tr td span {
+    margin-left: 0.5rem;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: lighter;
+  }
+  .about-me .content-info-text .btnCV {
+    font-size: 8px;
+    padding: 0.4rem 0.6rem;
+  }
+  .about-me .content-info-text .btn-scrollDown {
+    font-size: 8px;
+    padding: 0.2rem 0.4rem;
+  }
+  .about-my-skill .language,
+  .about-my-skill .framework {
+    width: 280px;
+  }
+  .about-my-resume {
+    padding-bottom: 3rem;
+  }
+  .about-my-resume-step .education {
+    padding: 1rem;
+  }
+  .about-my-resume-step .education-content-text {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .about-my-resume-step .education-content-text h6 {
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h4 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text h5 {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+  .about-my-resume-step .education-content-text p {
+    text-align: center;
+    font-size: 0.6rem;
+  }
+  .about-my-project .project-content .content {
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+  }
+  .about-my-project .project-content .content .imgLink img {
+    width: 250px;
+  }
+  .about-my-contact h4 {
+    font-size: 0.9rem;
+  }
+  .about-my-contact p {
+    font-size: 0.8rem;
+  }
+}
+/*# sourceMappingURL=about.css.map */
